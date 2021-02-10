@@ -1,0 +1,96 @@
+{
+  "name": "@folio/export-manager",
+  "version": "1.0.0",
+  "description": "Description for export manager",
+  "main": "index.js",
+  "repository": "",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=10"
+  },
+  "stripes": {
+    "actsAs": [
+      "app"
+    ],
+    "displayName": "ui-export-manager.meta.title",
+    "route": "/export-manager",
+    "okapiInterfaces": {
+    },
+    "icons": [
+      {
+        "name": "app",
+        "alt": "View export manager",
+        "title": "Export manager"
+      }
+    ],
+    "stripesDeps": [
+      "@folio/stripes-acq-components"
+    ],
+    "permissionSets": [
+      {
+        "permissionName": "module.export-manager.enabled",
+        "displayName": "UI: Export manager module is enabled",
+        "visible": false
+      },
+      {
+        "permissionName": "ui-export-manager.export-manager.all",
+        "displayName": "Export manager: All",
+        "description": "",
+        "visible": true,
+        "subPermissions": [
+          "module.export-manager.enabled"
+        ]
+      }
+    ]
+  },
+  "scripts": {
+    "build": "yarn stripes build --output ./output",
+    "lint": "eslint .",
+    "start": "yarn stripes serve",
+    "test": "jest --ci --coverage --passWithNoTests"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.0",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-proposal-decorators": "^7.0.0",
+    "@babel/plugin-transform-runtime": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.7.4",
+    "@folio/eslint-config-stripes": "^5.0.0",
+    "@folio/stripes": "^6.0.0",
+    "@folio/stripes-cli": "^2.0.0",
+    "@testing-library/jest-dom": "^5.11.1",
+    "@testing-library/react": "^11.0.2",
+    "babel-eslint": "^10.0.0",
+    "babel-jest": "^26.3.0",
+    "core-js": "^3.6.1",
+    "eslint": "^6.2.1",
+    "eslint-plugin-filenames": "^1.3.2",
+    "eslint-plugin-jest": "^24.0.0",
+    "faker": "^4.1.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^26.4.2",
+    "jest-css-modules": "^2.1.0",
+    "jest-junit": "^11.1.0",
+    "react": "^16.5.1",
+    "react-dom": "^16.5.1",
+    "react-intl": "^5.8.0",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "regenerator-runtime": "^0.13.3"
+  },
+  "dependencies": {
+    "@folio/stripes-acq-components": "^2.1.0",
+    "prop-types": "^15.5.10",
+    "query-string": "^6.1.0",
+    "react-hot-loader": "^4.3.12",
+    "react-router-prop-types": "^1.0.4"
+  },
+  "peerDependencies": {
+    "@folio/stripes": "^6.0.0",
+    "react": "*",
+    "react-intl": "^5.8.0 ",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0"
+  }
+}
