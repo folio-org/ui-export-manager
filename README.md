@@ -4,15 +4,11 @@ Copyright (C) 2021 The Open Library Foundation
 
 This software is distributed under the terms of the Apache License, Version 2.0. See the file "[LICENSE](LICENSE)" for more information.
 
-## Introduction
-
-Congratulations on creating a new Stripes UI app module!  Follow the instructions below to run ui-export-manager and start your development.
-
 ## Prerequisites
 
 In order to view and log into the platform being served up, a suitable Okapi backend will need to be running. The [Folio testing-backend](https://app.vagrantup.com/folio/boxes/testing-backend) Vagrant box should work if your app does not yet have its own backend module.
 
-## Run your new app
+## Run your app
 
 Run the following from the ui-export-manager directory to serve your new app using a development server:
 ```
