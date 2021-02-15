@@ -1,4 +1,5 @@
 {
     "meta.title": "Export manager",
-    "permission.export-manager.all": "Export manager: All"
+    "permission.export-manager.all": "Export manager: All",
+    "exportJobs": "Export jobs"
 }
