@@ -64,19 +64,4 @@ describe('ExportJobsList', () => {
     expect(getByText('ui-export-manager.exportJob.startTime')).toBeDefined();
     expect(getByText('ui-export-manager.exportJob.endTime')).toBeDefined();
   });
-
-  // it('Than it should display log events table row', async () => {
-  //   const logEvent = getLogEvent();
-  //   const { getByText } = renderCirculationLogList({ logEvents: [logEvent] });
-  //
-  //   expect(getByText(`${logEvent.userBarcode}`)).toBeDefined();
-  //   expect(getByText(`${logEvent.items[0].itemBarcode}`)).toBeDefined();
-  //   expect(getByText(`ui-circulation-log.logEvent.object.${logEvent.object}`)).toBeDefined();
-  //   expect(getByText(`ui-circulation-log.logEvent.action.${logEvent.action}`)).toBeDefined();
-  //   expect(getByText(logEvent.date)).toBeDefined();
-  //   expect(getByText(logEvent.source)).toBeDefined();
-  //   expect(getByText(logEvent.description)).toBeDefined();
-  //   expect(getByText(servicePoint.name)).toBeDefined();
-  //   expect(getByText('CirculationLogEventActions')).toBeDefined();
-  // });
 });
