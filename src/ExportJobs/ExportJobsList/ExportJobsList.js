@@ -4,19 +4,43 @@ import {
   useHistory,
   useLocation,
 } from 'react-router-dom';
+import { FormattedMessage } from 'react-intl';
 
 import {
   MultiColumnList,
 } from '@folio/stripes/components';
 import {
+  FolioFormattedTime,
   NoResultsMessage,
   useLocationSorting,
 } from '@folio/stripes-acq-components';
 
+import { ExportJobId } from '../../common/components';
 import { useNavigation } from '../../hooks';
 
 const sortableFields = [];
-const visibleColumns = ['name'];
+const visibleColumns = ['jobId', 'status', 'type', 'description', 'source', 'startTime', 'endTime'];
+const columnMapping = {
+  jobId: <FormattedMessage id="ui-export-manager.exportJob.jobId" />,
+  status: <FormattedMessage id="ui-export-manager.exportJob.status" />,
+  type: <FormattedMessage id="ui-export-manager.exportJob.type" />,
+  description: <FormattedMessage id="ui-export-manager.exportJob.description" />,
+  source: <FormattedMessage id="ui-export-manager.exportJob.source" />,
+  startTime: <FormattedMessage id="ui-export-manager.exportJob.startTime" />,
+  endTime: <FormattedMessage id="ui-export-manager.exportJob.endTime" />,
+};
+const resultsFormatter = {
+  jobId: exportJob => (
+    <ExportJobId
+      jobId={exportJob.jobId}
+      files={exportJob.files}
+    />
+  ),
+  status: exportJob => <FormattedMessage id={`ui-export-manager.exportJob.status.${exportJob.status}`} />,
+  type: exportJob => <FormattedMessage id={`ui-export-manager.exportJob.type.${exportJob.type}`} />,
+  startTime: exportJob => Boolean(exportJob.startTime) && <FolioFormattedTime dateString={exportJob.startTime} />,
+  endTime: exportJob => Boolean(exportJob.endTime) && <FolioFormattedTime dateString={exportJob.endTime} />,
+};
 
 export const ExportJobsList = ({
   exportJobs,
@@ -58,6 +82,8 @@ export const ExportJobsList = ({
       loading={isLoading}
       onNeedMoreData={() => {}}
       visibleColumns={visibleColumns}
+      columnMapping={columnMapping}
+      formatter={resultsFormatter}
       autosize
       sortOrder={sortingField}
       sortDirection={sortingDirection}
