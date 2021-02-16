@@ -3,13 +3,16 @@
 
   "exportJobs": "Export jobs",
 
+  "exportJob": "Export job {jobId}",
   "exportJob.jobId": "Job ID",
   "exportJob.status": "Status",
   "exportJob.type": "Job type",
+  "exportJob.outputType": "Output type",
   "exportJob.description": "Description",
   "exportJob.source": "Source",
   "exportJob.startTime": "Start time",
   "exportJob.endTime": "End time",
+  "exportJob.errorDetails": "Error details",
 
   "exportJob.status.Scheduled": "Scheduled",
   "exportJob.status.In progress": "In progress",
