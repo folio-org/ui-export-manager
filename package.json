@@ -14,8 +14,7 @@
     ],
     "displayName": "ui-export-manager.meta.title",
     "route": "/export-manager",
-    "okapiInterfaces": {
-    },
+    "okapiInterfaces": {},
     "icons": [
       {
         "name": "app",
@@ -47,7 +46,7 @@
     "build": "yarn stripes build --output ./output",
     "lint": "eslint .",
     "start": "yarn stripes serve",
-    "test": "jest --ci --coverage --passWithNoTests"
+    "test": "jest --ci --coverage"
   },
   "devDependencies": {
     "@babel/core": "^7.8.0",
@@ -61,6 +60,7 @@
     "@folio/stripes-cli": "^2.0.0",
     "@testing-library/jest-dom": "^5.11.1",
     "@testing-library/react": "^11.0.2",
+    "@testing-library/user-event": "^12.7.1",
     "babel-eslint": "^10.0.0",
     "babel-jest": "^26.3.0",
     "core-js": "^3.6.1",

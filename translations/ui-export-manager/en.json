@@ -3,5 +3,21 @@
 
   "exportJobs": "Export jobs",
 
+  "exportJob.jobId": "Job ID",
+  "exportJob.status": "Status",
+  "exportJob.type": "Job type",
+  "exportJob.description": "Description",
+  "exportJob.source": "Source",
+  "exportJob.startTime": "Start time",
+  "exportJob.endTime": "End time",
+
+  "exportJob.status.Scheduled": "Scheduled",
+  "exportJob.status.In progress": "In progress",
+  "exportJob.status.Successful": "Successful",
+  "exportJob.status.Failed": "Failed",
+
+  "exportJob.type.circulation": "Circulation log export",
+  "exportJob.type.bursar": "Bursar export",
+
   "permission.export-manager.all": "Export manager: All"
 }
