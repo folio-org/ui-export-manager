@@ -41,7 +41,7 @@ describe('ExportJob', () => {
     useExportJobQuery.mockClear();
   });
 
-  it('should fetch export job', async () => {
+  it('should fetch export job', () => {
     const exportJob = getExportJob();
 
     useExportJobQuery.mockReturnValue({ exportJob });

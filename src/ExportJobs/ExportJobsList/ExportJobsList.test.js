@@ -52,7 +52,7 @@ const renderExportJobsList = ({ exportJobs = [] }) => (render(
 ));
 
 describe('ExportJobsList', () => {
-  it('should display export jobs table header', async () => {
+  it('should display export jobs table header', () => {
     const exportJob = getExportJob();
     const { getByText } = renderExportJobsList({ exportJobs: [exportJob] });
 
