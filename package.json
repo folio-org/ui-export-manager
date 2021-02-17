@@ -14,7 +14,9 @@
     ],
     "displayName": "ui-export-manager.meta.title",
     "route": "/export-manager",
-    "okapiInterfaces": {},
+    "okapiInterfaces": {
+      "users": "15.0"
+    },
     "icons": [
       {
         "name": "app",
@@ -37,7 +39,9 @@
         "description": "",
         "visible": true,
         "subPermissions": [
-          "module.export-manager.enabled"
+          "module.export-manager.enabled",
+          "users.collection.get",
+          "users.item.get"
         ]
       }
     ]

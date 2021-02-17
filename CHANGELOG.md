@@ -7,3 +7,4 @@
 * Export manager layout. Refs UIEXPMGR-2.
 * Export manager - export jobs view (results). Refs UIEXPMGR-3.
 * Export manager - export job details. Refs UIEXPMGR-5.
+* Export manager - export jobs search and filters. Refs UIEXPMGR-4.

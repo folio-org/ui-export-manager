@@ -2,6 +2,7 @@
   "meta.title": "Export manager",
 
   "exportJobs": "Export jobs",
+  "exportJobs.search": "Search",
 
   "exportJob": "Export job {jobId}",
   "exportJob.jobId": "Job ID",
@@ -13,6 +14,7 @@
   "exportJob.startTime": "Start time",
   "exportJob.endTime": "End time",
   "exportJob.errorDetails": "Error details",
+  "exportJob.system": "System",
 
   "exportJob.status.Scheduled": "Scheduled",
   "exportJob.status.In progress": "In progress",

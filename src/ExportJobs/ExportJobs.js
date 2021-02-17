@@ -11,7 +11,9 @@ import {
 } from '@folio/stripes/components';
 import {
   FiltersPane,
+  ResetButton,
   ResultsPane,
+  SingleSearchForm,
   useLocationFilters,
   useToggle,
 } from '@folio/stripes-acq-components';
@@ -21,6 +23,7 @@ import { ExportJob } from '../ExportJob';
 import {
   useExportJobsQuery,
 } from './apiQuery';
+import { ExportJobsFilters } from './ExportJobsFilters';
 import { ExportJobsList } from './ExportJobsList';
 
 export const ExportJobs = () => {
@@ -29,7 +32,14 @@ export const ExportJobs = () => {
   const location = useLocation();
   const params = useParams();
 
-  const { filters } = useLocationFilters({ history, location });
+  const [
+    filters,
+    searchQuery,
+    applyFilters,
+    applySearch,
+    changeSearch,
+    resetFilters,
+  ] = useLocationFilters(location, history, () => {});
   const [isFiltersOpened, toggleFilters] = useToggle(true);
 
   const {
@@ -44,7 +54,25 @@ export const ExportJobs = () => {
           <FiltersPane
             toggleFilters={toggleFilters}
           >
-            Filters
+            <SingleSearchForm
+              applySearch={applySearch}
+              changeSearch={changeSearch}
+              searchQuery={searchQuery}
+              isLoading={isLoading}
+              ariaLabelId="ui-export-manager.exportJobs.search"
+            />
+
+            <ResetButton
+              id="reset-job-exports-filters"
+              reset={resetFilters}
+              disabled={!location.search || isLoading}
+            />
+
+            <ExportJobsFilters
+              activeFilters={filters}
+              applyFilters={applyFilters}
+              disabled={isLoading}
+            />
           </FiltersPane>
         )
       }
