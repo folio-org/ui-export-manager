@@ -1,5 +1,23 @@
 {
     "meta.title": "مدير التصدير",
     "permission.export-manager.all": "مدير التصدير: الكل",
-    "exportJobs": "مهام التصدير"
+    "exportJobs": "مهام التصدير",
+    "exportJob.jobId": "معرف المهمة",
+    "exportJob.status": "الحالة",
+    "exportJob.type": "نوع المهمة",
+    "exportJob.description": "الوصف",
+    "exportJob.source": "المصدر",
+    "exportJob.startTime": "وقت البدء",
+    "exportJob.endTime": "وقت الانتهاء",
+    "exportJob.status.Scheduled": "مجدول",
+    "exportJob.status.In progress": "قيد التقدم",
+    "exportJob.status.Successful": "نجاح",
+    "exportJob.status.Failed": "فشل",
+    "exportJob.type.circulation": "تصدير سجل الإعارة",
+    "exportJob.type.bursar": "تصدير Bursar",
+    "exportJob": "تصدير المهمة {jobId}",
+    "exportJob.outputType": "نوع الإخراج",
+    "exportJob.errorDetails": "تفاصيل الخطأ",
+    "exportJobs.search": "بحث",
+    "exportJob.system": "النظام"
 }
