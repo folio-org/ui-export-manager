@@ -50,4 +50,24 @@ describe('ExportJob', () => {
 
     expect(useExportJobQuery).toHaveBeenCalled();
   });
+
+  it('should display loading pane when fetch is in progress', () => {
+    const exportJob = getExportJob();
+
+    useExportJobQuery.mockReturnValue({ isLoading: true, exportJob });
+
+    const { getByTestId } = renderExportJobsList();
+
+    expect(getByTestId('export-job-loading')).toBeDefined();
+  });
+
+  it('should display job details pane when fetch is not in progress', () => {
+    const exportJob = getExportJob();
+
+    useExportJobQuery.mockReturnValue({ isLoading: false, exportJob });
+
+    const { getByTestId } = renderExportJobsList();
+
+    expect(getByTestId('export-job')).toBeDefined();
+  });
 });
