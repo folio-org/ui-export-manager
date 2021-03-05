@@ -7,11 +7,7 @@ export const useExportJobQuery = (id) => {
 
   const { isLoading, data = {} } = useQuery({
     queryKey: ['ui-export-manager', 'export-job', id],
-    queryFn: async () => {
-      const response = await ky.get(`data-export-spring/jobs/${id}`).json();
-
-      return response;
-    },
+    queryFn: () => ky.get(`data-export-spring/jobs/${id}`).json(),
   });
 
   return {
