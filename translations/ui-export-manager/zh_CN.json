@@ -9,15 +9,15 @@
     "exportJob.source": "来源",
     "exportJob.startTime": "起始时间",
     "exportJob.endTime": "结束时间",
-    "exportJob.status.Scheduled": "已预定",
-    "exportJob.status.In progress": "进行中",
-    "exportJob.status.Successful": "成功",
-    "exportJob.status.Failed": "失败",
-    "exportJob.type.circulation": "流通日志导出",
-    "exportJob.type.bursar": "费用/罚款导出",
     "exportJob": "导出任务{jobId}",
     "exportJob.outputType": "输出类型",
     "exportJob.errorDetails": "错误详情",
     "exportJobs.search": "搜索",
-    "exportJob.system": "系统"
+    "exportJob.system": "系统",
+    "exportJob.status.SCHEDULED": "Scheduled",
+    "exportJob.status.IN_PROGRESS": "In progress",
+    "exportJob.status.SUCCESSFUL": "Successful",
+    "exportJob.status.FAILED": "Failed",
+    "exportJob.type.CIRCULATION_LOG": "Circulation log",
+    "exportJob.type.BURSAR_FEES_FINES": "Bursar"
 }
