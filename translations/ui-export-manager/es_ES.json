@@ -9,15 +9,15 @@
     "exportJob.source": "Source",
     "exportJob.startTime": "Start time",
     "exportJob.endTime": "End time",
-    "exportJob.status.Scheduled": "Scheduled",
-    "exportJob.status.In progress": "In progress",
-    "exportJob.status.Successful": "Successful",
-    "exportJob.status.Failed": "Failed",
-    "exportJob.type.circulation": "Circulation log export",
-    "exportJob.type.bursar": "Bursar export",
     "exportJob": "Export job {jobId}",
     "exportJob.outputType": "Output type",
     "exportJob.errorDetails": "Error details",
     "exportJobs.search": "Search",
-    "exportJob.system": "System"
+    "exportJob.system": "System",
+    "exportJob.status.SCHEDULED": "Scheduled",
+    "exportJob.status.IN_PROGRESS": "In progress",
+    "exportJob.status.SUCCESSFUL": "Successful",
+    "exportJob.status.FAILED": "Failed",
+    "exportJob.type.CIRCULATION_LOG": "Circulation log",
+    "exportJob.type.BURSAR_FEES_FINES": "Bursar"
 }
