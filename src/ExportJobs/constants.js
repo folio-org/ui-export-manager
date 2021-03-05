@@ -1,3 +1,6 @@
-export const EXPORT_JOB_STATUSES = ['Scheduled', 'In progress', 'Successful', 'Failed'];
+export const EXPORT_JOB_STATUSES = ['SCHEDULED', 'IN_PROGRESS', 'SUCCESSFUL', 'FAILED'];
 
-export const EXPORT_JOB_TYPES = ['bursar', 'circulation'];
+export const EXPORT_JOB_TYPES = [
+  'BURSAR_FEES_FINES',
+  'CIRCULATION_LOG',
+];

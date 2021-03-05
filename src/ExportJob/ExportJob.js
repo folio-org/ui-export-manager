@@ -5,6 +5,7 @@ import { useIntl } from 'react-intl';
 import {
   Col,
   KeyValue,
+  LoadingPane,
   Pane,
   Row,
 } from '@folio/stripes/components';
@@ -23,6 +24,7 @@ export const ExportJob = ({ uuid }) => {
   const { navigateToJobs } = useNavigation();
 
   const {
+    isLoading,
     exportJob,
   } = useExportJobQuery(uuid);
 
@@ -31,8 +33,21 @@ export const ExportJob = ({ uuid }) => {
     { jobId: exportJob.jobId },
   );
 
+  if (isLoading) {
+    return (
+      <LoadingPane
+        data-testid="export-job-loading"
+        paneTitle={title}
+        defaultWidth="fill"
+        dismissible
+        onClose={navigateToJobs}
+      />
+    );
+  }
+
   return (
     <Pane
+      data-testid="export-job"
       paneTitle={title}
       defaultWidth="fill"
       dismissible
@@ -48,7 +63,7 @@ export const ExportJob = ({ uuid }) => {
         <Col xs={3}>
           <KeyValue label={formatMessage({ id: 'ui-export-manager.exportJob.jobId' })}>
             <ExportJobId
-              jobId={exportJob.jobId}
+              jobId={exportJob.name}
               files={exportJob.files}
             />
           </KeyValue>
@@ -57,14 +72,20 @@ export const ExportJob = ({ uuid }) => {
         <Col xs={3}>
           <KeyValue
             label={formatMessage({ id: 'ui-export-manager.exportJob.status' })}
-            value={formatMessage({ id: `ui-export-manager.exportJob.status.${exportJob.status}` })}
+            value={
+              exportJob.status
+              && formatMessage({ id: `ui-export-manager.exportJob.status.${exportJob.status}` })
+            }
           />
         </Col>
 
         <Col xs={3}>
           <KeyValue
             label={formatMessage({ id: 'ui-export-manager.exportJob.type' })}
-            value={formatMessage({ id: `ui-export-manager.exportJob.type.${exportJob.type}` })}
+            value={
+              exportJob.type
+              && formatMessage({ id: `ui-export-manager.exportJob.type.${exportJob.type}` })
+            }
           />
         </Col>
 

@@ -1,6 +1,1 @@
-const commonCofig = require('@folio/stripes-acq-components/jest.config');
-
-module.exports = {
-  ...commonCofig,
-  coverageDirectory: './artifacts/coverage/',
-};
+module.exports = require('@folio/stripes-acq-components/jest.config');

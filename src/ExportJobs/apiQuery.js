@@ -1,45 +1,59 @@
-export const useExportJobsQuery = () => {
+import { useInfiniteQuery } from 'react-query';
+import queryString from 'query-string';
+
+import { useOkapiKy } from '@folio/stripes/core';
+import {
+  buildDateRangeQuery,
+  makeQueryBuilder,
+} from '@folio/stripes-acq-components';
+
+const RESULT_COUNT_INCREMENT = 30;
+
+const buildJobsQuery = makeQueryBuilder(
+  'cql.allRecords=1',
+  (query) => {
+    return `name=${query}* or description=${query}*`;
+  },
+  'sortby name/sort.ascending',
+  {
+    endTime: buildDateRangeQuery.bind(null, ['endTime']),
+    startTime: buildDateRangeQuery.bind(null, ['startTime']),
+  },
+);
+
+export const useExportJobsQuery = (search) => {
+  const ky = useOkapiKy();
+
+  const {
+    fetchNextPage,
+    isLoading,
+    data = {},
+  } = useInfiniteQuery({
+    queryKey: ['ui-export-manager', 'export-jobs', search],
+    queryFn: async ({ pageParam = 0 }) => {
+      const kyOptions = {
+        searchParams: {
+          limit: RESULT_COUNT_INCREMENT,
+          offset: pageParam * RESULT_COUNT_INCREMENT,
+          query: buildJobsQuery(queryString.parse(search)),
+        },
+      };
+
+      const response = await ky.get('data-export-spring/jobs', kyOptions).json();
+
+      return { ...response, nextPage: pageParam + 1 };
+    },
+    getNextPageParam: (lastPage) => lastPage.nextPage,
+  });
+
+  const pages = data.pages || [];
+
   return {
-    isLoading: false,
-    exportJobs: [
-      {
-        id: 1,
-        jobId: '101',
-        status: 'In progress',
-        type: 'circulation',
-        source: 'Admin, Diku',
-        startTime: '2020-08-13T12:21:21.123+00:00',
-      },
-      {
-        id: 2,
-        jobId: '102',
-        status: 'Successful',
-        type: 'bursar',
-        description: '# of charges: 20',
-        source: 'System',
-        startTime: '2020-08-12T12:21:21.123+00:00',
-        endTime: '2020-08-12T12:25:21.123+00:00',
-        files: [
-          '/img/tenant-assets/opentown-libraries-logo.c96ff678691e1a345321b50941335d81.png',
-          '/img/tenant-assets/opentown-libraries-logo.c96ff678691e1a345321b50941335d81.png',
-        ],
-      },
-      {
-        id: 3,
-        jobId: '103',
-        status: 'Scheduled',
-        type: 'bursar',
-        source: 'System',
-      },
-      {
-        id: 4,
-        jobId: '104',
-        status: 'Failed',
-        type: 'circulation',
-        source: 'Admin, Diku',
-        startTime: '2020-08-15T12:21:21.123+00:00',
-        endTime: '2020-08-15T12:25:21.123+00:00',
-      },
-    ],
+    loadMore: fetchNextPage,
+    isLoading,
+    exportJobs: pages.reduce((acc, page) => {
+      return acc.concat(page.jobRecords);
+    }, []),
+    totalCount: pages[0]?.totalRecords,
   };
 };

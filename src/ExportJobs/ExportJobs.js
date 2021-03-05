@@ -26,6 +26,8 @@ import {
 import { ExportJobsFilters } from './ExportJobsFilters';
 import { ExportJobsList } from './ExportJobsList';
 
+const resetData = () => {};
+
 export const ExportJobs = () => {
   const { formatMessage } = useIntl();
   const history = useHistory();
@@ -39,13 +41,15 @@ export const ExportJobs = () => {
     applySearch,
     changeSearch,
     resetFilters,
-  ] = useLocationFilters(location, history, () => {});
+  ] = useLocationFilters(location, history, resetData);
   const [isFiltersOpened, toggleFilters] = useToggle(true);
 
   const {
     isLoading,
     exportJobs,
-  } = useExportJobsQuery();
+    totalCount,
+    loadMore,
+  } = useExportJobsQuery(location.search);
 
   return (
     <Paneset>
@@ -79,14 +83,16 @@ export const ExportJobs = () => {
 
       <ResultsPane
         title={formatMessage({ id: 'ui-export-manager.exportJobs' })}
-        count={exportJobs.length}
+        count={totalCount}
         filters={filters}
         toggleFiltersPane={toggleFilters}
         isFiltersOpened={isFiltersOpened}
       >
         <ExportJobsList
           isLoading={isLoading}
+          onNeedMoreData={loadMore}
           exportJobs={exportJobs}
+          totalCount={totalCount}
           filters={filters}
           isFiltersOpened={isFiltersOpened}
           toggleFilters={toggleFilters}

@@ -16,13 +16,13 @@
   "exportJob.errorDetails": "Error details",
   "exportJob.system": "System",
 
-  "exportJob.status.Scheduled": "Scheduled",
-  "exportJob.status.In progress": "In progress",
-  "exportJob.status.Successful": "Successful",
-  "exportJob.status.Failed": "Failed",
+  "exportJob.status.SCHEDULED": "Scheduled",
+  "exportJob.status.IN_PROGRESS": "In progress",
+  "exportJob.status.SUCCESSFUL": "Successful",
+  "exportJob.status.FAILED": "Failed",
 
-  "exportJob.type.circulation": "Circulation log export",
-  "exportJob.type.bursar": "Bursar export",
+  "exportJob.type.CIRCULATION_LOG": "Circulation log",
+  "exportJob.type.BURSAR_FEES_FINES": "Bursar",
 
   "permission.export-manager.all": "Export manager: All"
 }

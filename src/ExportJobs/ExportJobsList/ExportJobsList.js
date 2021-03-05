@@ -32,7 +32,7 @@ const columnMapping = {
 const resultsFormatter = {
   jobId: exportJob => (
     <ExportJobId
-      jobId={exportJob.jobId}
+      jobId={exportJob.name}
       files={exportJob.files}
     />
   ),
@@ -41,9 +41,12 @@ const resultsFormatter = {
   startTime: exportJob => Boolean(exportJob.startTime) && <FolioFormattedTime dateString={exportJob.startTime} />,
   endTime: exportJob => Boolean(exportJob.endTime) && <FolioFormattedTime dateString={exportJob.endTime} />,
 };
+const resetData = () => {};
 
 export const ExportJobsList = ({
   exportJobs,
+  totalCount,
+  onNeedMoreData,
   isLoading,
   isFiltersOpened,
   filters,
@@ -56,7 +59,7 @@ export const ExportJobsList = ({
     sortingField,
     sortingDirection,
     changeSorting,
-  ] = useLocationSorting(location, history, () => {}, sortableFields);
+  ] = useLocationSorting(location, history, resetData, sortableFields);
 
   const { navigateToJobDetails } = useNavigation();
 
@@ -77,10 +80,10 @@ export const ExportJobsList = ({
   return (
     <MultiColumnList
       id="export-jobs-list"
-      totalCount={exportJobs.length}
+      totalCount={totalCount}
       contentData={exportJobs}
       loading={isLoading}
-      onNeedMoreData={() => {}}
+      onNeedMoreData={onNeedMoreData}
       visibleColumns={visibleColumns}
       columnMapping={columnMapping}
       formatter={resultsFormatter}
@@ -98,9 +101,11 @@ export const ExportJobsList = ({
 };
 
 ExportJobsList.propTypes = {
+  onNeedMoreData: PropTypes.func,
   isLoading: PropTypes.bool.isRequired,
   isFiltersOpened: PropTypes.bool,
   exportJobs: PropTypes.arrayOf(PropTypes.object).isRequired,
+  totalCount: PropTypes.number,
   toggleFilters: PropTypes.func.isRequired,
   filters: PropTypes.object,
 };
