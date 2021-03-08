@@ -15,8 +15,7 @@
     "displayName": "ui-export-manager.meta.title",
     "route": "/export-manager",
     "okapiInterfaces": {
-      "users": "15.0",
-      "data-export-spring": "1.0"
+      "users": "15.0"
     },
     "icons": [
       {
