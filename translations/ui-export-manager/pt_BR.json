@@ -14,9 +14,9 @@
     "exportJob.errorDetails": "Detalhes do erro",
     "exportJobs.search": "Pesquisar",
     "exportJob.system": "Sistema",
-    "exportJob.status.SCHEDULED": "Scheduled",
-    "exportJob.status.IN_PROGRESS": "In progress",
-    "exportJob.status.SUCCESSFUL": "Successful",
+    "exportJob.status.SCHEDULED": "Agendado",
+    "exportJob.status.IN_PROGRESS": "Em andamento",
+    "exportJob.status.SUCCESSFUL": "Bem-sucedido",
     "exportJob.status.FAILED": "Failed",
     "exportJob.type.CIRCULATION_LOG": "Circulation log",
     "exportJob.type.BURSAR_FEES_FINES": "Bursar"
