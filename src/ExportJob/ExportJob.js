@@ -92,7 +92,7 @@ export const ExportJob = ({ uuid }) => {
         <Col xs={3}>
           <KeyValue
             label={formatMessage({ id: 'ui-export-manager.exportJob.outputType' })}
-            value={exportJob.outputType}
+            value={exportJob.outputFormat}
           />
         </Col>
       </Row>
@@ -110,7 +110,11 @@ export const ExportJob = ({ uuid }) => {
         <Col xs={3}>
           <KeyValue
             label={formatMessage({ id: 'ui-export-manager.exportJob.source' })}
-            value={exportJob.source}
+            value={
+              exportJob.isSystemSource
+                ? formatMessage({ id: 'ui-export-manager.exportJob.system' })
+                : exportJob.source
+            }
           />
         </Col>
 

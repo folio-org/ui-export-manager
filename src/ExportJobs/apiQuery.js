@@ -14,7 +14,7 @@ const buildJobsQuery = makeQueryBuilder(
   (query) => {
     return `name=${query}* or description=${query}*`;
   },
-  'sortby name/sort.ascending',
+  'sortby metadata.updatedDate/sort.descending',
   {
     endTime: buildDateRangeQuery.bind(null, ['endTime']),
     startTime: buildDateRangeQuery.bind(null, ['startTime']),
