@@ -14,10 +14,13 @@ const buildJobsQuery = makeQueryBuilder(
   (query) => {
     return `name=${query}* or description=${query}*`;
   },
-  'sortby metadata.updatedDate/sort.descending',
+  'sortby name/sort.descending',
   {
     endTime: buildDateRangeQuery.bind(null, ['endTime']),
     startTime: buildDateRangeQuery.bind(null, ['startTime']),
+  },
+  {
+    jobId: 'name',
   },
 );
 
@@ -52,6 +55,10 @@ export const useExportJobsQuery = (search) => {
     loadMore: fetchNextPage,
     isLoading,
     exportJobs: pages.reduce((acc, page) => {
+      if (!page.jobRecords) {
+        return acc;
+      }
+
       return acc.concat(page.jobRecords);
     }, []),
     totalCount: pages[0]?.totalRecords,

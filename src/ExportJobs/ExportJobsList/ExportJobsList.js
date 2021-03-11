@@ -18,7 +18,7 @@ import {
 import { ExportJobId } from '../../common/components';
 import { useNavigation } from '../../hooks';
 
-const sortableFields = ['name', 'status', 'type', 'startTime', 'endTime'];
+const sortableFields = ['jobId', 'status', 'type', 'startTime', 'endTime'];
 const visibleColumns = ['jobId', 'status', 'type', 'description', 'source', 'startTime', 'endTime'];
 const columnMapping = {
   jobId: <FormattedMessage id="ui-export-manager.exportJob.jobId" />,
