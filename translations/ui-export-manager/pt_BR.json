@@ -17,7 +17,7 @@
     "exportJob.status.SCHEDULED": "Agendado",
     "exportJob.status.IN_PROGRESS": "Em andamento",
     "exportJob.status.SUCCESSFUL": "Bem-sucedido",
-    "exportJob.status.FAILED": "Failed",
+    "exportJob.status.FAILED": "Falhou",
     "exportJob.type.CIRCULATION_LOG": "Circulation log",
     "exportJob.type.BURSAR_FEES_FINES": "Bursar"
 }
