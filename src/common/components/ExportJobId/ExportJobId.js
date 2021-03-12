@@ -11,7 +11,8 @@ export const ExportJobId = ({ jobId, files }) => {
       const link = document.createElement('a');
 
       link.href = file;
-      link.download = 'file.png';
+      link.download = jobId;
+      link.target = '_blank';
 
       document.body.appendChild(link);
 
