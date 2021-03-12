@@ -41,7 +41,10 @@
         "subPermissions": [
           "module.export-manager.enabled",
           "users.collection.get",
-          "users.item.get"
+          "users.item.get",
+          "usergroups.collection.get",
+          "data-export.job.collection.get",
+          "data-export.job.item.get"
         ]
       }
     ]
