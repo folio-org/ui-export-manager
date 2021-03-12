@@ -9,7 +9,7 @@
     "exportJob.source": "المصدر",
     "exportJob.startTime": "وقت البدء",
     "exportJob.endTime": "وقت الانتهاء",
-    "exportJob": "تصدير المهمة {jobId}",
+    "exportJob": "مهمة تصدير {jobId}",
     "exportJob.outputType": "نوع الإخراج",
     "exportJob.errorDetails": "تفاصيل الخطأ",
     "exportJobs.search": "بحث",
