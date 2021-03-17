@@ -1,7 +1,7 @@
 {
     "meta.title": "Export manager",
     "permission.export-manager.all": "Export manager: All",
-    "exportJobs": "Export jobs",
+    "exportJobs": "Exporter les tâches",
     "exportJob.jobId": "ID de la tâche",
     "exportJob.status": "Statut",
     "exportJob.type": "Type de tâche",
@@ -10,7 +10,7 @@
     "exportJob.startTime": "Heure de début",
     "exportJob.endTime": "Heure de fin",
     "exportJob": "Exporter la tâche {jobId}",
-    "exportJob.outputType": "Output type",
+    "exportJob.outputType": "Type de sortie",
     "exportJob.errorDetails": "Détails de l'erreur",
     "exportJobs.search": "Rechercher",
     "exportJob.system": "Système",
