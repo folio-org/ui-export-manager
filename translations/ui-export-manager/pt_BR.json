@@ -9,7 +9,7 @@
     "exportJob.source": "Fonte",
     "exportJob.startTime": "Hora de início",
     "exportJob.endTime": "Hora de término",
-    "exportJob": "Export job {jobId}",
+    "exportJob": "Job de exportação {jobId}",
     "exportJob.outputType": "Tipo de saída",
     "exportJob.errorDetails": "Detalhes do erro",
     "exportJobs.search": "Pesquisar",
@@ -18,6 +18,6 @@
     "exportJob.status.IN_PROGRESS": "Em andamento",
     "exportJob.status.SUCCESSFUL": "Bem-sucedido",
     "exportJob.status.FAILED": "Falhou",
-    "exportJob.type.CIRCULATION_LOG": "Circulation log",
-    "exportJob.type.BURSAR_FEES_FINES": "Bursar"
+    "exportJob.type.CIRCULATION_LOG": "Registro de circulação",
+    "exportJob.type.BURSAR_FEES_FINES": "Tesoureiro"
 }
