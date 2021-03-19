@@ -12,7 +12,7 @@ const RESULT_COUNT_INCREMENT = 30;
 const buildJobsQuery = makeQueryBuilder(
   'cql.allRecords=1',
   (query) => {
-    return `name=${query}* or description=${query}*`;
+    return `name="*${query}*" or description="*${query}*"`;
   },
   'sortby name/sort.descending',
   {
