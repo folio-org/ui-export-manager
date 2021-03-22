@@ -1,6 +1,6 @@
 {
-    "meta.title": "Export manager",
-    "permission.export-manager.all": "Export manager: All",
+    "meta.title": "Module d'exportation",
+    "permission.export-manager.all": "Module d'exportation: tout",
     "exportJobs": "Exporter les tâches",
     "exportJob.jobId": "ID de la tâche",
     "exportJob.status": "Statut",
@@ -18,6 +18,6 @@
     "exportJob.status.IN_PROGRESS": "En cours",
     "exportJob.status.SUCCESSFUL": "Réussi",
     "exportJob.status.FAILED": "Échoué",
-    "exportJob.type.CIRCULATION_LOG": "Circulation log",
-    "exportJob.type.BURSAR_FEES_FINES": "Bursar"
+    "exportJob.type.CIRCULATION_LOG": "Journal de circulation",
+    "exportJob.type.BURSAR_FEES_FINES": "Intendant"
 }
