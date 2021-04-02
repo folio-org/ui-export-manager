@@ -14,10 +14,10 @@
     "exportJob.errorDetails": "错误详情",
     "exportJobs.search": "搜索",
     "exportJob.system": "系统",
-    "exportJob.status.SCHEDULED": "Scheduled",
-    "exportJob.status.IN_PROGRESS": "In progress",
-    "exportJob.status.SUCCESSFUL": "Successful",
-    "exportJob.status.FAILED": "Failed",
-    "exportJob.type.CIRCULATION_LOG": "Circulation log",
-    "exportJob.type.BURSAR_FEES_FINES": "Bursar"
+    "exportJob.status.SCHEDULED": "已预定",
+    "exportJob.status.IN_PROGRESS": "进行中",
+    "exportJob.status.SUCCESSFUL": "成功",
+    "exportJob.status.FAILED": "失败",
+    "exportJob.type.CIRCULATION_LOG": "流通日志",
+    "exportJob.type.BURSAR_FEES_FINES": "费用/罚款导出"
 }
