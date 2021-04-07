@@ -72,10 +72,10 @@ export const ExportJobsFilters = ({
       />
 
       <PluggableUserFilter
-        activeFilters={activeFilters?.source}
+        activeFilters={activeFilters?.createdByUserId}
         disabled={disabled}
         labelId="ui-export-manager.exportJob.source"
-        name="source"
+        name="createdByUserId"
         onChange={adaptedApplyFilters}
       />
 
