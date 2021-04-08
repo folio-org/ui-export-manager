@@ -2,6 +2,9 @@
 
 ## (IN PROGRESS)
 
+## [1.0.1](https://github.com/folio-org/ui-export-manager/tree/v1.0.1) (2021-04-08)
+[Full Changelog](https://github.com/folio-org/ui-export-manager/compare/v1.0.0...v1.0.1)
+
 * Unable to filter results by Source. Refs UIEXPMGR-11.
 
 ## [1.0.0](https://github.com/folio-org/ui-export-manager/tree/v1.0.0) (2021-03-19)
