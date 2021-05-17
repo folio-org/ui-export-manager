@@ -3,7 +3,7 @@
     "permission.export-manager.all": "Export manager: All",
     "exportJobs": "Export jobs",
     "exportJob.jobId": "Job ID",
-    "exportJob.status": "Status",
+    "exportJob.status": "Stato",
     "exportJob.type": "Job type",
     "exportJob.description": "Description",
     "exportJob.source": "Source",
@@ -14,10 +14,10 @@
     "exportJob.errorDetails": "Error details",
     "exportJobs.search": "Search",
     "exportJob.system": "System",
-    "exportJob.status.SCHEDULED": "Scheduled",
-    "exportJob.status.IN_PROGRESS": "In progress",
-    "exportJob.status.SUCCESSFUL": "Successful",
-    "exportJob.status.FAILED": "Failed",
+    "exportJob.status.SCHEDULED": "Programmato",
+    "exportJob.status.IN_PROGRESS": "In lavorazione",
+    "exportJob.status.SUCCESSFUL": "Riuscito",
+    "exportJob.status.FAILED": "Fallito",
     "exportJob.type.CIRCULATION_LOG": "Circulation log",
     "exportJob.type.BURSAR_FEES_FINES": "Bursar"
 }
