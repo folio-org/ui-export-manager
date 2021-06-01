@@ -12,7 +12,7 @@
     "exportJob": "Export job {jobId}",
     "exportJob.outputType": "Output type",
     "exportJob.errorDetails": "Error details",
-    "exportJobs.search": "Search",
+    "exportJobs.search": "Cerca",
     "exportJob.system": "System",
     "exportJob.status.SCHEDULED": "Programmato",
     "exportJob.status.IN_PROGRESS": "In lavorazione",
