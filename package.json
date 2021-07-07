@@ -57,7 +57,8 @@
     "test:unit": "jest --ci --coverage && yarn run test:unit:report",
     "test:unit:report": "cp -r ./artifacts/coverage-jest ./artifacts/coverage",
     "test:e2e": "echo Not implemented",
-    "test": "yarn run test:unit && yarn run test:e2e"
+    "test": "yarn run test:unit && yarn run test:e2e",
+    "formatjs-compile": "formatjs compile-folder --ast --format simple ./translations/ui-export-manager ./translations/ui-export-manager/compiled"
   },
   "devDependencies": {
     "@babel/core": "^7.8.0",
@@ -69,6 +70,7 @@
     "@folio/eslint-config-stripes": "^5.0.0",
     "@folio/stripes": "^6.0.0",
     "@folio/stripes-cli": "^2.0.0",
+    "@formatjs/cli": "^4.2.16",
     "@testing-library/jest-dom": "^5.11.1",
     "@testing-library/react": "^11.0.2",
     "@testing-library/react-hooks": "^5.0.3",
