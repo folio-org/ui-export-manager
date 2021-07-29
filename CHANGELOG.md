@@ -4,6 +4,11 @@
 
 * Compile Translation Files into AST Format. Refs UIEXPMGR-13.
 
+## [1.1.1](https://github.com/folio-org/ui-export-manager/tree/v1.1.1) (2021-07-28)
+[Full Changelog](https://github.com/folio-org/ui-export-manager/compare/v1.1.0...v1.1.1)
+
+* Pin @folio/stripes-acq-components version.
+
 ## [1.1.0](https://github.com/folio-org/ui-export-manager/tree/v1.1.0) (2021-06-17)
 [Full Changelog](https://github.com/folio-org/ui-export-manager/compare/v1.0.1...v1.1.0)
 
