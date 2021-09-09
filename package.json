@@ -95,7 +95,7 @@
     "regenerator-runtime": "^0.13.3"
   },
   "dependencies": {
-    "@folio/stripes-acq-components": "3.0.0",
+    "@folio/stripes-acq-components": "^3.0.0",
     "prop-types": "^15.5.10",
     "query-string": "^6.1.0",
     "react-hot-loader": "^4.3.12",
