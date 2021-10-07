@@ -2,6 +2,9 @@
 
 ## (IN PROGRESS)
 
+## [2.0.0](https://github.com/folio-org/ui-export-manager/tree/v2.0.0) (2021-10-07)
+[Full Changelog](https://github.com/folio-org/ui-export-manager/compare/v1.1.1...v2.0.0)
+
 * Compile Translation Files into AST Format. Refs UIEXPMGR-13.
 * Increment stripes to v7. Refs UIEXPMGR-17.
 
