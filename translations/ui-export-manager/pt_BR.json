@@ -1,5 +1,5 @@
 {
-    "meta.title": "Gerente de exportação",
+    "meta.title": "Gerenciador de exportações",
     "permission.export-manager.all": "Gerente de exportação: Todos",
     "exportJobs": "Trabalhos de exportação",
     "exportJob.jobId": "ID do job",
