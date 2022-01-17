@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom';
 
 import { ExportJobs } from './ExportJobs';
+import { ExportEdiJobs } from './ExportEdiJobs';
 
 export const ExportManager = () => {
   return (
@@ -20,6 +21,18 @@ export const ExportManager = () => {
         exact
         component={ExportJobs}
         path="/export-manager/jobs/:id"
+      />
+
+      <Route
+        exact
+        component={ExportEdiJobs}
+        path="/export-manager/edi-jobs"
+      />
+
+      <Route
+        exact
+        component={ExportEdiJobs}
+        path="/export-manager/edi-jobs/:id"
       />
 
       <Route

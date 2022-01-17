@@ -2,7 +2,6 @@ import React from 'react';
 import {
   useHistory,
   useLocation,
-  useParams,
 } from 'react-router-dom';
 import { useIntl } from 'react-intl';
 
@@ -19,21 +18,17 @@ import {
 } from '@folio/stripes-acq-components';
 
 import { Navigation } from '../common/components';
-import { ExportJob } from '../ExportJob';
 
-import {
-  useExportJobsQuery,
-} from './apiQuery';
-import { ExportJobsFilters } from './ExportJobsFilters';
-import { ExportJobsList } from './ExportJobsList';
+import { useExportEdiJobsQuery } from './apiQuery';
+import { ExportEdiJobsFilters } from './ExportEdiJobsFilters';
+import { ExportEdiJobsList } from './ExportEdiJobsList';
 
 const resetData = () => {};
 
-export const ExportJobs = () => {
+export const ExportEdiJobs = () => {
   const { formatMessage } = useIntl();
   const history = useHistory();
   const location = useLocation();
-  const params = useParams();
 
   const [
     filters,
@@ -47,10 +42,10 @@ export const ExportJobs = () => {
 
   const {
     isLoading,
-    exportJobs,
+    exportEdiJobs,
     totalCount,
     loadMore,
-  } = useExportJobsQuery(location.search);
+  } = useExportEdiJobsQuery(location.search);
 
   return (
     <Paneset>
@@ -75,7 +70,7 @@ export const ExportJobs = () => {
               disabled={!location.search || isLoading}
             />
 
-            <ExportJobsFilters
+            <ExportEdiJobsFilters
               activeFilters={filters}
               applyFilters={applyFilters}
               disabled={isLoading}
@@ -91,22 +86,16 @@ export const ExportJobs = () => {
         toggleFiltersPane={toggleFilters}
         isFiltersOpened={isFiltersOpened}
       >
-        <ExportJobsList
+        <ExportEdiJobsList
           isLoading={isLoading}
           onNeedMoreData={loadMore}
-          exportJobs={exportJobs}
+          exportJobs={exportEdiJobs}
           totalCount={totalCount}
           filters={filters}
           isFiltersOpened={isFiltersOpened}
           toggleFilters={toggleFilters}
         />
       </ResultsPane>
-
-      {
-        Boolean(params.id) && (
-          <ExportJob uuid={params.id} />
-        )
-      }
     </Paneset>
   );
 };
