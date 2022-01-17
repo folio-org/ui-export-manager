@@ -15,8 +15,11 @@
     "displayName": "ui-export-manager.meta.title",
     "route": "/export-manager",
     "okapiInterfaces": {
-      "users": "15.0",
-      "data-export-spring": "1.0"
+      "configuration": "2.0",
+      "data-export-spring": "1.0",
+      "organizations.organizations": "1.0",
+      "tags": "1.0",
+      "users": "15.0"
     },
     "icons": [
       {
@@ -41,11 +44,16 @@
         "visible": true,
         "subPermissions": [
           "module.export-manager.enabled",
-          "users.collection.get",
-          "users.item.get",
-          "usergroups.collection.get",
+          "configuration.entries.collection.get",
+          "organizations.organizations.collection.get",
+          "organizations.organizations.item.get",
+          "data-export.config.collection.get",
           "data-export.job.collection.get",
-          "data-export.job.item.get"
+          "data-export.job.item.get",
+          "tags.collection.get",
+          "usergroups.collection.get",
+          "users.collection.get",
+          "users.item.get"
         ]
       }
     ]

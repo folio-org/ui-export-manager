@@ -3,10 +3,11 @@ import { render } from '@testing-library/react';
 
 import '@folio/stripes-acq-components/test/jest/__mock__';
 
-import { EXPORT_JOB_STATUS_OPTIONS } from '../../common/constants';
-import { EXPORT_JOB_TYPES } from '../constants';
+import {
+  EXPORT_JOB_STATUS_OPTIONS,
+} from '../../common/constants';
 
-import { ExportJobsFilters } from './ExportJobsFilters';
+import { ExportEdiJobsFilters } from './ExportEdiJobsFilters';
 
 jest.mock('@folio/stripes-acq-components', () => {
   return {
@@ -22,6 +23,9 @@ jest.mock('@folio/stripes-acq-components', () => {
     PluggableUserFilter: jest.fn(({ labelId }) => <span>{labelId}</span>),
   };
 });
+jest.mock('./ExportMethodFilter', () => ({
+  ExportMethodFilter: () => <span>ExportMethodFilter</span>,
+}));
 
 const defaultProps = {
   activeFilters: {},
@@ -29,21 +33,21 @@ const defaultProps = {
   disabled: false,
 };
 
-const renderExportJobsFilters = ({
+const renderExportEdiJobsFilters = ({
   activeFilters,
   applyFilters,
   disabled,
 } = defaultProps) => (render(
-  <ExportJobsFilters
+  <ExportEdiJobsFilters
     activeFilters={activeFilters}
     applyFilters={applyFilters}
     disabled={disabled}
   />,
 ));
 
-describe('ExportJobsFilters', () => {
+describe('ExportEdiJobsFilters', () => {
   it('should display filter by status', () => {
-    const { getByText } = renderExportJobsFilters();
+    const { getByText } = renderExportEdiJobsFilters();
 
     expect(getByText('ui-export-manager.exportJob.status')).toBeDefined();
 
@@ -51,36 +55,39 @@ describe('ExportJobsFilters', () => {
       .forEach(({ value }) => expect(getByText(value)).toBeDefined());
   });
 
-  it('should display filter by type', () => {
-    const { getByText } = renderExportJobsFilters();
-
-    expect(getByText('ui-export-manager.exportJob.type')).toBeDefined();
-
-    Object.values(EXPORT_JOB_TYPES)
-      .forEach((type) => expect(getByText(type)).toBeDefined());
-  });
-
   it('should display filter by system source', () => {
-    const { getByText } = renderExportJobsFilters();
+    const { getByText } = renderExportEdiJobsFilters();
 
     expect(getByText('ui-export-manager.exportJob.system')).toBeDefined();
   });
 
   it('should display filter by source', () => {
-    const { getByText } = renderExportJobsFilters();
+    const { getByText } = renderExportEdiJobsFilters();
 
     expect(getByText('ui-export-manager.exportJob.source')).toBeDefined();
   });
 
   it('should display filter by start time', () => {
-    const { getByText } = renderExportJobsFilters();
+    const { getByText } = renderExportEdiJobsFilters();
 
     expect(getByText('ui-export-manager.exportJob.startTime')).toBeDefined();
   });
 
   it('should display filter by end time', () => {
-    const { getByText } = renderExportJobsFilters();
+    const { getByText } = renderExportEdiJobsFilters();
 
     expect(getByText('ui-export-manager.exportJob.endTime')).toBeDefined();
+  });
+
+  it('should display filter by export method', () => {
+    const { getByText } = renderExportEdiJobsFilters();
+
+    expect(getByText('ExportMethodFilter')).toBeDefined();
+  });
+
+  it('should display filter by organization', () => {
+    const { getByText } = renderExportEdiJobsFilters();
+
+    expect(getByText('ui-export-manager.exportJob.organization')).toBeDefined();
   });
 });

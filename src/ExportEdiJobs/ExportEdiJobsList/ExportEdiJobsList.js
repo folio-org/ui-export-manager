@@ -7,7 +7,7 @@ import {
 import { FormattedMessage } from 'react-intl';
 
 import {
-  MultiColumnList,
+  MultiColumnList, NoValue,
 } from '@folio/stripes/components';
 import {
   FolioFormattedTime,
@@ -18,16 +18,16 @@ import {
 import { ExportJobId } from '../../common/components';
 import { useNavigation } from '../../hooks';
 
-const sortableFields = ['jobId', 'status', 'type', 'startTime', 'endTime'];
-const visibleColumns = ['jobId', 'status', 'type', 'description', 'source', 'startTime', 'endTime'];
+const sortableFields = ['jobId', 'status', 'startTime', 'endTime', 'exportMethod'];
+const visibleColumns = ['jobId', 'status', 'description', 'source', 'startTime', 'endTime', 'exportMethod'];
 const columnMapping = {
   jobId: <FormattedMessage id="ui-export-manager.exportJob.jobId" />,
   status: <FormattedMessage id="ui-export-manager.exportJob.status" />,
-  type: <FormattedMessage id="ui-export-manager.exportJob.type" />,
   description: <FormattedMessage id="ui-export-manager.exportJob.description" />,
   source: <FormattedMessage id="ui-export-manager.exportJob.source" />,
   startTime: <FormattedMessage id="ui-export-manager.exportJob.startTime" />,
   endTime: <FormattedMessage id="ui-export-manager.exportJob.endTime" />,
+  exportMethod: <FormattedMessage id="ui-export-manager.exportJob.exportMethod" />,
 };
 const resultsFormatter = {
   jobId: exportJob => (
@@ -42,13 +42,15 @@ const resultsFormatter = {
       : exportJob.source
   ),
   status: exportJob => <FormattedMessage id={`ui-export-manager.exportJob.status.${exportJob.status}`} />,
-  type: exportJob => <FormattedMessage id={`ui-export-manager.exportJob.type.${exportJob.type}`} defaultMessage={exportJob.type} />,
   startTime: exportJob => Boolean(exportJob.startTime) && <FolioFormattedTime dateString={exportJob.startTime} />,
   endTime: exportJob => Boolean(exportJob.endTime) && <FolioFormattedTime dateString={exportJob.endTime} />,
+  exportMethod: exportJob => (
+    exportJob.exportTypeSpecificParameters?.vendorEdiOrdersExportConfig?.configName || <NoValue />
+  ),
 };
 const resetData = () => {};
 
-export const ExportJobsList = ({
+export const ExportEdiJobsList = ({
   exportJobs,
   totalCount,
   onNeedMoreData,
@@ -66,11 +68,11 @@ export const ExportJobsList = ({
     changeSorting,
   ] = useLocationSorting(location, history, resetData, sortableFields);
 
-  const { navigateToJobDetails } = useNavigation();
+  const { navigateToEdiJobDetails } = useNavigation();
 
-  const openJobDetails = useCallback(
-    (e, { id }) => navigateToJobDetails(id),
-    [navigateToJobDetails],
+  const openEdiJobDetails = useCallback(
+    (e, { id }) => navigateToEdiJobDetails(id),
+    [navigateToEdiJobDetails],
   );
 
   const resultsStatusMessage = (
@@ -84,7 +86,7 @@ export const ExportJobsList = ({
 
   return (
     <MultiColumnList
-      id="export-jobs-list"
+      id="export-edi-jobs-list"
       totalCount={totalCount}
       contentData={exportJobs}
       loading={isLoading}
@@ -99,13 +101,13 @@ export const ExportJobsList = ({
       isEmptyMessage={resultsStatusMessage}
       hasMargin
       pagingType="click"
-      onRowClick={openJobDetails}
+      onRowClick={openEdiJobDetails}
       interactive
     />
   );
 };
 
-ExportJobsList.propTypes = {
+ExportEdiJobsList.propTypes = {
   onNeedMoreData: PropTypes.func,
   isLoading: PropTypes.bool.isRequired,
   isFiltersOpened: PropTypes.bool,

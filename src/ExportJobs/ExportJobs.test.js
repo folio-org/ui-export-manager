@@ -30,6 +30,9 @@ jest.mock('@folio/stripes-acq-components', () => {
   };
 });
 
+jest.mock('../common/components', () => ({
+  Navigation: () => <span>Navigation</span>,
+}));
 jest.mock('../ExportJob', () => ({
   ExportJob: () => <span>ExportJob</span>,
 }));
@@ -69,7 +72,7 @@ describe('ExportJobs', () => {
       expect(getByText('ResetButton')).toBeDefined();
     });
 
-    it('should display expost jobs filters', () => {
+    it('should display export jobs filters', () => {
       const { getByText } = renderExportJobs();
 
       expect(getByText('ExportJobsFilters')).toBeDefined();
@@ -77,7 +80,7 @@ describe('ExportJobs', () => {
   });
 
   describe('Results section', () => {
-    it('should display expost jobs list', () => {
+    it('should display export jobs list', () => {
       const { getByText } = renderExportJobs();
 
       expect(getByText('ExportJobsList')).toBeDefined();
@@ -85,13 +88,13 @@ describe('ExportJobs', () => {
   });
 
   describe('Details section', () => {
-    it('should not display expost job details when id parameter is not present', () => {
+    it('should not display export job details when id parameter is not present', () => {
       const { queryByText } = renderExportJobs();
 
       expect(queryByText('ExportJob')).toBeNull();
     });
 
-    it('should display expost job details when id parameter is present', () => {
+    it('should display export job details when id parameter is present', () => {
       useParams.mockClear().mockReturnValue({ id: 5 });
 
       const { getByText } = renderExportJobs();

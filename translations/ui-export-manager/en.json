@@ -15,6 +15,9 @@
   "exportJob.endTime": "End time",
   "exportJob.errorDetails": "Error details",
   "exportJob.system": "System",
+  "exportJob.organization": "Organization",
+  "exportJob.exportMethod": "Export method",
+
 
   "exportJob.status.SCHEDULED": "Scheduled",
   "exportJob.status.IN_PROGRESS": "In progress",
@@ -23,6 +26,9 @@
 
   "exportJob.type.CIRCULATION_LOG": "Circulation log",
   "exportJob.type.BURSAR_FEES_FINES": "Bursar",
+
+  "navigation.all": "All",
+  "navigation.organizations": "Organizations",
 
   "permission.export-manager.all": "Export manager: All"
 }

@@ -23,9 +23,14 @@ export const useNavigation = () => {
     navigateTo(`jobs/${id}`);
   }, [navigateTo]);
 
+  const navigateToEdiJobDetails = useCallback((id) => {
+    navigateTo(`edi-jobs/${id}`);
+  }, [navigateTo]);
+
   return {
     navigateTo,
     navigateToJobs,
     navigateToJobDetails,
+    navigateToEdiJobDetails,
   };
 };
