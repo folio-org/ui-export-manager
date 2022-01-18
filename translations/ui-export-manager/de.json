@@ -19,5 +19,9 @@
     "exportJob.status.SUCCESSFUL": "Erfolgreich",
     "exportJob.status.FAILED": "Fehlgeschlagen",
     "exportJob.type.CIRCULATION_LOG": "Ausleihprotokoll",
-    "exportJob.type.BURSAR_FEES_FINES": "Bursar"
+    "exportJob.type.BURSAR_FEES_FINES": "Bursar",
+    "exportJob.organization": "Organization",
+    "exportJob.exportMethod": "Export method",
+    "navigation.all": "All",
+    "navigation.organizations": "Organizations"
 }

@@ -19,5 +19,9 @@
     "exportJob.status.SUCCESSFUL": "Exitoso",
     "exportJob.status.FAILED": "Fallido",
     "exportJob.type.CIRCULATION_LOG": "Registro de circulación",
-    "exportJob.type.BURSAR_FEES_FINES": "Tesorero"
+    "exportJob.type.BURSAR_FEES_FINES": "Tesorero",
+    "exportJob.organization": "Organization",
+    "exportJob.exportMethod": "Export method",
+    "navigation.all": "All",
+    "navigation.organizations": "Organizations"
 }

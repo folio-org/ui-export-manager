@@ -19,5 +19,9 @@
     "exportJob.status.SUCCESSFUL": "Réussi",
     "exportJob.status.FAILED": "Échoué",
     "exportJob.type.CIRCULATION_LOG": "Journal de circulation",
-    "exportJob.type.BURSAR_FEES_FINES": "Intendant"
+    "exportJob.type.BURSAR_FEES_FINES": "Intendant",
+    "exportJob.organization": "Organization",
+    "exportJob.exportMethod": "Export method",
+    "navigation.all": "All",
+    "navigation.organizations": "Organizations"
 }

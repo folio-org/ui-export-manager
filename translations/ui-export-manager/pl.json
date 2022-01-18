@@ -19,5 +19,9 @@
     "exportJob.status.SUCCESSFUL": "Pomyślne",
     "exportJob.status.FAILED": "Niepowodzenie",
     "exportJob.type.CIRCULATION_LOG": "Dziennik obiegu",
-    "exportJob.type.BURSAR_FEES_FINES": "Kwestor"
+    "exportJob.type.BURSAR_FEES_FINES": "Kwestor",
+    "exportJob.organization": "Organization",
+    "exportJob.exportMethod": "Export method",
+    "navigation.all": "All",
+    "navigation.organizations": "Organizations"
 }

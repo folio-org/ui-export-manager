@@ -19,5 +19,9 @@
     "exportJob.status.SUCCESSFUL": "نجاح",
     "exportJob.status.FAILED": "فشل",
     "exportJob.type.CIRCULATION_LOG": "سجل الإعارة",
-    "exportJob.type.BURSAR_FEES_FINES": "Bursar"
+    "exportJob.type.BURSAR_FEES_FINES": "Bursar",
+    "exportJob.organization": "المؤسسة",
+    "exportJob.exportMethod": "طريقة التصدير",
+    "navigation.all": "الكل",
+    "navigation.organizations": "المؤسسات"
 }
