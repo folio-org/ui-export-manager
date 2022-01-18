@@ -18,7 +18,8 @@ const buildJobsQuery = makeQueryBuilder(
   {
     endTime: buildDateRangeQuery.bind(null, ['endTime']),
     startTime: buildDateRangeQuery.bind(null, ['startTime']),
-    vendorId: (id) => `configName==EDIFACT_ORDERS_EXPORT_${id}*`,
+    vendorId: (id) => `jsonb.exportTypeSpecificParameters.vendorEdiOrdersExportConfig.vendorId=="${id}"`,
+    exportConfigId: (id) => `jsonb.exportTypeSpecificParameters.vendorEdiOrdersExportConfig.exportConfigId=="${id}"`,
   },
   {
     jobId: 'name',
