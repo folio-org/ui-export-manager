@@ -19,5 +19,9 @@
     "exportJob.status.SUCCESSFUL": "成功",
     "exportJob.status.FAILED": "失败",
     "exportJob.type.CIRCULATION_LOG": "流通紀錄",
-    "exportJob.type.BURSAR_FEES_FINES": "费用/罚款导出"
+    "exportJob.type.BURSAR_FEES_FINES": "费用/罚款导出",
+    "exportJob.organization": "Organization",
+    "exportJob.exportMethod": "Export method",
+    "navigation.all": "All",
+    "navigation.organizations": "Organizations"
 }
