@@ -12,11 +12,11 @@ import {
 } from '@folio/stripes/components';
 import {
   FolioFormattedTime,
+  useOrganization,
 } from '@folio/stripes-acq-components';
 import { ViewMetaData } from '@folio/stripes/smart-components';
 
 import { ExportJobId } from '../../common/components';
-import { useOrganization } from '../../common/hooks';
 import { useNavigation } from '../../hooks';
 
 import { useExportJobQuery } from '../../ExportJob/apiQuery';

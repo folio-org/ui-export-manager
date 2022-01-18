@@ -6,13 +6,13 @@ import '@folio/stripes-acq-components/test/jest/__mock__';
 import { useExportJobQuery } from '../../ExportJob/apiQuery';
 import { ExportEdiJobDetails } from './ExportEdiJobDetails';
 
+jest.mock('@folio/stripes-acq-components', () => ({
+  ...jest.requireActual('@folio/stripes-acq-components'),
+  useOrganization: () => jest.fn().mockReturnValue({}),
+}));
 jest.mock('../../common/components', () => ({
   ...jest.requireActual('../../common/components'),
   ExportJobId: () => <span>ExportJobId</span>,
-}));
-jest.mock('../../common/hooks', () => ({
-  ...jest.requireActual('../../common/hooks'),
-  useOrganization: () => jest.fn().mockReturnValue({}),
 }));
 jest.mock('../../hooks', () => ({
   ...jest.requireActual('../../hooks'),
