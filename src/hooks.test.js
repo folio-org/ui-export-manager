@@ -56,5 +56,26 @@ describe('Export manager hooks', () => {
         pathname: `/export-manager/jobs/${id}`,
       });
     });
+
+    it('should provide navigateToEdiJobs util that navigates to export edi jobs', () => {
+      const { result } = renderHook(() => useNavigation());
+
+      result.current.navigateToEdiJobs();
+
+      expect(mockHistoryPush).toHaveBeenCalledWith({
+        pathname: '/export-manager/edi-jobs',
+      });
+    });
+
+    it('should provide navigateToEdiJobDetails util that navigates to export edi job details', () => {
+      const id = 'id';
+      const { result } = renderHook(() => useNavigation());
+
+      result.current.navigateToEdiJobDetails(id);
+
+      expect(mockHistoryPush).toHaveBeenCalledWith({
+        pathname: `/export-manager/edi-jobs/${id}`,
+      });
+    });
   });
 });

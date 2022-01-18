@@ -2,6 +2,7 @@ import React from 'react';
 import {
   useHistory,
   useLocation,
+  useParams,
 } from 'react-router-dom';
 import { useIntl } from 'react-intl';
 
@@ -22,6 +23,7 @@ import { Navigation } from '../common/components';
 import { useExportEdiJobsQuery } from './apiQuery';
 import { ExportEdiJobsFilters } from './ExportEdiJobsFilters';
 import { ExportEdiJobsList } from './ExportEdiJobsList';
+import { ExportEdiJobDetails } from './ExportEdiJobDetails';
 
 const resetData = () => {};
 
@@ -29,6 +31,7 @@ export const ExportEdiJobs = () => {
   const { formatMessage } = useIntl();
   const history = useHistory();
   const location = useLocation();
+  const params = useParams();
 
   const [
     filters,
@@ -96,6 +99,12 @@ export const ExportEdiJobs = () => {
           toggleFilters={toggleFilters}
         />
       </ResultsPane>
+
+      {
+        Boolean(params.id) && (
+          <ExportEdiJobDetails uuid={params.id} />
+        )
+      }
     </Paneset>
   );
 };
