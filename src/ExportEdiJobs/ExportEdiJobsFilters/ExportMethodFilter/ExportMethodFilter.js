@@ -13,7 +13,7 @@ const ExportMethodFilter = (props) => {
   const options = useMemo(() => (
     configs.map(config => ({
       label: config.exportTypeSpecificParameters.vendorEdiOrdersExportConfig.configName,
-      value: config.exportTypeSpecificParameters.vendorEdiOrdersExportConfig.exportConfigId,
+      value: config.id,
     }))
   ), [configs]);
 
