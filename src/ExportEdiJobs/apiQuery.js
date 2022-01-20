@@ -34,6 +34,7 @@ export const useExportEdiJobsQuery = (search) => {
     fetchNextPage,
     isLoading,
     data = {},
+    refetch,
   } = useInfiniteQuery({
     queryKey: [namespace, search],
     queryFn: async ({ pageParam = 0 }) => {
@@ -65,5 +66,6 @@ export const useExportEdiJobsQuery = (search) => {
       return acc.concat(page.jobRecords);
     }, []),
     totalCount: pages[0]?.totalRecords,
+    refetch,
   };
 };

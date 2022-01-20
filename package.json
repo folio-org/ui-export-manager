@@ -50,6 +50,7 @@
           "data-export.config.collection.get",
           "data-export.job.collection.get",
           "data-export.job.item.get",
+          "data-export.job.item.post",
           "tags.collection.get",
           "usergroups.collection.get",
           "users.collection.get",
@@ -104,6 +105,7 @@
   },
   "dependencies": {
     "@folio/stripes-acq-components": "^3.0.0",
+    "lodash": "^4.17.21",
     "prop-types": "^15.5.10",
     "query-string": "^6.1.0",
     "react-hot-loader": "^4.3.12",
