@@ -48,6 +48,7 @@ export const ExportEdiJobs = () => {
     exportEdiJobs,
     totalCount,
     loadMore,
+    refetch,
   } = useExportEdiJobsQuery(location.search);
 
   return (
@@ -102,7 +103,10 @@ export const ExportEdiJobs = () => {
 
       {
         Boolean(params.id) && (
-          <ExportEdiJobDetails uuid={params.id} />
+          <ExportEdiJobDetails
+            refetchJobs={refetch}
+            uuid={params.id}
+          />
         )
       }
     </Paneset>

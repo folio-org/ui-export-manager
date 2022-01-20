@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage, useIntl } from 'react-intl';
 
@@ -20,8 +20,9 @@ import { ExportJobId } from '../../common/components';
 import { useNavigation } from '../../hooks';
 
 import { useExportJobQuery } from '../../ExportJob/apiQuery';
+import { ExportEdiJobDetailsActionMenu } from '../ExportEdiJobDetailsActionMenu';
 
-export const ExportEdiJobDetails = ({ uuid }) => {
+export const ExportEdiJobDetails = ({ refetchJobs, uuid }) => {
   const { formatMessage } = useIntl();
   const { navigateToEdiJobs } = useNavigation();
 
@@ -44,6 +45,14 @@ export const ExportEdiJobDetails = ({ uuid }) => {
     { jobId: exportJob.jobId },
   );
 
+  const renderActionMenu = useCallback((props) => (
+    <ExportEdiJobDetailsActionMenu
+      exportJob={exportJob}
+      refetchJobs={refetchJobs}
+      {...props}
+    />
+  ), [exportJob, refetchJobs]);
+
   if (isLoading) {
     return (
       <LoadingPane
@@ -58,6 +67,7 @@ export const ExportEdiJobDetails = ({ uuid }) => {
 
   return (
     <Pane
+      actionMenu={renderActionMenu}
       paneTitle={title}
       defaultWidth="fill"
       dismissible
@@ -151,5 +161,6 @@ export const ExportEdiJobDetails = ({ uuid }) => {
 };
 
 ExportEdiJobDetails.propTypes = {
+  refetchJobs: PropTypes.func.isRequired,
   uuid: PropTypes.string.isRequired,
 };

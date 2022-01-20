@@ -1,7 +1,5 @@
-import React from 'react';
+import { QueryClient, QueryClientProvider } from 'react-query';
 import { screen, render } from '@testing-library/react';
-
-import '@folio/stripes-acq-components/test/jest/__mock__';
 
 import { useExportJobQuery } from '../../ExportJob/apiQuery';
 import { ExportEdiJobDetails } from './ExportEdiJobDetails';
@@ -14,14 +12,13 @@ jest.mock('../../common/components', () => ({
   ...jest.requireActual('../../common/components'),
   ExportJobId: () => <span>ExportJobId</span>,
 }));
-jest.mock('../../hooks', () => ({
-  ...jest.requireActual('../../hooks'),
-  useNavigation: jest.fn().mockReturnValue({}),
-}));
-
 jest.mock('../../ExportJob/apiQuery', () => ({
   ...jest.requireActual('../../ExportJob/apiQuery'),
   useExportJobQuery: jest.fn(),
+}));
+jest.mock('../../hooks', () => ({
+  ...jest.requireActual('../../hooks'),
+  useNavigation: jest.fn().mockReturnValue({}),
 }));
 
 const exportJob = {
@@ -45,8 +42,18 @@ const exportJob = {
   },
 };
 
+const queryClient = new QueryClient();
+
+// eslint-disable-next-line react/prop-types
+const wrapper = ({ children }) => (
+  <QueryClientProvider client={queryClient}>
+    {children}
+  </QueryClientProvider>
+);
+
 const renderExportEdiJobDetails = () => render(
   <ExportEdiJobDetails uuid="id" />,
+  { wrapper },
 );
 
 describe('ExportEdiJobDetails', () => {

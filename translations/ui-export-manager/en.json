@@ -27,6 +27,10 @@
   "exportJob.type.CIRCULATION_LOG": "Circulation log",
   "exportJob.type.BURSAR_FEES_FINES": "Bursar",
 
+  "exportJob.details.action.rerun": "Rerun",
+  "exportJob.details.action.rerun.success": "Export job <b>{name}</b> was successfully reruned.",
+  "exportJob.details.action.rerun.error": "Export job <b>{name}</b> rerun was failed.",
+
   "navigation.all": "All",
   "navigation.organizations": "Organizations",
 
