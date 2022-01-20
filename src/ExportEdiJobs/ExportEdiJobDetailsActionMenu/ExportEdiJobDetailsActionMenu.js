@@ -23,12 +23,10 @@ export const ExportEdiJobDetailsActionMenu = ({
   const { navigateToEdiJobDetails } = useNavigation();
   const showCallout = useShowCallout();
 
-  const jobParams = pick(exportJob, ['type', 'exportTypeSpecificParameters']);
-
   const onRerun = useCallback(
     () => {
       onToggle();
-      scheduleExportJob(jobParams)
+      scheduleExportJob(pick(exportJob, ['type', 'exportTypeSpecificParameters']))
         .then(({ id }) => {
           showCallout({
             messageId: 'ui-export-manager.exportJob.details.action.rerun.success',
@@ -47,7 +45,6 @@ export const ExportEdiJobDetailsActionMenu = ({
     },
     [
       exportJob,
-      jobParams,
       navigateToEdiJobDetails,
       onToggle,
       refetchJobs,
