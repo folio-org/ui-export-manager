@@ -50,6 +50,7 @@
           "data-export.config.collection.get",
           "data-export.job.collection.get",
           "data-export.job.item.get",
+          "data-export.job.item.post",
           "tags.collection.get",
           "usergroups.collection.get",
           "users.collection.get",
