@@ -23,5 +23,8 @@
     "exportJob.organization": "المؤسسة",
     "exportJob.exportMethod": "طريقة التصدير",
     "navigation.all": "الكل",
-    "navigation.organizations": "المؤسسات"
+    "navigation.organizations": "المؤسسات",
+    "exportJob.details.action.rerun": "إعادة تشغيل",
+    "exportJob.details.action.rerun.success": "تمت إعادة تشغيل مهمة التصدير <b>{name}</b> بنجاح.",
+    "exportJob.details.action.rerun.error": "فشلت إعادة تشغيل مهمة التصدير <b>{name}</b>."
 }

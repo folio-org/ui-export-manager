@@ -23,5 +23,8 @@
     "exportJob.organization": "Organization",
     "exportJob.exportMethod": "Export method",
     "navigation.all": "All",
-    "navigation.organizations": "Organizations"
+    "navigation.organizations": "Organizations",
+    "exportJob.details.action.rerun": "Rerun",
+    "exportJob.details.action.rerun.success": "Export job <b>{name}</b> was successfully reruned.",
+    "exportJob.details.action.rerun.error": "Export job <b>{name}</b> rerun was failed."
 }
