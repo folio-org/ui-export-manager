@@ -20,8 +20,11 @@
     "exportJob.status.FAILED": "失败",
     "exportJob.type.CIRCULATION_LOG": "流通日志",
     "exportJob.type.BURSAR_FEES_FINES": "费用/罚款导出",
-    "exportJob.organization": "Organization",
-    "exportJob.exportMethod": "Export method",
-    "navigation.all": "All",
-    "navigation.organizations": "Organizations"
+    "exportJob.organization": "机构",
+    "exportJob.exportMethod": "导出方式",
+    "navigation.all": "全部",
+    "navigation.organizations": "机构",
+    "exportJob.details.action.rerun": "重新运行",
+    "exportJob.details.action.rerun.success": "作业<b> {name}</b>重新导出成功。",
+    "exportJob.details.action.rerun.error": "作业<b> {name}</b>重新导出失败。"
 }

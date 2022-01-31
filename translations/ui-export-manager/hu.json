@@ -20,8 +20,11 @@
     "exportJob.status.FAILED": "Failed",
     "exportJob.type.CIRCULATION_LOG": "Circulation log",
     "exportJob.type.BURSAR_FEES_FINES": "Bursar",
-    "exportJob.organization": "Organization",
+    "exportJob.organization": "Szervezet",
     "exportJob.exportMethod": "Export method",
     "navigation.all": "All",
-    "navigation.organizations": "Organizations"
+    "navigation.organizations": "Szervezetek",
+    "exportJob.details.action.rerun": "Rerun",
+    "exportJob.details.action.rerun.success": "Export job <b>{name}</b> was successfully reruned.",
+    "exportJob.details.action.rerun.error": "Export job <b>{name}</b> rerun was failed."
 }
