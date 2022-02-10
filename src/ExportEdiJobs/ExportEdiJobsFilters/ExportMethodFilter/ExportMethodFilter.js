@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 
 import { Loading } from '@folio/stripes/components';
@@ -9,9 +9,7 @@ import {
 import { useConfigs } from './useConfigs';
 
 const ExportMethodFilter = ({ vendorId, ...rest }) => {
-  const { configs, isFetching, refetch } = useConfigs(vendorId);
-
-  useEffect(() => refetch(), [vendorId, refetch]);
+  const { configs, isFetching } = useConfigs(vendorId);
 
   const options = useMemo(() => (
     configs.map(config => ({
@@ -31,7 +29,7 @@ const ExportMethodFilter = ({ vendorId, ...rest }) => {
 };
 
 ExportMethodFilter.propTypes = {
-  vendorId: PropTypes.string.isRequired,
+  vendorId: PropTypes.string,
 };
 
 export default ExportMethodFilter;

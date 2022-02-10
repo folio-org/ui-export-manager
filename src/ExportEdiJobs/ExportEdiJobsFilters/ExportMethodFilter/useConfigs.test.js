@@ -40,8 +40,6 @@ describe('useConfigs', () => {
   it('fetches integration configs', async () => {
     const { result, waitFor } = renderHook(() => useConfigs(), { wrapper });
 
-    result.current.refetch();
-
     await waitFor(() => !result.current.isFetching);
 
     expect(result.current.configs).toEqual(configs);

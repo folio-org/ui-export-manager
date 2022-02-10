@@ -19,15 +19,13 @@ export const useConfigs = (organizationId) => {
     limit: LIMIT_MAX,
   };
 
-  const { isFetching, data = {}, refetch } = useQuery(
-    [namespace],
+  const { isFetching, data = {} } = useQuery(
+    [namespace, organizationId],
     () => ky.get('data-export-spring/configs', { searchParams }).json(),
-    { enabled: false },
   );
 
   return ({
     configs: data.configs || [],
     isFetching,
-    refetch,
   });
 };
