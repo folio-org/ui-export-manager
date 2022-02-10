@@ -50,6 +50,7 @@ export const ExportEdiJobsFilters = ({
         labelId="ui-export-manager.exportJob.exportMethod"
         name="exportConfigId"
         onChange={adaptedApplyFilters}
+        vendorId={activeFilters?.vendorId?.[0]}
       />
 
       <PluggableOrganizationFilter

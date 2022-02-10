@@ -5,7 +5,7 @@ import '@folio/stripes-acq-components/test/jest/__mock__';
 import Filter from './ExportMethodFilter';
 
 jest.mock('./useConfigs', () => ({
-  useConfigs: jest.fn().mockReturnValue({ isFetching: false, configs: [] }),
+  useConfigs: jest.fn().mockReturnValue({ isFetching: false, configs: [], refetch: jest.fn() }),
 }));
 
 const filterAccordionTitle = 'labelId';
