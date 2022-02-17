@@ -5,6 +5,7 @@
 * Search and filter organization exports logs. Refs UIEXPMGR-26.
 * Third pane view - Search and filter organization exports logs. Refs UIEXPMGR-25.
 * Third pane view - Rerun action. Refs UIEXPMGR-27.
+* Add Sent to and File name to export job details. Refs UIEXPMGR-30.
 
 ## [2.0.0](https://github.com/folio-org/ui-export-manager/tree/v2.0.0) (2021-10-07)
 [Full Changelog](https://github.com/folio-org/ui-export-manager/compare/v1.1.1...v2.0.0)
