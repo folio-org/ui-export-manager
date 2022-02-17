@@ -137,6 +137,20 @@ export const ExportEdiJobDetails = ({ refetchJobs, uuid }) => {
             value={exportConfig?.configName}
           />
         </Col>
+
+        <Col xs={3}>
+          <KeyValue
+            label={<FormattedMessage id="ui-export-manager.exportJob.sentTo" />}
+            value={`${exportConfig?.ediFtp?.serverAddress}${exportConfig?.ediFtp?.orderDirectory || ''}`}
+          />
+        </Col>
+
+        <Col xs={3}>
+          <KeyValue
+            label={<FormattedMessage id="ui-export-manager.exportJob.fileName" />}
+            value={exportJob.fileNames?.join(', ')}
+          />
+        </Col>
       </Row>
 
       <Row>

@@ -90,6 +90,8 @@ describe('ExportEdiJobDetails', () => {
       'ui-export-manager.exportJob.source',
       'ui-export-manager.exportJob.organization',
       'ui-export-manager.exportJob.exportMethod',
+      'ui-export-manager.exportJob.sentTo',
+      'ui-export-manager.exportJob.fileName',
       'ui-export-manager.exportJob.description',
       'ui-export-manager.exportJob.errorDetails',
     ].forEach(label => (

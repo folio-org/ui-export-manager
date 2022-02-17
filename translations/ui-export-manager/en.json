@@ -17,7 +17,8 @@
   "exportJob.system": "System",
   "exportJob.organization": "Organization",
   "exportJob.exportMethod": "Export method",
-
+  "exportJob.sentTo": "Sent to",
+  "exportJob.fileName": "File name",
 
   "exportJob.status.SCHEDULED": "Scheduled",
   "exportJob.status.IN_PROGRESS": "In progress",
