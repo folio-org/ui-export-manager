@@ -2,6 +2,9 @@
 
 ## (IN PROGRESS)
 
+## [2.1.0](https://github.com/folio-org/ui-export-manager/tree/v2.1.0) (2022-03-04)
+[Full Changelog](https://github.com/folio-org/ui-export-manager/compare/v2.0.0...v2.1.0)
+
 * Search and filter organization exports logs. Refs UIEXPMGR-26.
 * Third pane view - Search and filter organization exports logs. Refs UIEXPMGR-25.
 * Third pane view - Rerun action. Refs UIEXPMGR-27.
