@@ -89,6 +89,7 @@ export const ExportEdiJobs = () => {
         filters={filters}
         toggleFiltersPane={toggleFilters}
         isFiltersOpened={isFiltersOpened}
+        isLoading={isLoading}
       >
         <ExportEdiJobsList
           isLoading={isLoading}
