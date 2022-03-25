@@ -90,6 +90,7 @@ export const ExportJobs = () => {
         filters={filters}
         toggleFiltersPane={toggleFilters}
         isFiltersOpened={isFiltersOpened}
+        isLoading={isLoading}
       >
         <ExportJobsList
           isLoading={isLoading}
