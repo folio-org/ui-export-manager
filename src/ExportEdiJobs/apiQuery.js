@@ -12,7 +12,7 @@ const RESULT_COUNT_INCREMENT = 30;
 const buildJobsQuery = makeQueryBuilder(
   'type="EDIFACT_ORDERS_EXPORT"',
   (query) => {
-    return `name="*${query}*" or description="*${query}*`;
+    return `name="*${query}*" or description="*${query}*"`;
   },
   'sortby name/sort.descending',
   {
