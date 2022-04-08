@@ -2,6 +2,9 @@
 
 ## (IN PROGRESS)
 
+## [2.1.1](https://github.com/folio-org/ui-export-manager/tree/v2.1.1) (2022-04-08)
+[Full Changelog](https://github.com/folio-org/ui-export-manager/compare/v2.1.0...v2.1.1)
+
 * Search and filter organization export logs NOT working. Refs UIEXPMGR-36.
 
 ## [2.1.0](https://github.com/folio-org/ui-export-manager/tree/v2.1.0) (2022-03-04)
