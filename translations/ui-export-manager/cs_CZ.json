@@ -20,14 +20,14 @@
     "exportJob.status.FAILED": "Failed",
     "exportJob.type.CIRCULATION_LOG": "Circulation log",
     "exportJob.type.BURSAR_FEES_FINES": "Bursar",
-    "exportJob.organization": "Organization",
-    "exportJob.exportMethod": "Export method",
+    "exportJob.organization": "Organizace",
+    "exportJob.exportMethod": "Metoda exportu",
     "navigation.all": "All",
     "navigation.organizations": "Organizations",
-    "exportJob.details.action.rerun": "Rerun",
-    "exportJob.details.action.rerun.success": "Export job <b>{name}</b> was successfully reruned.",
-    "exportJob.details.action.rerun.error": "Export job <b>{name}</b> rerun was failed.",
-    "exportJob.type.EDIFACT_ORDERS_EXPORT": "EDIFACT orders export",
-    "exportJob.sentTo": "Sent to",
-    "exportJob.fileName": "File name"
+    "exportJob.details.action.rerun": "Znovu spustit",
+    "exportJob.details.action.rerun.success": "Úloha exportu <b>{name}</b> byla úspěšně znovu spuštěna.",
+    "exportJob.details.action.rerun.error": "Opětovné spuštění úlohy exportu <b>{name}</b> se nezdařilo.",
+    "exportJob.type.EDIFACT_ORDERS_EXPORT": "Export objednávek EDIFACT",
+    "exportJob.sentTo": "Odeslat do",
+    "exportJob.fileName": "Název souboru"
 }
