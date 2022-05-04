@@ -1,6 +1,6 @@
 {
-    "meta.title": "导出管理员",
-    "permission.export-manager.all": "导出管理员：全部",
+    "meta.title": "匯出管理者",
+    "permission.export-manager.all": "匯出管理者：全部",
     "exportJobs": "导出任务",
     "exportJob.jobId": "任务ID",
     "exportJob.status": "状态",
