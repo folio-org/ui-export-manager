@@ -3,6 +3,7 @@
 ## (IN PROGRESS)
 
 * Select filter should announce the number of Results in the Results List pane header. Refs UIEXPMGR-31.
+* Disable link user data in Export Manager based on permissions. Refs UIEXPMGR-43.
 
 ## [2.1.2](https://github.com/folio-org/ui-export-manager/tree/v2.1.2) (2022-04-12)
 [Full Changelog](https://github.com/folio-org/ui-export-manager/compare/v2.1.1...v2.1.2)
