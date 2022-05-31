@@ -28,6 +28,7 @@
   "exportJob.type.CIRCULATION_LOG": "Circulation log",
   "exportJob.type.BURSAR_FEES_FINES": "Bursar",
   "exportJob.type.EDIFACT_ORDERS_EXPORT": "EDIFACT orders export",
+  "exportJob.type.E_HOLDINGS": "eHoldings",
 
   "exportJob.details.action.rerun": "Rerun",
   "exportJob.details.action.rerun.success": "Export job <b>{name}</b> was successfully reruned.",
