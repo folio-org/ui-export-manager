@@ -9,7 +9,7 @@
     "exportJob.source": "Source",
     "exportJob.startTime": "Start time",
     "exportJob.endTime": "End time",
-    "exportJob": "Export job {jobId}",
+    "exportJob": "Exportovat úlohu {jobId}",
     "exportJob.outputType": "Output type",
     "exportJob.errorDetails": "Error details",
     "exportJobs.search": "Search",
@@ -29,5 +29,6 @@
     "exportJob.details.action.rerun.error": "Opětovné spuštění úlohy exportu <b>{name}</b> se nezdařilo.",
     "exportJob.type.EDIFACT_ORDERS_EXPORT": "Export objednávek EDIFACT",
     "exportJob.sentTo": "Odeslat do",
-    "exportJob.fileName": "Název souboru"
+    "exportJob.fileName": "Název souboru",
+    "exportJob.type.E_HOLDINGS": "eHoldingy"
 }

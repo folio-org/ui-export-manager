@@ -29,5 +29,6 @@
     "exportJob.details.action.rerun.error": "A reexecução do job de exportação <b> {name} </b> falhou.",
     "exportJob.type.EDIFACT_ORDERS_EXPORT": "Exportação de pedidos EDIFACT",
     "exportJob.sentTo": "Enviado para",
-    "exportJob.fileName": "Nome do arquivo"
+    "exportJob.fileName": "Nome do arquivo",
+    "exportJob.type.E_HOLDINGS": "Acervo Digital"
 }
