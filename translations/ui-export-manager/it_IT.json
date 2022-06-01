@@ -29,5 +29,6 @@
     "exportJob.details.action.rerun.error": "Export job <b>{name}</b> rerun was failed.",
     "exportJob.type.EDIFACT_ORDERS_EXPORT": "EDIFACT orders export",
     "exportJob.sentTo": "Sent to",
-    "exportJob.fileName": "File name"
+    "exportJob.fileName": "File name",
+    "exportJob.type.E_HOLDINGS": "eHoldings"
 }
