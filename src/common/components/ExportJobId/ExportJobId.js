@@ -25,6 +25,7 @@ export const ExportJobId = ({ jobId, files, entityType }) => {
       link.href = file;
       link.download = jobId;
       link.target = '_blank';
+      
       document.body.appendChild(link);
 
       link.dispatchEvent(
