@@ -34,7 +34,6 @@ const resultsFormatter = {
     <ExportJobId
       jobId={exportJob.name}
       files={exportJob.files}
-      entityType={exportJob.entityType}
     />
   ),
   source: exportJob => (
