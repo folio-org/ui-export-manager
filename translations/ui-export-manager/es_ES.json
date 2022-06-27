@@ -30,5 +30,5 @@
     "exportJob.type.EDIFACT_ORDERS_EXPORT": "EDIFACT orders export",
     "exportJob.sentTo": "Sent to",
     "exportJob.fileName": "File name",
-    "exportJob.type.E_HOLDINGS": "eHoldings"
+    "exportJob.type.E_HOLDINGS": "eRecursos"
 }
