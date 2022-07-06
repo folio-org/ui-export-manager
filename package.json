@@ -67,6 +67,7 @@
     "test:unit:report": "cp -r ./artifacts/coverage-jest ./artifacts/coverage",
     "test:e2e": "echo Not implemented",
     "test": "yarn run test:unit && yarn run test:e2e",
+    "build-mod-descriptor": "stripes mod descriptor --full --strict | jq '.[]' > module-descriptor.json ",
     "formatjs-compile": "formatjs compile-folder --ast --format simple ./translations/ui-export-manager ./translations/ui-export-manager/compiled"
   },
   "devDependencies": {
