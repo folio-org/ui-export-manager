@@ -2,6 +2,8 @@
 
 ## (IN PROGRESS)
 
+## [2.2.0](https://github.com/folio-org/ui-export-manager/tree/v2.2.0) (2022-07-08)
+[Full Changelog](https://github.com/folio-org/ui-export-manager/compare/v2.1.2...v2.2.0)
 * Select filter should announce the number of Results in the Results List pane header. Refs UIEXPMGR-31.
 * Disable link user data in Export Manager based on permissions. Refs UIEXPMGR-43.
 * Update Export Manager app to show eholdings exports. Refs UIEXPMGR-42.

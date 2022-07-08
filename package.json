@@ -1,6 +1,6 @@
 {
   "name": "@folio/export-manager",
-  "version": "2.1.2",
+  "version": "2.2.0",
   "description": "Description for export manager",
   "main": "index.js",
   "repository": "",
