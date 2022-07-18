@@ -109,7 +109,6 @@
     "lodash": "^4.17.21",
     "prop-types": "^15.5.10",
     "query-string": "^6.1.0",
-    "react-hot-loader": "^4.3.12",
     "react-router-prop-types": "^1.0.4"
   },
   "peerDependencies": {
