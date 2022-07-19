@@ -1,6 +1,8 @@
 # Change history for ui-export-manager
 
 ## (IN PROGRESS)
+* Remove react-hot-loader from package.json. Refs UIEXPMGR-33.
+* replace babel-eslint with @babel/eslint-parser. Refs UIEXPMGR-41.
 
 ## [2.2.0](https://github.com/folio-org/ui-export-manager/tree/v2.2.0) (2022-07-08)
 [Full Changelog](https://github.com/folio-org/ui-export-manager/compare/v2.1.2...v2.2.0)
