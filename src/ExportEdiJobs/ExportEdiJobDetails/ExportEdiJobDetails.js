@@ -85,6 +85,7 @@ export const ExportEdiJobDetails = ({ refetchJobs, uuid }) => {
             <ExportJobId
               jobId={exportJob.name}
               files={exportJob.files}
+              entityType={exportJob.entityType}
             />
           </KeyValue>
         </Col>

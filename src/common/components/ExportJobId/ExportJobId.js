@@ -14,7 +14,6 @@ export const ExportJobId = ({ jobId, files, entityType }) => {
   const showUsersLink = hasCsvAnyPerms && entityType === 'USER';
   const showItemsLink = hasInAppAnyPerms && entityType === 'ITEM';
   const showAnyLink = (hasCsvAnyPerms && hasInAppAnyPerms) || (!['USER', 'ITEM'].includes(entityType));
-
   const isShowLink = showUsersLink || showItemsLink || showAnyLink;
 
   const downloadFiles = (e) => {

@@ -65,6 +65,7 @@ export const ExportJob = ({ uuid }) => {
             <ExportJobId
               jobId={exportJob.name}
               files={exportJob.files}
+              entityType={exportJob.entityType}
             />
           </KeyValue>
         </Col>
