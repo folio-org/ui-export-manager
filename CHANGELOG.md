@@ -1,6 +1,7 @@
 # Change history for ui-export-manager
 
 ## (IN PROGRESS)
+* The link is enabled in Export Manager without required permissions. Fix UIEXPMGR-52.
 
 ## [2.2.1](https://github.com/folio-org/ui-export-manager/tree/v2.2.1) (2022-07-22)
 [Full Changelog](https://github.com/folio-org/ui-export-manager/compare/v2.2.0...v2.2.1)
