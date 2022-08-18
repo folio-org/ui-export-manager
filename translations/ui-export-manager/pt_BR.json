@@ -1,6 +1,6 @@
 {
-    "meta.title": "Exportação",
-    "permission.export-manager.all": "Exportação: Todos",
+    "meta.title": "Trabalhos de Exportação",
+    "permission.export-manager.all": "Trabalhos de Exportação: Todas permissões",
     "exportJobs": "Trabalhos de exportação",
     "exportJob.jobId": "ID do job",
     "exportJob.status": "Status",
