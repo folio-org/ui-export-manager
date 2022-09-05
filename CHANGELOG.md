@@ -1,6 +1,8 @@
 # Change history for ui-export-manager
 
-## (IN PROGRESS)
+## [2.2.3] (IN PROGRESS)
+
+* Remove "eHoldings" under Job type filter. Refs UIEXPMGR-57.
 
 ## [2.2.2](https://github.com/folio-org/ui-export-manager/tree/v2.2.2) (2022-08-11)
 [Full Changelog](https://github.com/folio-org/ui-export-manager/compare/v2.2.1...v2.2.2)
