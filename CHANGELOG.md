@@ -1,7 +1,8 @@
 # Change history for ui-export-manager
 
 ## (IN PROGRESS)
-
+* Export Manager | Results List | Hyperlink one column to improve accessibility. Refs UIEXPMGR-59.
+* Two files are generated in the Export Manager clicking on the link with Bulk Edit Errors only. Fix UIEXPMGR-56.
 
 ## [2.2.3](https://github.com/folio-org/ui-export-manager/tree/v2.2.3) (2022-09-05)
 [Full Changelog](https://github.com/folio-org/ui-export-manager/compare/v2.2.2...v2.2.3)
