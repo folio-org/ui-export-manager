@@ -1,6 +1,7 @@
 # Change history for ui-export-manager
 
 ## (IN PROGRESS)
+* Supports `users` interface version `16.0`.  Refs UIEXPMGR-50.
 * Export Manager | Results List | Hyperlink one column to improve accessibility. Refs UIEXPMGR-59.
 * Two files are generated in the Export Manager clicking on the link with Bulk Edit Errors only. Fix UIEXPMGR-56.
 
