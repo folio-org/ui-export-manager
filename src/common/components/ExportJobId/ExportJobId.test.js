@@ -23,9 +23,9 @@ describe('BursarExportsManualRunner', () => {
 
   it('should render job id as a button when files are provided', () => {
     const jobId = '1001';
-    const { getByText, getByRole } = renderExportJobId(jobId, ['/test.png']);
+    const { getByText, getByTestId } = renderExportJobId(jobId, ['/test.png']);
 
     expect(getByText(jobId)).toBeDefined();
-    expect(getByRole('button')).toBeDefined();
+    expect(getByTestId('text-link')).toBeDefined();
   });
 });
