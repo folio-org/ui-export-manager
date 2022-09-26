@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { useStripes } from '@folio/stripes/core';
-
-import styles from './ExportJobId.css';
+import { TextLink } from '@folio/stripes/components';
 
 export const ExportJobId = ({ jobId, files, entityType }) => {
   const stripes = useStripes();
@@ -19,35 +18,36 @@ export const ExportJobId = ({ jobId, files, entityType }) => {
   const downloadFiles = (e) => {
     e.stopPropagation();
     files.forEach((file) => {
-      const link = document.createElement('a');
+      if (file) {
+        const link = document.createElement('a');
 
-      link.href = file;
-      link.download = jobId;
-      link.target = '_blank';
+        link.href = file;
+        link.download = jobId;
+        link.target = '_blank';
 
-      document.body.appendChild(link);
+        document.body.appendChild(link);
 
-      link.dispatchEvent(
-        new MouseEvent('click', {
-          bubbles: true,
-          cancelable: true,
-          view: window,
-        }),
-      );
+        link.dispatchEvent(
+          new MouseEvent('click', {
+            bubbles: true,
+            cancelable: true,
+            view: window,
+          }),
+        );
 
-      document.body.removeChild(link);
+        document.body.removeChild(link);
+      }
     });
   };
 
   return (
     files?.length && isShowLink ? (
-      <button
-        type="button"
-        className={styles.exportJobIdButton}
+      <TextLink
         onClick={downloadFiles}
+        data-testid="text-link"
       >
         {jobId}
-      </button>
+      </TextLink>
     ) : (
       <span>{jobId}</span>
     )

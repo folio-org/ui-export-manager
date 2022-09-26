@@ -1,11 +1,22 @@
 {
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "requireConfigFile": false,
+    "sourceType": "module",
+    "babelOptions": {
+      "presets": ["@babel/preset-react"]
+    }
+  },
   "extends": ["@folio/eslint-config-stripes/acquisitions"],
   "rules": {
     "no-multiple-empty-lines": "off",
-    "react/react-in-jsx-scope": "off"
+    "react/react-in-jsx-scope": 0
   },
   "settings": {
+    "react": {
+      "version": "detect"
+    },
+
     "import/resolver": {
       "node": {
         "paths": ["src"],
