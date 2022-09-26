@@ -11,7 +11,7 @@ import {
 } from '@folio/stripes/components';
 import {
   FolioFormattedTime,
-  NoResultsMessage,
+  NoResultsMessage, PrevNextPagination,
   useLocationSorting,
 } from '@folio/stripes-acq-components';
 
@@ -57,6 +57,9 @@ export const ExportJobsList = ({
   isFiltersOpened,
   filters,
   toggleFilters,
+  pagination,
+  height,
+  width,
 }) => {
   const history = useHistory();
   const location = useLocation();
@@ -84,25 +87,34 @@ export const ExportJobsList = ({
   );
 
   return (
-    <MultiColumnList
-      id="export-jobs-list"
-      totalCount={totalCount}
-      contentData={exportJobs}
-      loading={isLoading}
-      onNeedMoreData={onNeedMoreData}
-      visibleColumns={visibleColumns}
-      columnMapping={columnMapping}
-      formatter={resultsFormatter}
-      autosize
-      sortOrder={sortingField}
-      sortDirection={sortingDirection}
-      onHeaderClick={changeSorting}
-      isEmptyMessage={resultsStatusMessage}
-      hasMargin
-      pagingType="click"
-      onRowClick={openJobDetails}
-      interactive
-    />
+    <>
+      <MultiColumnList
+        id="export-jobs-list"
+        totalCount={totalCount}
+        contentData={exportJobs}
+        loading={isLoading}
+        onNeedMoreData={onNeedMoreData}
+        visibleColumns={visibleColumns}
+        columnMapping={columnMapping}
+        formatter={resultsFormatter}
+        height={height - PrevNextPagination.HEIGHT}
+        width={width}
+        sortOrder={sortingField}
+        sortDirection={sortingDirection}
+        onHeaderClick={changeSorting}
+        isEmptyMessage={resultsStatusMessage}
+        hasMargin
+        pagingType="none"
+        onRowClick={openJobDetails}
+        interactive
+      />
+      <PrevNextPagination
+        {...pagination}
+        totalCount={totalCount}
+        disabled={isLoading}
+        onChange={onNeedMoreData}
+      />
+    </>
   );
 };
 
@@ -114,4 +126,7 @@ ExportJobsList.propTypes = {
   totalCount: PropTypes.number,
   toggleFilters: PropTypes.func.isRequired,
   filters: PropTypes.object,
+  pagination: PropTypes.object,
+  height: PropTypes.number,
+  width: PropTypes.number,
 };
