@@ -3,25 +3,34 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { pick } from 'lodash';
 
-import { IfPermission } from '@folio/stripes/core';
+import {
+  IfPermission,
+} from '@folio/stripes/core';
 import {
   Button,
   Icon,
   MenuSection,
 } from '@folio/stripes/components';
-import { useShowCallout } from '@folio/stripes-acq-components';
+import {
+  useShowCallout,
+} from '@folio/stripes-acq-components';
 
 import { useExportJobScheduler } from '../../common/hooks';
 import { useNavigation } from '../../hooks';
 
 export const ExportEdiJobDetailsActionMenu = ({
   exportJob,
+  isRerunDisabled,
   onToggle,
   refetchJobs,
 }) => {
+  const showCallout = useShowCallout();
   const { scheduleExportJob } = useExportJobScheduler();
   const { navigateToEdiJobDetails } = useNavigation();
-  const showCallout = useShowCallout();
+
+  const {
+    name,
+  } = exportJob;
 
   const onRerun = useCallback(
     () => {
@@ -30,7 +39,7 @@ export const ExportEdiJobDetailsActionMenu = ({
         .then(({ id }) => {
           showCallout({
             messageId: 'ui-export-manager.exportJob.details.action.rerun.success',
-            values: { name: exportJob.name },
+            values: { name },
           });
           refetchJobs();
           navigateToEdiJobDetails(id);
@@ -39,7 +48,7 @@ export const ExportEdiJobDetailsActionMenu = ({
           showCallout({
             messageId: 'ui-export-manager.exportJob.details.action.rerun.error',
             type: 'error',
-            values: { name: exportJob.name },
+            values: { name },
           });
         });
     },
@@ -59,6 +68,7 @@ export const ExportEdiJobDetailsActionMenu = ({
         <Button
           data-testid="job-action-rerun"
           buttonStyle="dropdownItem"
+          disabled={isRerunDisabled}
           onClick={onRerun}
         >
           <Icon
@@ -75,6 +85,7 @@ export const ExportEdiJobDetailsActionMenu = ({
 
 ExportEdiJobDetailsActionMenu.propTypes = {
   exportJob: PropTypes.object.isRequired,
+  isRerunDisabled: PropTypes.bool,
   onToggle: PropTypes.func.isRequired,
   refetchJobs: PropTypes.func.isRequired,
 };
