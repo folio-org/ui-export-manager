@@ -7,8 +7,6 @@ import {
   makeQueryBuilder,
 } from '@folio/stripes-acq-components';
 
-const RESULT_COUNT_INCREMENT = 30;
-
 const buildJobsQuery = makeQueryBuilder(
   'cql.allRecords=1',
   (query) => {
@@ -24,7 +22,7 @@ const buildJobsQuery = makeQueryBuilder(
   },
 );
 
-export const useExportJobsQuery = (search) => {
+export const useExportJobsQuery = (search, pagination) => {
   const ky = useOkapiKy();
 
   const {
@@ -33,18 +31,18 @@ export const useExportJobsQuery = (search) => {
     data = {},
   } = useInfiniteQuery({
     queryKey: ['ui-export-manager', 'export-jobs', search],
-    queryFn: async ({ pageParam = 0 }) => {
+    queryFn: async () => {
       const kyOptions = {
         searchParams: {
-          limit: RESULT_COUNT_INCREMENT,
-          offset: pageParam * RESULT_COUNT_INCREMENT,
+          limit: pagination.limit,
+          offset: pagination.offset,
           query: buildJobsQuery(queryString.parse(search)),
         },
       };
 
       const response = await ky.get('data-export-spring/jobs', kyOptions).json();
 
-      return { ...response, nextPage: pageParam + 1 };
+      return { ...response };
     },
     getNextPageParam: (lastPage) => lastPage.nextPage,
   });

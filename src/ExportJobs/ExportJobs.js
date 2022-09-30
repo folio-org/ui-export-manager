@@ -14,7 +14,7 @@ import {
   ResetButton,
   ResultsPane,
   SingleSearchForm,
-  useLocationFilters,
+  useLocationFilters, usePagination,
   useToggle,
 } from '@folio/stripes-acq-components';
 
@@ -34,6 +34,7 @@ export const ExportJobs = () => {
   const history = useHistory();
   const location = useLocation();
   const params = useParams();
+  const RESULT_COUNT_INCREMENT = 100;
 
   const [
     filters,
@@ -45,12 +46,12 @@ export const ExportJobs = () => {
   ] = useLocationFilters(location, history, resetData);
   const [isFiltersOpened, toggleFilters] = useToggle(true);
 
+  const { pagination, changePage } = usePagination({ limit: RESULT_COUNT_INCREMENT, offset: 0 });
   const {
     isLoading,
     exportJobs,
     totalCount,
-    loadMore,
-  } = useExportJobsQuery(location.search);
+  } = useExportJobsQuery(location.search, pagination);
 
   return (
     <Paneset>
@@ -87,20 +88,26 @@ export const ExportJobs = () => {
       <ResultsPane
         title={formatMessage({ id: 'ui-export-manager.exportJobs' })}
         count={totalCount}
+        autosize
         filters={filters}
         toggleFiltersPane={toggleFilters}
         isFiltersOpened={isFiltersOpened}
         isLoading={isLoading}
       >
-        <ExportJobsList
-          isLoading={isLoading}
-          onNeedMoreData={loadMore}
-          exportJobs={exportJobs}
-          totalCount={totalCount}
-          filters={filters}
-          isFiltersOpened={isFiltersOpened}
-          toggleFilters={toggleFilters}
-        />
+        {(({ height, width }) => (
+          <ExportJobsList
+            isLoading={isLoading}
+            onNeedMoreData={changePage}
+            exportJobs={exportJobs}
+            totalCount={totalCount}
+            filters={filters}
+            isFiltersOpened={isFiltersOpened}
+            toggleFilters={toggleFilters}
+            pagination={pagination}
+            height={height}
+            width={width}
+          />
+        ))}
       </ResultsPane>
 
       {

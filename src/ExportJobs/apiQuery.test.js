@@ -36,7 +36,12 @@ describe('Export jobs api queries', () => {
         }),
       });
 
-      const { result, waitFor } = renderHook(() => useExportJobsQuery(), { wrapper });
+      const { result, waitFor } = renderHook(() => useExportJobsQuery(
+        {}, {
+          offset: 30,
+          limit: 30,
+        },
+      ), { wrapper });
 
       await waitFor(() => {
         return !result.current.isLoading;
@@ -62,7 +67,12 @@ describe('Export jobs api queries', () => {
         }),
       });
 
-      const { result, waitFor } = renderHook(() => useExportJobsQuery(), { wrapper });
+      const { result, waitFor } = renderHook(() => useExportJobsQuery(
+        {}, {
+          offset: 30,
+          limit: 30,
+        },
+      ), { wrapper });
 
       await waitFor(() => {
         return !result.current.isLoading;
