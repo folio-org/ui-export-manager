@@ -7,8 +7,6 @@ import {
   makeQueryBuilder,
 } from '@folio/stripes-acq-components';
 
-const RESULT_COUNT_INCREMENT = 30;
-
 const buildJobsQuery = makeQueryBuilder(
   'type="EDIFACT_ORDERS_EXPORT"',
   (query) => {
@@ -26,7 +24,7 @@ const buildJobsQuery = makeQueryBuilder(
   },
 );
 
-export const useExportEdiJobsQuery = (search) => {
+export const useExportEdiJobsQuery = (search, pagination) => {
   const ky = useOkapiKy();
   const [namespace] = useNamespace({ key: 'export-edi-jobs' });
 
@@ -37,18 +35,18 @@ export const useExportEdiJobsQuery = (search) => {
     refetch,
   } = useInfiniteQuery({
     queryKey: [namespace, search],
-    queryFn: async ({ pageParam = 0 }) => {
+    queryFn: async () => {
       const kyOptions = {
         searchParams: {
-          limit: RESULT_COUNT_INCREMENT,
-          offset: pageParam * RESULT_COUNT_INCREMENT,
+          limit: pagination.limit,
+          offset: pagination.offset,
           query: buildJobsQuery(queryString.parse(`${search}&type=EDIFACT_ORDERS_EXPORT`)),
         },
       };
 
       const response = await ky.get('data-export-spring/jobs', kyOptions).json();
 
-      return { ...response, nextPage: pageParam + 1 };
+      return { ...response };
     },
     getNextPageParam: (lastPage) => lastPage.nextPage,
   });

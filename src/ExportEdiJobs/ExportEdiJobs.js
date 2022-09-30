@@ -14,7 +14,7 @@ import {
   ResetButton,
   ResultsPane,
   SingleSearchForm,
-  useLocationFilters,
+  useLocationFilters, usePagination,
   useToggle,
 } from '@folio/stripes-acq-components';
 
@@ -42,14 +42,15 @@ export const ExportEdiJobs = () => {
     resetFilters,
   ] = useLocationFilters(location, history, resetData);
   const [isFiltersOpened, toggleFilters] = useToggle(true);
+  const RESULT_COUNT_INCREMENT = 100;
 
+  const { pagination, changePage } = usePagination({ limit: RESULT_COUNT_INCREMENT, offset: 0 });
   const {
     isLoading,
     exportEdiJobs,
     totalCount,
-    loadMore,
     refetch,
-  } = useExportEdiJobsQuery(location.search);
+  } = useExportEdiJobsQuery(location.search, pagination);
 
   return (
     <Paneset>
@@ -90,16 +91,22 @@ export const ExportEdiJobs = () => {
         toggleFiltersPane={toggleFilters}
         isFiltersOpened={isFiltersOpened}
         isLoading={isLoading}
+        autosize
       >
-        <ExportEdiJobsList
-          isLoading={isLoading}
-          onNeedMoreData={loadMore}
-          exportJobs={exportEdiJobs}
-          totalCount={totalCount}
-          filters={filters}
-          isFiltersOpened={isFiltersOpened}
-          toggleFilters={toggleFilters}
-        />
+        {(({ height, width }) => (
+          <ExportEdiJobsList
+            isLoading={isLoading}
+            onNeedMoreData={changePage}
+            exportJobs={exportEdiJobs}
+            totalCount={totalCount}
+            filters={filters}
+            isFiltersOpened={isFiltersOpened}
+            toggleFilters={toggleFilters}
+            height={height}
+            width={width}
+            pagination={pagination}
+          />
+        ))}
       </ResultsPane>
 
       {
