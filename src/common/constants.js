@@ -6,7 +6,7 @@ export const EXPORT_JOB_STATUSES = {
   inProgress: 'IN_PROGRESS',
   successful: 'SUCCESSFUL',
   failed: 'FAILED',
-}
+};
 
 export const EXPORT_JOB_STATUS_OPTIONS = Object.values(EXPORT_JOB_STATUSES).map(status => ({
   value: status,

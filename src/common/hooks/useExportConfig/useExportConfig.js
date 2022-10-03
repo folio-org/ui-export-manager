@@ -20,12 +20,12 @@ export const useExportConfig = (id) => {
     () => ky.get(`${EXPORT_CONFIGS_API}/${id}`).json(),
     {
       enabled: Boolean(id),
-    }
+    },
   );
 
   return {
     config: data,
     isError,
     isLoading,
-  }
+  };
 };

@@ -3,7 +3,10 @@ import user from '@testing-library/user-event';
 import { act, render, screen } from '@testing-library/react';
 
 import { useOkapiKy } from '@folio/stripes/core';
-import { useShowCallout } from '@folio/stripes-acq-components';
+import {
+  downloadBase64,
+  useShowCallout,
+} from '@folio/stripes-acq-components';
 
 import { EXPORT_JOB_STATUSES } from '../../common/constants';
 import { useExportJobScheduler } from '../../common/hooks';
@@ -25,11 +28,19 @@ jest.mock('../../hooks', () => ({
   useNavigation: jest.fn().mockReturnValue({}),
 }));
 
+global.URL.createObjectURL = jest.fn();
+
 const defaultProps = {
-  exportJob: { id: 'jobId', status: EXPORT_JOB_STATUSES.successful },
+  exportJob: {
+    id: 'jobId',
+    status: EXPORT_JOB_STATUSES.successful,
+    fileNames: ['test-job.edi'],
+  },
   onToggle: jest.fn(),
   refetchJobs: jest.fn(),
 };
+
+const toastMessage = type => `ui-export-manager.exportJob.details.action.${type}`;
 
 const queryClient = new QueryClient();
 
@@ -57,6 +68,7 @@ describe('ExportEdiJobDetailsActionMenu', () => {
   const kyPostMock = jest.fn(() => Promise.resolve());
 
   beforeEach(() => {
+    downloadBase64.mockClear();
     kyGetMock.mockClear();
     kyPostMock.mockClear();
     scheduleExportJob.mockClear();
@@ -88,12 +100,13 @@ describe('ExportEdiJobDetailsActionMenu', () => {
       exportJob: {
         status: EXPORT_JOB_STATUSES.failed,
         fileNames: ['test.edi'],
-      }, 
+      },
     });
 
     await act(async () => user.click(screen.getByTestId('job-action-download')));
 
     expect(kyGetMock).toHaveBeenCalled();
+    expect(downloadBase64).toHaveBeenCalled();
   });
 
   it('should handle export job download error', async () => {
@@ -103,7 +116,9 @@ describe('ExportEdiJobDetailsActionMenu', () => {
 
     await act(async () => user.click(screen.getByTestId('job-action-download')));
 
-    expect(showCallout).toHaveBeenCalled();
+    expect(showCallout).toHaveBeenCalledWith(expect.objectContaining({
+      messageId: toastMessage`download.error`,
+    }));
   });
 
   it('should handle export job re-send', async () => {
@@ -112,6 +127,9 @@ describe('ExportEdiJobDetailsActionMenu', () => {
     await act(async () => user.click(screen.getByTestId('job-action-resend')));
 
     expect(kyPostMock).toHaveBeenCalled();
+    expect(showCallout).toHaveBeenCalledWith(expect.objectContaining({
+      messageId: toastMessage`resend.success`,
+    }));
   });
 
   it('should handle export job re-send error', async () => {
@@ -121,6 +139,8 @@ describe('ExportEdiJobDetailsActionMenu', () => {
 
     await act(async () => user.click(screen.getByTestId('job-action-resend')));
 
-    expect(showCallout).toHaveBeenCalled();
+    expect(showCallout).toHaveBeenCalledWith(expect.objectContaining({
+      messageId: toastMessage`resend.error`,
+    }));
   });
 });
