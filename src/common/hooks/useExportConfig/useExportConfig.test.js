@@ -14,7 +14,7 @@ const wrapper = ({ children }) => (
 
 const mockConfig = {
   id: 'exportJobId',
-}
+};
 
 describe('useExportConfig', () => {
   beforeEach(() => {
