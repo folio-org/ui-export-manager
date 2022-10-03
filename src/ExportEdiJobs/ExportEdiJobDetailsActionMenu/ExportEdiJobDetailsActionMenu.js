@@ -19,7 +19,6 @@ import {
 
 import {
   EXPORT_JOBS_API,
-  EXPORT_JOB_STATUSES,
 } from '../../common/constants';
 import { useExportJobScheduler } from '../../common/hooks';
 import { useNavigation } from '../../hooks';
@@ -38,12 +37,7 @@ export const ExportEdiJobDetailsActionMenu = ({
   const {
     name,
     fileNames,
-    status,
   } = exportJob;
-
-  const canBeResendOrDownload = (
-    status === EXPORT_JOB_STATUSES.successful || (status === EXPORT_JOB_STATUSES.failed && fileNames?.length)
-  );
 
   const onRerun = useCallback(
     () => {
@@ -67,6 +61,7 @@ export const ExportEdiJobDetailsActionMenu = ({
     },
     [
       exportJob,
+      name,
       navigateToEdiJobDetails,
       onToggle,
       refetchJobs,
@@ -91,24 +86,24 @@ export const ExportEdiJobDetailsActionMenu = ({
           type: 'error',
         });
       });
-  }, [exportJob, ky, onToggle]);
+  }, [exportJob.id, fileNames, ky, onToggle, showCallout]);
 
   const onResend = useCallback(async () => {
     onToggle();
-  
+
     return ky.post(`${EXPORT_JOBS_API}/${exportJob.id}/resend`)
-    .then(() => {
-      showCallout({
-        messageId: 'ui-export-manager.exportJob.details.action.resend.success',
+      .then(() => {
+        showCallout({
+          messageId: 'ui-export-manager.exportJob.details.action.resend.success',
+        });
+      })
+      .catch(() => {
+        showCallout({
+          messageId: 'ui-export-manager.exportJob.details.action.resend.error',
+          type: 'error',
+        });
       });
-    })
-    .catch(() => {
-      showCallout({
-        messageId: 'ui-export-manager.exportJob.details.action.resend.error',
-        type: 'error',
-      });
-    })
-  }, [exportJob, onToggle]);
+  }, [exportJob.id, ky, onToggle, showCallout]);
 
   return (
     <MenuSection id="export-edi-job-details-actions">
@@ -129,7 +124,7 @@ export const ExportEdiJobDetailsActionMenu = ({
       </IfPermission>
 
       {
-        canBeResendOrDownload && (
+        fileNames?.length > 0 && (
           <>
             <IfPermission perm="data-export.job.item.download">
               <Button
