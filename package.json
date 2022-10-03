@@ -38,6 +38,16 @@
         "visible": false
       },
       {
+        "permissionName": "ui-export-manager.jobs.downloadAndResend",
+        "displayName": "Export manager: Download and re-send files",
+        "description": "",
+        "visible": true,
+        "subPermissions": [
+          "data-export.job.item.download",
+          "data-export.job.item.resend"
+        ]
+      },
+      {
         "permissionName": "ui-export-manager.export-manager.all",
         "displayName": "Export manager: All",
         "description": "",
@@ -54,7 +64,8 @@
           "tags.collection.get",
           "usergroups.collection.get",
           "users.collection.get",
-          "users.item.get"
+          "users.item.get",
+          "ui-export-manager.jobs.downloadAndResend"
         ]
       }
     ]
