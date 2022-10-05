@@ -5,6 +5,7 @@
 * Two files are generated in the Export Manager clicking on the link with Bulk Edit Errors only. Fix UIEXPMGR-56.
 * Export manager - Implement MCL Next/Previous pagination. Refs UIEXPMGR-54.
 * Third pane view: Download and re-send actions. Refs UIEXPMGR-60.
+* Upgrade Users interface to 16.0. Refs UIEXPMGR-50.
 
 ## [2.2.3](https://github.com/folio-org/ui-export-manager/tree/v2.2.3) (2022-09-05)
 [Full Changelog](https://github.com/folio-org/ui-export-manager/compare/v2.2.2...v2.2.3)
