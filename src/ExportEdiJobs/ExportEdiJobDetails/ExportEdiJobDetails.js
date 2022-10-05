@@ -17,6 +17,7 @@ import {
 import { ViewMetaData } from '@folio/stripes/smart-components';
 
 import { ExportJobId } from '../../common/components';
+import { useExportConfig } from '../../common/hooks';
 import { useNavigation } from '../../hooks';
 
 import { useExportJobQuery } from '../../ExportJob/apiQuery';
@@ -27,13 +28,18 @@ export const ExportEdiJobDetails = ({ refetchJobs, uuid }) => {
   const { navigateToEdiJobs } = useNavigation();
 
   const {
-    isLoading,
+    isLoading: isJobLoading,
     exportJob,
   } = useExportJobQuery(uuid);
 
   const exportConfig = exportJob
     ?.exportTypeSpecificParameters
     ?.vendorEdiOrdersExportConfig;
+
+  const {
+    isError,
+    isLoading: isConfigsLoading,
+  } = useExportConfig(exportConfig?.exportConfigId);
 
   const {
     organization,
@@ -49,9 +55,16 @@ export const ExportEdiJobDetails = ({ refetchJobs, uuid }) => {
     <ExportEdiJobDetailsActionMenu
       exportJob={exportJob}
       refetchJobs={refetchJobs}
+      isRerunDisabled={isError}
       {...props}
     />
-  ), [exportJob, refetchJobs]);
+  ), [
+    exportJob,
+    isError,
+    refetchJobs,
+  ]);
+
+  const isLoading = isJobLoading || isConfigsLoading;
 
   if (isLoading) {
     return (

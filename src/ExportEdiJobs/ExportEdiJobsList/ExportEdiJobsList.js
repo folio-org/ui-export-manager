@@ -11,7 +11,7 @@ import {
 } from '@folio/stripes/components';
 import {
   FolioFormattedTime,
-  NoResultsMessage,
+  NoResultsMessage, PrevNextPagination,
   useLocationSorting,
 } from '@folio/stripes-acq-components';
 
@@ -58,6 +58,9 @@ export const ExportEdiJobsList = ({
   isFiltersOpened,
   filters,
   toggleFilters,
+  pagination,
+  height,
+  width,
 }) => {
   const history = useHistory();
   const location = useLocation();
@@ -85,25 +88,34 @@ export const ExportEdiJobsList = ({
   );
 
   return (
-    <MultiColumnList
-      id="export-edi-jobs-list"
-      totalCount={totalCount}
-      contentData={exportJobs}
-      loading={isLoading}
-      onNeedMoreData={onNeedMoreData}
-      visibleColumns={visibleColumns}
-      columnMapping={columnMapping}
-      formatter={resultsFormatter}
-      autosize
-      sortOrder={sortingField}
-      sortDirection={sortingDirection}
-      onHeaderClick={changeSorting}
-      isEmptyMessage={resultsStatusMessage}
-      hasMargin
-      pagingType="click"
-      onRowClick={openEdiJobDetails}
-      interactive
-    />
+    <>
+      <MultiColumnList
+        id="export-edi-jobs-list"
+        totalCount={totalCount}
+        contentData={exportJobs}
+        loading={isLoading}
+        onNeedMoreData={onNeedMoreData}
+        visibleColumns={visibleColumns}
+        columnMapping={columnMapping}
+        formatter={resultsFormatter}
+        sortOrder={sortingField}
+        sortDirection={sortingDirection}
+        onHeaderClick={changeSorting}
+        isEmptyMessage={resultsStatusMessage}
+        height={height - PrevNextPagination.HEIGHT}
+        width={width}
+        hasMargin
+        pagingType="none"
+        onRowClick={openEdiJobDetails}
+        interactive
+      />
+      <PrevNextPagination
+        {...pagination}
+        totalCount={totalCount}
+        disabled={isLoading}
+        onChange={onNeedMoreData}
+      />
+    </>
   );
 };
 
@@ -115,4 +127,7 @@ ExportEdiJobsList.propTypes = {
   totalCount: PropTypes.number,
   toggleFilters: PropTypes.func.isRequired,
   filters: PropTypes.object,
+  pagination: PropTypes.object,
+  height: PropTypes.number,
+  width: PropTypes.number,
 };

@@ -24,6 +24,7 @@ jest.mock('@folio/stripes-acq-components', () => {
     useLocationSorting: () => [],
     ResetButton: () => <span>ResetButton</span>,
     SingleSearchForm: () => <span>SingleSearchForm</span>,
+    usePagination: () => ({}),
   };
 });
 
