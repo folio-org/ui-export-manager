@@ -108,12 +108,14 @@ export const ExportJobsList = ({
         onRowClick={openJobDetails}
         interactive
       />
+      {exportJobs.length > 0 && (
       <PrevNextPagination
         {...pagination}
         totalCount={totalCount}
         disabled={isLoading}
         onChange={onNeedMoreData}
-      />
+      />)
+      }
     </>
   );
 };
