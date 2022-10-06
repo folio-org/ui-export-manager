@@ -29,6 +29,7 @@ const columnMapping = {
   endTime: <FormattedMessage id="ui-export-manager.exportJob.endTime" />,
   exportMethod: <FormattedMessage id="ui-export-manager.exportJob.exportMethod" />,
 };
+
 const resultsFormatter = {
   jobId: exportJob => (
     <ExportJobId
@@ -110,13 +111,13 @@ export const ExportEdiJobsList = ({
         interactive
       />
       {exportJobs.length > 0 && (
-      <PrevNextPagination
-        {...pagination}
-        totalCount={totalCount}
-        disabled={isLoading}
-        onChange={onNeedMoreData}
-      />)
-      }
+        <PrevNextPagination
+          {...pagination}
+          totalCount={totalCount}
+          disabled={isLoading}
+          onChange={onNeedMoreData}
+        />
+      )}
     </>
   );
 };

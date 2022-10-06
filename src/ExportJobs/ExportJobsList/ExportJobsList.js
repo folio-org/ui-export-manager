@@ -109,13 +109,13 @@ export const ExportJobsList = ({
         interactive
       />
       {exportJobs.length > 0 && (
-      <PrevNextPagination
-        {...pagination}
-        totalCount={totalCount}
-        disabled={isLoading}
-        onChange={onNeedMoreData}
-      />)
-      }
+        <PrevNextPagination
+          {...pagination}
+          totalCount={totalCount}
+          disabled={isLoading}
+          onChange={onNeedMoreData}
+        />
+      )}
     </>
   );
 };
