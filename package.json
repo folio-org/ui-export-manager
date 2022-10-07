@@ -58,6 +58,7 @@
           "organizations.organizations.collection.get",
           "organizations.organizations.item.get",
           "data-export.config.collection.get",
+          "data-export.config.item.get",
           "data-export.job.collection.get",
           "data-export.job.item.get",
           "data-export.edifact.orders.create",
