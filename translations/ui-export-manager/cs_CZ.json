@@ -30,5 +30,11 @@
     "exportJob.type.EDIFACT_ORDERS_EXPORT": "Export objednávek EDIFACT",
     "exportJob.sentTo": "Odeslat do",
     "exportJob.fileName": "Název souboru",
-    "exportJob.type.E_HOLDINGS": "eHoldingy"
+    "exportJob.type.E_HOLDINGS": "eHoldingy",
+    "exportJob.details.action.download": "Stáhnout",
+    "exportJob.details.action.download.error": "Stažení vašeho souboru se nezdařilo.",
+    "exportJob.details.action.resend": "Znovu odeslat",
+    "exportJob.details.action.resend.error": "Nahrání vašeho souboru se nezdařilo.",
+    "exportJob.details.action.resend.success": "Nahrávání vašeho souboru bylo úspěšně zahájeno.",
+    "permission.jobs.downloadAndResend": "Správce exportu: Stahování a opětovné odesílání souborů"
 }

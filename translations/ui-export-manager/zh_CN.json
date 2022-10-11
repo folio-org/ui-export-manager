@@ -30,5 +30,11 @@
     "exportJob.type.EDIFACT_ORDERS_EXPORT": "EDIFACT(用于行政、商业和运输的电子数据交换)订单导出",
     "exportJob.sentTo": "送至",
     "exportJob.fileName": "文件名",
-    "exportJob.type.E_HOLDINGS": "电子馆藏"
+    "exportJob.type.E_HOLDINGS": "电子馆藏",
+    "exportJob.details.action.download": "Download",
+    "exportJob.details.action.download.error": "Your file download was failed.",
+    "exportJob.details.action.resend": "Re-send",
+    "exportJob.details.action.resend.error": "Your file upload was failed.",
+    "exportJob.details.action.resend.success": "Your file upload has started successfully.",
+    "permission.jobs.downloadAndResend": "Export manager: Download and re-send files"
 }
