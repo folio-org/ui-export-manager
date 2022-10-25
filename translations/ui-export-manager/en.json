@@ -29,6 +29,7 @@
   "exportJob.type.BURSAR_FEES_FINES": "Bursar",
   "exportJob.type.EDIFACT_ORDERS_EXPORT": "EDIFACT orders export",
   "exportJob.type.E_HOLDINGS": "eHoldings",
+  "exportJob.type.BULK_EDIT": "Bulk edit",
 
   "exportJob.details.action.download": "Download",
   "exportJob.details.action.download.error": "Your file download was failed.",

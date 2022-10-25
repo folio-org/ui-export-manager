@@ -4,4 +4,6 @@ export const EXPORT_JOB_TYPES = [
   'BURSAR_FEES_FINES',
   'CIRCULATION_LOG',
   'E_HOLDINGS',
+  'BULK_EDIT',
 ];
+
