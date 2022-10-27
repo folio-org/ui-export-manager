@@ -31,10 +31,10 @@
     "exportJob.sentTo": "Enviado para",
     "exportJob.fileName": "Nome do arquivo",
     "exportJob.type.E_HOLDINGS": "Acervo Digital",
-    "exportJob.details.action.download": "Download",
-    "exportJob.details.action.download.error": "Your file download was failed.",
-    "exportJob.details.action.resend": "Re-send",
-    "exportJob.details.action.resend.error": "Your file upload was failed.",
-    "exportJob.details.action.resend.success": "Your file upload has started successfully.",
-    "permission.jobs.downloadAndResend": "Export manager: Download and re-send files"
+    "exportJob.details.action.download": "Baixar",
+    "exportJob.details.action.download.error": "O download do seu arquivo falhou.",
+    "exportJob.details.action.resend": "Reenviar",
+    "exportJob.details.action.resend.error": "O upload do seu arquivo falhou.",
+    "exportJob.details.action.resend.success": "O upload do seu arquivo foi iniciado com sucesso.",
+    "permission.jobs.downloadAndResend": "Gerenciador de exportação: baixe e reenvie arquivos"
 }

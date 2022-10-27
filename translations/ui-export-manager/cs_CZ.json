@@ -18,7 +18,7 @@
     "exportJob.status.IN_PROGRESS": "Probíhá",
     "exportJob.status.SUCCESSFUL": "Úspěšný",
     "exportJob.status.FAILED": "Neúspěšný",
-    "exportJob.type.CIRCULATION_LOG": "Log oběhu",
+    "exportJob.type.CIRCULATION_LOG": "Výpůjčkový log",
     "exportJob.type.BURSAR_FEES_FINES": "Kvestor",
     "exportJob.organization": "Organizace",
     "exportJob.exportMethod": "Metoda exportu",
