@@ -7,6 +7,10 @@ import {
   makeQueryBuilder,
 } from '@folio/stripes-acq-components';
 
+const BULK_EDIT_QUERY = 'type==("BULK_EDIT_IDENTIFIERS" or "BULK_EDIT_QUERY")';
+const BULK_EDIT_TYPE = '"BULK_EDIT_IDENTIFIERS" or "BULK_EDIT_QUERY"';
+const BULK_EDIT = 'BULK_EDIT';
+
 const buildJobsQuery = makeQueryBuilder(
   'cql.allRecords=1',
   (query) => {
@@ -16,6 +20,17 @@ const buildJobsQuery = makeQueryBuilder(
   {
     endTime: buildDateRangeQuery.bind(null, ['endTime']),
     startTime: buildDateRangeQuery.bind(null, ['startTime']),
+    type: (query) => {
+      if (query === BULK_EDIT) {
+        return BULK_EDIT_QUERY;
+      } else if (Array.isArray(query)) {
+        return `type==(${query.map(v => {
+          if (v === BULK_EDIT) {
+            return BULK_EDIT_TYPE;
+          } else return `"${v}"`;
+        }).join(' or ')})`;
+      } else return `type==${query}`;
+    },
   },
   {
     jobId: 'name',
