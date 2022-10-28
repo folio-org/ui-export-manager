@@ -31,10 +31,10 @@
     "exportJob.sentTo": "送至",
     "exportJob.fileName": "文件名",
     "exportJob.type.E_HOLDINGS": "电子馆藏",
-    "exportJob.details.action.download": "Download",
-    "exportJob.details.action.download.error": "Your file download was failed.",
-    "exportJob.details.action.resend": "Re-send",
-    "exportJob.details.action.resend.error": "Your file upload was failed.",
-    "exportJob.details.action.resend.success": "Your file upload has started successfully.",
-    "permission.jobs.downloadAndResend": "Export manager: Download and re-send files"
+    "exportJob.details.action.download": "下载",
+    "exportJob.details.action.download.error": "文件下载失败。",
+    "exportJob.details.action.resend": "重新发送",
+    "exportJob.details.action.resend.error": "文件上传失败。",
+    "exportJob.details.action.resend.success": "文件上传已成功开始。",
+    "permission.jobs.downloadAndResend": "导出管理：下载并重新发送文件"
 }
