@@ -7,8 +7,8 @@ import {
   makeQueryBuilder,
 } from '@folio/stripes-acq-components';
 
-const BULK_EDIT_QUERY = 'type==("BULK_EDIT_IDENTIFIERS" or "BULK_EDIT_QUERY")';
-const BULK_EDIT_TYPE = '"BULK_EDIT_IDENTIFIERS" or "BULK_EDIT_QUERY"';
+const BULK_EDIT_QUERY = 'type==("BULK_EDIT_IDENTIFIERS" or "BULK_EDIT_QUERY" or "BULK_EDIT_UPDATE")';
+const BULK_EDIT_TYPE = '"BULK_EDIT_IDENTIFIERS" or "BULK_EDIT_QUERY" or "BULK_EDIT_UPDATE"';
 const BULK_EDIT = 'BULK_EDIT';
 
 const buildJobsQuery = makeQueryBuilder(
