@@ -1,6 +1,11 @@
 # Change history for ui-export-manager
 
 ## (IN PROGRESS)
+
+## [2.3.0](https://github.com/folio-org/ui-export-manager/tree/v2.3.0) (2022-10-28)
+[Full Changelog](https://github.com/folio-org/ui-export-manager/compare/v2.2.3...v2.3.0)
+
+* Remove "eHoldings" under Job type filter. Refs UIEXPMGR-57.
 * Export Manager | Results List | Hyperlink one column to improve accessibility. Refs UIEXPMGR-59.
 * Two files are generated in the Export Manager clicking on the link with Bulk Edit Errors only. Fix UIEXPMGR-56.
 * Export manager - Implement MCL Next/Previous pagination. Refs UIEXPMGR-54.
