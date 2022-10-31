@@ -20,7 +20,6 @@
     "exportJob.status.FAILED": "Failed",
     "exportJob.type.CIRCULATION_LOG": "Circulation log",
     "exportJob.type.BURSAR_FEES_FINES": "Bursar",
-    "exportJob.type.BULK_EDIT": "Bulk edit",
     "exportJob.organization": "Organization",
     "exportJob.exportMethod": "Export method",
     "navigation.all": "All",
@@ -37,5 +36,6 @@
     "exportJob.details.action.resend": "Re-send",
     "exportJob.details.action.resend.error": "Your file upload was failed.",
     "exportJob.details.action.resend.success": "Your file upload has started successfully.",
-    "permission.jobs.downloadAndResend": "Export manager: Download and re-send files"
+    "permission.jobs.downloadAndResend": "Export manager: Download and re-send files",
+    "exportJob.type.BULK_EDIT": "Bulk edit"
 }

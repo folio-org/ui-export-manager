@@ -36,5 +36,6 @@
     "exportJob.details.action.resend": "重新发送",
     "exportJob.details.action.resend.error": "文件上传失败。",
     "exportJob.details.action.resend.success": "文件上传已成功开始。",
-    "permission.jobs.downloadAndResend": "导出管理：下载并重新发送文件"
+    "permission.jobs.downloadAndResend": "导出管理：下载并重新发送文件",
+    "exportJob.type.BULK_EDIT": "Bulk edit"
 }
