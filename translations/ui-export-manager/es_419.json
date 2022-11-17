@@ -31,11 +31,11 @@
     "exportJob.sentTo": "Enviado a",
     "exportJob.fileName": "Nombre del archivo",
     "exportJob.type.E_HOLDINGS": "eHoldings",
-    "exportJob.details.action.download": "Download",
-    "exportJob.details.action.download.error": "Your file download was failed.",
+    "exportJob.details.action.download": "Descargar",
+    "exportJob.details.action.download.error": "La descarga de su archivo falló.",
     "exportJob.details.action.resend": "Re-send",
-    "exportJob.details.action.resend.error": "Your file upload was failed.",
+    "exportJob.details.action.resend.error": "Su carga de archivo falló.",
     "exportJob.details.action.resend.success": "Your file upload has started successfully.",
     "permission.jobs.downloadAndResend": "Export manager: Download and re-send files",
-    "exportJob.type.BULK_EDIT": "Bulk edit"
+    "exportJob.type.BULK_EDIT": "Edición masiva"
 }
