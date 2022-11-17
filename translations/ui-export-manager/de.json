@@ -31,11 +31,11 @@
     "exportJob.sentTo": "Gesendet an",
     "exportJob.fileName": "Dateiname",
     "exportJob.type.E_HOLDINGS": "eHoldings",
-    "exportJob.details.action.download": "Download",
-    "exportJob.details.action.download.error": "Your file download was failed.",
-    "exportJob.details.action.resend": "Re-send",
-    "exportJob.details.action.resend.error": "Your file upload was failed.",
-    "exportJob.details.action.resend.success": "Your file upload has started successfully.",
-    "permission.jobs.downloadAndResend": "Export manager: Download and re-send files",
-    "exportJob.type.BULK_EDIT": "Bulk edit"
+    "exportJob.details.action.download": "Herunterladen",
+    "exportJob.details.action.download.error": "Herunterladen der Datei fehlgeschlagen.",
+    "exportJob.details.action.resend": "Erneut senden",
+    "exportJob.details.action.resend.error": "Hochladen der Datei fehlgeschlagen.",
+    "exportJob.details.action.resend.success": "Hochladen der Datei wurde erfolgreich gestartet.",
+    "permission.jobs.downloadAndResend": "Exportmanager: Herunterladen und erneutes Versenden der Dateien",
+    "exportJob.type.BULK_EDIT": "Massenbearbeitungen"
 }
