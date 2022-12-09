@@ -62,11 +62,7 @@ export const ExportJob = ({ uuid }) => {
       <Row>
         <Col xs={3}>
           <KeyValue label={formatMessage({ id: 'ui-export-manager.exportJob.jobId' })}>
-            <ExportJobId
-              jobId={exportJob.name}
-              files={exportJob.files}
-              entityType={exportJob.entityType}
-            />
+            <ExportJobId job={exportJob} />
           </KeyValue>
         </Col>
 

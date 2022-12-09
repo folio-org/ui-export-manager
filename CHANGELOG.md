@@ -2,6 +2,8 @@
 
 ## (IN PROGRESS)
 
+* Cannot re-run 1 day+ old holdings exports. Refs UIEXPMGR-64.
+
 ## [2.3.0](https://github.com/folio-org/ui-export-manager/tree/v2.3.0) (2022-10-28)
 [Full Changelog](https://github.com/folio-org/ui-export-manager/compare/v2.2.3...v2.3.0)
 

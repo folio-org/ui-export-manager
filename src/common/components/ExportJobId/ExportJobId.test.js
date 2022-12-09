@@ -1,31 +1,74 @@
 import React from 'react';
 import { render } from '@testing-library/react';
+import user from '@testing-library/user-event';
 
 import '@folio/stripes-acq-components/test/jest/__mock__';
 
+import { useSecureDownload } from '../../hooks';
 import { ExportJobId } from './ExportJobId';
 
-const renderExportJobId = (jobId, files = []) => render(
-  <ExportJobId
-    jobId={jobId}
-    files={files}
-  />,
+const renderExportJobId = (job) => render(
+  <ExportJobId job={job} />,
 );
 
-describe('BursarExportsManualRunner', () => {
-  it('should render job id as a text when no files provided', () => {
-    const jobId = '1001';
-    const { getByText, queryByRole } = renderExportJobId(jobId);
+jest.mock('../../hooks', () => ({
+  ...jest.requireActual('../../hooks'),
+  useSecureDownload: jest.fn(),
+}));
 
-    expect(getByText(jobId)).toBeDefined();
+describe('ExportJobId', () => {
+  const downloadSecurelyMock = jest.fn();
+
+  beforeEach(() => {
+    downloadSecurelyMock.mockClear();
+
+    useSecureDownload.mockClear().mockReturnValue({
+      download: downloadSecurelyMock,
+    });
+  });
+
+  it('should render job id as a text when no files provided', () => {
+    const jobName = '1001';
+    const { getByText, queryByRole } = renderExportJobId({ name: jobName });
+
+    expect(getByText(jobName)).toBeDefined();
     expect(queryByRole('button')).toBeNull();
   });
 
   it('should render job id as a button when files are provided', () => {
-    const jobId = '1001';
-    const { getByText, getByTestId } = renderExportJobId(jobId, ['/test.png']);
+    const jobName = '1001';
+    const { getByText, getByTestId } = renderExportJobId({
+      name: jobName,
+      files: ['/test.png'],
+    });
 
-    expect(getByText(jobId)).toBeDefined();
+    expect(getByText(jobName)).toBeDefined();
     expect(getByTestId('text-link')).toBeDefined();
+  });
+
+  it('should use secure download for eholdings exports', () => {
+    const jobName = '1001';
+    const { getByTestId } = renderExportJobId({
+      name: jobName,
+      files: ['/test.png'],
+      type: 'E_HOLDINGS',
+    });
+
+    user.click(getByTestId('text-link'));
+
+    expect(downloadSecurelyMock).toHaveBeenCalled();
+  });
+
+  it('should not use secure download for eholdings exports', () => {
+    const jobName = '1001';
+    const { getByTestId } = renderExportJobId({
+      name: jobName,
+      files: ['/test.png'],
+      type: 'CIRCULATION_LOG',
+    });
+
+    user.click(getByTestId('text-link'));
+
+    expect(downloadSecurelyMock).not.toHaveBeenCalled();
   });
 });

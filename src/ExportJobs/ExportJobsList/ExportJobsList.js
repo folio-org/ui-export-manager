@@ -31,11 +31,7 @@ const columnMapping = {
 };
 const resultsFormatter = {
   jobId: exportJob => (
-    <ExportJobId
-      jobId={exportJob.name}
-      files={exportJob.files}
-      entityType={exportJob.entityType}
-    />
+    <ExportJobId job={exportJob} />
   ),
   source: exportJob => (
     exportJob.isSystemSource

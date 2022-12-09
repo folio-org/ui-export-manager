@@ -4,8 +4,13 @@ import PropTypes from 'prop-types';
 import { useStripes } from '@folio/stripes/core';
 import { TextLink } from '@folio/stripes/components';
 
-export const ExportJobId = ({ jobId, files, entityType }) => {
+import { useSecureDownload } from '../../hooks';
+
+export const ExportJobId = ({ job }) => {
+  const { id, name: jobId, files, entityType, type: jobType, startTime, exportTypeSpecificParameters } = job;
+
   const stripes = useStripes();
+  const { download: downloadSecurely } = useSecureDownload(id);
 
   const hasCsvAnyPerms = stripes.hasPerm('ui-bulk-edit.view') || stripes.hasPerm('ui-bulk-edit.edit');
   const hasInAppAnyPerms = stripes.hasPerm('ui-bulk-edit.app-view') || stripes.hasPerm('ui-bulk-edit.app-edit');
@@ -17,27 +22,36 @@ export const ExportJobId = ({ jobId, files, entityType }) => {
 
   const downloadFiles = (e) => {
     e.stopPropagation();
-    files.forEach((file) => {
-      if (file) {
-        const link = document.createElement('a');
 
-        link.href = file;
-        link.download = jobId;
-        link.target = '_blank';
+    if (jobType === 'E_HOLDINGS') {
+      const timestamp = new Date(startTime).toISOString();
+      const recordId = exportTypeSpecificParameters?.eHoldingsExportConfig?.recordId;
+      const recordType = exportTypeSpecificParameters?.eHoldingsExportConfig?.recordType?.toLowerCase();
 
-        document.body.appendChild(link);
+      downloadSecurely(`${timestamp}_${recordId}_${recordType}.csv`);
+    } else {
+      files.forEach((file) => {
+        if (file) {
+          const link = document.createElement('a');
 
-        link.dispatchEvent(
-          new MouseEvent('click', {
-            bubbles: true,
-            cancelable: true,
-            view: window,
-          }),
-        );
+          link.href = file;
+          link.download = jobId;
+          link.target = '_blank';
 
-        document.body.removeChild(link);
-      }
-    });
+          document.body.appendChild(link);
+
+          link.dispatchEvent(
+            new MouseEvent('click', {
+              bubbles: true,
+              cancelable: true,
+              view: window,
+            }),
+          );
+
+          document.body.removeChild(link);
+        }
+      });
+    }
   };
 
   return (
@@ -55,7 +69,5 @@ export const ExportJobId = ({ jobId, files, entityType }) => {
 };
 
 ExportJobId.propTypes = {
-  jobId: PropTypes.string.isRequired,
-  files: PropTypes.arrayOf(PropTypes.string),
-  entityType: PropTypes.string,
+  job: PropTypes.object.isRequired,
 };
