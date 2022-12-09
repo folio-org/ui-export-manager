@@ -50,6 +50,7 @@ describe('ExportJobId', () => {
     const jobName = '1001';
     const { getByTestId } = renderExportJobId({
       name: jobName,
+      startTime: '2022-12-01 00:00:00',
       files: ['/test.png'],
       type: 'E_HOLDINGS',
     });
