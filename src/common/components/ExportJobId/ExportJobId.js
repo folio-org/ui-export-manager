@@ -7,7 +7,7 @@ import { TextLink } from '@folio/stripes/components';
 import { useSecureDownload } from '../../hooks';
 
 export const ExportJobId = ({ job }) => {
-  const { id, name: jobId, files, entityType, type: jobType, startTime, exportTypeSpecificParameters } = job;
+  const { id, name: jobId, files, fileNames, entityType, type: jobType } = job;
 
   const stripes = useStripes();
   const { download: downloadSecurely } = useSecureDownload(id);
@@ -24,11 +24,7 @@ export const ExportJobId = ({ job }) => {
     e.stopPropagation();
 
     if (jobType === 'E_HOLDINGS') {
-      const timestamp = new Date(startTime).toISOString();
-      const recordId = exportTypeSpecificParameters?.eHoldingsExportConfig?.recordId;
-      const recordType = exportTypeSpecificParameters?.eHoldingsExportConfig?.recordType?.toLowerCase();
-
-      downloadSecurely(`${timestamp}_${recordId}_${recordType}.csv`);
+      downloadSecurely(fileNames[0]);
     } else {
       files.forEach((file) => {
         if (file) {
