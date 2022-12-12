@@ -4,8 +4,13 @@ import PropTypes from 'prop-types';
 import { useStripes } from '@folio/stripes/core';
 import { TextLink } from '@folio/stripes/components';
 
-export const ExportJobId = ({ jobId, files, entityType }) => {
+import { useSecureDownload } from '../../hooks';
+
+export const ExportJobId = ({ job }) => {
+  const { id, name: jobId, files, fileNames, entityType, type: jobType } = job;
+
   const stripes = useStripes();
+  const { download: downloadSecurely } = useSecureDownload(id);
 
   const hasCsvAnyPerms = stripes.hasPerm('ui-bulk-edit.view') || stripes.hasPerm('ui-bulk-edit.edit');
   const hasInAppAnyPerms = stripes.hasPerm('ui-bulk-edit.app-view') || stripes.hasPerm('ui-bulk-edit.app-edit');
@@ -17,27 +22,32 @@ export const ExportJobId = ({ jobId, files, entityType }) => {
 
   const downloadFiles = (e) => {
     e.stopPropagation();
-    files.forEach((file) => {
-      if (file) {
-        const link = document.createElement('a');
 
-        link.href = file;
-        link.download = jobId;
-        link.target = '_blank';
+    if (jobType === 'E_HOLDINGS') {
+      downloadSecurely(fileNames[0]);
+    } else {
+      files.forEach((file) => {
+        if (file) {
+          const link = document.createElement('a');
 
-        document.body.appendChild(link);
+          link.href = file;
+          link.download = jobId;
+          link.target = '_blank';
 
-        link.dispatchEvent(
-          new MouseEvent('click', {
-            bubbles: true,
-            cancelable: true,
-            view: window,
-          }),
-        );
+          document.body.appendChild(link);
 
-        document.body.removeChild(link);
-      }
-    });
+          link.dispatchEvent(
+            new MouseEvent('click', {
+              bubbles: true,
+              cancelable: true,
+              view: window,
+            }),
+          );
+
+          document.body.removeChild(link);
+        }
+      });
+    }
   };
 
   return (
@@ -55,7 +65,5 @@ export const ExportJobId = ({ jobId, files, entityType }) => {
 };
 
 ExportJobId.propTypes = {
-  jobId: PropTypes.string.isRequired,
-  files: PropTypes.arrayOf(PropTypes.string),
-  entityType: PropTypes.string,
+  job: PropTypes.object.isRequired,
 };
