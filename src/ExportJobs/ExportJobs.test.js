@@ -4,6 +4,7 @@ import {
   useParams,
 } from 'react-router-dom';
 
+import { runAxeTest } from '@folio/stripes-testing';
 import '@folio/stripes-acq-components/test/jest/__mock__';
 
 import { useExportJobsQuery } from './apiQuery';
@@ -101,6 +102,14 @@ describe('ExportJobs', () => {
       const { getByText } = renderExportJobs();
 
       expect(getByText('ExportJob')).toBeDefined();
+    });
+
+    it('should render with no axe errors', async () => {
+      const { container } = renderExportJobs();
+
+      await runAxeTest({
+        rootNode: container,
+      });
     });
   });
 });

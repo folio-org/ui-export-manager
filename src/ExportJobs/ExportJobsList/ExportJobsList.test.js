@@ -1,6 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
+import { runAxeTest } from '@folio/stripes-testing';
 import '@folio/stripes-acq-components/test/jest/__mock__';
 
 import { ExportJobsList } from './ExportJobsList';
@@ -63,5 +64,15 @@ describe('ExportJobsList', () => {
     expect(getByText('ui-export-manager.exportJob.source')).toBeDefined();
     expect(getByText('ui-export-manager.exportJob.startTime')).toBeDefined();
     expect(getByText('ui-export-manager.exportJob.endTime')).toBeDefined();
+  });
+
+  it('should render with no axe errors', async () => {
+    const exportJob = getExportJob();
+
+    const { container } = renderExportJobsList({ exportJobs: [exportJob] });
+
+    await runAxeTest({
+      rootNode: container,
+    });
   });
 });

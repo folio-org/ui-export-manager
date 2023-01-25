@@ -1,6 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
+import { runAxeTest } from '@folio/stripes-testing';
 import '@folio/stripes-acq-components/test/jest/__mock__';
 
 import { EXPORT_JOB_STATUS_OPTIONS } from '../../common/constants';
@@ -82,5 +83,13 @@ describe('ExportJobsFilters', () => {
     const { getByText } = renderExportJobsFilters();
 
     expect(getByText('ui-export-manager.exportJob.endTime')).toBeDefined();
+  });
+
+  it('should render with no axe errors', async () => {
+    const { container } = renderExportJobsFilters();
+
+    await runAxeTest({
+      rootNode: container,
+    });
   });
 });
