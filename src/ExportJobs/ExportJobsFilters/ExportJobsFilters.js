@@ -18,9 +18,16 @@ import {
 import {
   EXPORT_JOB_STATUSES,
   EXPORT_JOB_TYPES,
+  EXPORT_JOB_TYPES_REQUEST_MAP,
 } from '../constants';
 
-const applyFiltersAdapter = (applyFilters) => ({ name, values }) => applyFilters(name, values);
+const applyFiltersAdapter = (applyFilters) => ({ name, values }) => {
+  const mappedValues = values
+    .map(value => EXPORT_JOB_TYPES_REQUEST_MAP[value])
+    .reduce((acc, cur) => [...acc, ...cur], []);
+
+  applyFilters(name, mappedValues);
+};
 
 const statusFilterOptions = EXPORT_JOB_STATUSES.map(status => ({
   value: status,
