@@ -3,6 +3,7 @@
 ## (IN PROGRESS)
 
 * Run Accessibility Checker and Color Contrast Analyzer tools. Refs UIEXPMGR-71.
+* Export Manager app | Authority control updates. Refs UIEXPMGR-68.
 
 ## [2.3.1](https://github.com/folio-org/ui-export-manager/tree/v2.3.1) (2022-12-12)
 [Full Changelog](https://github.com/folio-org/ui-export-manager/compare/v2.3.0...v2.3.1)
