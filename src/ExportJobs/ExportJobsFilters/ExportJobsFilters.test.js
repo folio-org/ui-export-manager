@@ -1,28 +1,19 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import {
+  render,
+  fireEvent,
+} from '@testing-library/react';
 
 import { runAxeTest } from '@folio/stripes-testing';
 import '@folio/stripes-acq-components/test/jest/__mock__';
 
 import { EXPORT_JOB_STATUS_OPTIONS } from '../../common/constants';
-import { EXPORT_JOB_TYPES } from '../constants';
+import {
+  EXPORT_JOB_TYPES,
+  EXPORT_JOB_TYPES_REQUEST_MAP,
+} from '../constants';
 
 import { ExportJobsFilters } from './ExportJobsFilters';
-
-jest.mock('@folio/stripes-acq-components', () => {
-  return {
-    ...jest.requireActual('@folio/stripes-acq-components'),
-    AcqDateRangeFilter: jest.fn(({ labelId }) => <span>{labelId}</span>),
-    AcqCheckboxFilter: jest.fn(({ options, labelId }) => (
-      <>
-        <span>{labelId}</span>
-        {options.map(({ value }) => <span key={value}>{value}</span>)}
-      </>
-    )),
-    BooleanFilter: jest.fn(({ labelId }) => <span>{labelId}</span>),
-    PluggableUserFilter: jest.fn(({ labelId }) => <span>{labelId}</span>),
-  };
-});
 
 const defaultProps = {
   activeFilters: {},
@@ -49,7 +40,7 @@ describe('ExportJobsFilters', () => {
     expect(getByText('ui-export-manager.exportJob.status')).toBeDefined();
 
     Object.values(EXPORT_JOB_STATUS_OPTIONS)
-      .forEach(({ value }) => expect(getByText(value)).toBeDefined());
+      .forEach(({ value }) => expect(getByText(`ui-export-manager.exportJob.status.${value}`)).toBeDefined());
   });
 
   it('should display filter by type', () => {
@@ -58,7 +49,7 @@ describe('ExportJobsFilters', () => {
     expect(getByText('ui-export-manager.exportJob.type')).toBeDefined();
 
     Object.values(EXPORT_JOB_TYPES)
-      .forEach((type) => expect(getByText(type)).toBeDefined());
+      .forEach((type) => expect(getByText(`ui-export-manager.exportJob.type.${type}`)).toBeDefined());
   });
 
   it('should display filter by system source', () => {
@@ -90,6 +81,16 @@ describe('ExportJobsFilters', () => {
 
     await runAxeTest({
       rootNode: container,
+    });
+  });
+
+  describe('when selecting a job type with multiple facet values', () => {
+    it('should apply correct values', () => {
+      const { getByText } = renderExportJobsFilters();
+
+      fireEvent.click(getByText('ui-export-manager.exportJob.type.AUTH_HEADINGS_UPDATES'));
+
+      expect(defaultProps.applyFilters).toHaveBeenCalledWith('type', EXPORT_JOB_TYPES_REQUEST_MAP.AUTH_HEADINGS_UPDATES);
     });
   });
 });
