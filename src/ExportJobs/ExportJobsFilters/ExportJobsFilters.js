@@ -18,9 +18,26 @@ import {
 import {
   EXPORT_JOB_STATUSES,
   EXPORT_JOB_TYPES,
+  EXPORT_JOB_TYPES_REQUEST_MAP,
 } from '../constants';
 
 const applyFiltersAdapter = (applyFilters) => ({ name, values }) => applyFilters(name, values);
+
+const mapJobTypeValues = (values) => {
+  return values.reduce((acc, value) => {
+    // remove unsupported job types
+    if (!EXPORT_JOB_TYPES.includes(value)) {
+      return acc;
+    }
+
+    // spread combined job types
+    if (value in EXPORT_JOB_TYPES_REQUEST_MAP) {
+      return [...acc, ...EXPORT_JOB_TYPES_REQUEST_MAP[value]];
+    }
+
+    return [...acc, value];
+  }, []);
+};
 
 const statusFilterOptions = EXPORT_JOB_STATUSES.map(status => ({
   value: status,
@@ -58,7 +75,7 @@ export const ExportJobsFilters = ({
         disabled={disabled}
         labelId="ui-export-manager.exportJob.type"
         name="type"
-        onChange={adaptedApplyFilters}
+        onChange={({ name, values }) => adaptedApplyFilters({ name, values: mapJobTypeValues(values) })}
         options={typeFilterOptions}
         closedByDefault={false}
       />

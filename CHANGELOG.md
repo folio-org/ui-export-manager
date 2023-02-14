@@ -4,6 +4,7 @@
 
 * Run Accessibility Checker and Color Contrast Analyzer tools. Refs UIEXPMGR-71.
 * bump stripes to 8.0.0 for Orchid/2023-R1. Refs UIEXPMGR-72.
+* Export Manager app | Authority control updates. Refs UIEXPMGR-68.
 * Download refactoring to support /download endpoint (Circulation log). Refs UIEXPMGR-65.
 
 ## [2.3.1](https://github.com/folio-org/ui-export-manager/tree/v2.3.1) (2022-12-12)
