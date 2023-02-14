@@ -60,12 +60,12 @@ describe('ExportJobId', () => {
     expect(downloadSecurelyMock).toHaveBeenCalled();
   });
 
-  it('should not use secure download for eholdings exports', () => {
+  it('should not use secure download for bursar exports', () => {
     const jobName = '1001';
     const { getByTestId } = renderExportJobId({
       name: jobName,
       files: ['/test.png'],
-      type: 'CIRCULATION_LOG',
+      type: 'BURSAR_FEES_FINES',
     });
 
     user.click(getByTestId('text-link'));
