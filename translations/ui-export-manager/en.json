@@ -31,6 +31,8 @@
   "exportJob.type.E_HOLDINGS": "eHoldings",
   "exportJob.type.BULK_EDIT": "Bulk edit",
   "exportJob.type.AUTH_HEADINGS_UPDATES": "Authority control",
+  "exportJob.type.BULK_EDIT_IDENTIFIERS": "Bulk edit identifiers",
+  "exportJob.type.BULK_EDIT_QUERY": "Bulk edit query",
 
   "exportJob.details.action.download": "Download",
   "exportJob.details.action.download.error": "Your file download was failed.",
