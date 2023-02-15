@@ -37,5 +37,6 @@
     "exportJob.details.action.resend.error": "Your file upload was failed.",
     "exportJob.details.action.resend.success": "Your file upload has started successfully.",
     "permission.jobs.downloadAndResend": "Export manager: Download and re-send files",
-    "exportJob.type.BULK_EDIT": "Bulk edit"
+    "exportJob.type.BULK_EDIT": "Bulk edit",
+    "exportJob.type.AUTH_HEADINGS_UPDATES": "Authority control"
 }
