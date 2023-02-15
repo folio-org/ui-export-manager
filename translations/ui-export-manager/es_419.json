@@ -37,5 +37,6 @@
     "exportJob.details.action.resend.error": "Su carga de archivo falló.",
     "exportJob.details.action.resend.success": "Your file upload has started successfully.",
     "permission.jobs.downloadAndResend": "Export manager: Download and re-send files",
-    "exportJob.type.BULK_EDIT": "Edición masiva"
+    "exportJob.type.BULK_EDIT": "Edición masiva",
+    "exportJob.type.AUTH_HEADINGS_UPDATES": "Authority control"
 }

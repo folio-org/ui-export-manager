@@ -40,4 +40,5 @@
     "exportJob.type.BULK_EDIT": "Bulk edit",
     "exportJob.type.BULK_EDIT_IDENTIFIERS": "Bulk edit identifiers",
     "exportJob.type.BULK_EDIT_QUERY": "Bulk edit query"
+    "exportJob.type.AUTH_HEADINGS_UPDATES": "Authority control"
 }
