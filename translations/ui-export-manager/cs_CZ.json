@@ -37,5 +37,6 @@
     "exportJob.details.action.resend.error": "Nahrání vašeho souboru se nezdařilo.",
     "exportJob.details.action.resend.success": "Nahrávání vašeho souboru bylo úspěšně zahájeno.",
     "permission.jobs.downloadAndResend": "Správa exportu: Stahování a opětovné odesílání souborů",
-    "exportJob.type.BULK_EDIT": "Hromadná úprava"
+    "exportJob.type.BULK_EDIT": "Hromadná úprava",
+    "exportJob.type.AUTH_HEADINGS_UPDATES": "Kontrola autority"
 }
