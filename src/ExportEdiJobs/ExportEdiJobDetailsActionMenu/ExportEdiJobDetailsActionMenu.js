@@ -13,14 +13,13 @@ import {
   MenuSection,
 } from '@folio/stripes/components';
 import {
-  downloadBase64,
   useShowCallout,
 } from '@folio/stripes-acq-components';
 
 import {
   EXPORT_JOBS_API,
 } from '../../common/constants';
-import { useExportJobScheduler } from '../../common/hooks';
+import { useExportJobScheduler, useSecureDownload } from '../../common/hooks';
 import { useNavigation } from '../../hooks';
 
 export const ExportEdiJobDetailsActionMenu = ({
@@ -35,9 +34,11 @@ export const ExportEdiJobDetailsActionMenu = ({
   const { navigateToEdiJobDetails } = useNavigation();
 
   const {
+    id: jobId,
     name,
     fileNames,
   } = exportJob;
+  const { download: downloadSecurely } = useSecureDownload(jobId);
 
   const onRerun = useCallback(
     () => {
@@ -70,23 +71,10 @@ export const ExportEdiJobDetailsActionMenu = ({
     ],
   );
 
-  const onDownload = useCallback(async () => {
+  const onDownload = () => {
     onToggle();
-
-    return ky.get(`${EXPORT_JOBS_API}/${exportJob.id}/download`, {
-      headers: { accept: 'application/octet-stream' },
-    })
-      .blob()
-      .then(data => {
-        downloadBase64(fileNames[0], URL.createObjectURL(data));
-      })
-      .catch(() => {
-        showCallout({
-          messageId: 'ui-export-manager.exportJob.details.action.download.error',
-          type: 'error',
-        });
-      });
-  }, [exportJob.id, fileNames, ky, onToggle, showCallout]);
+    downloadSecurely();
+  };
 
   const onResend = useCallback(async () => {
     onToggle();
