@@ -5,6 +5,7 @@ import { useStripes } from '@folio/stripes/core';
 import { TextLink } from '@folio/stripes/components';
 
 import { useSecureDownload } from '../../hooks';
+import { EXPORTED_JOB_TYPES } from '../../constants';
 
 export const ExportJobId = ({ job }) => {
   const { id, name: jobId, files, fileNames, entityType, type: jobType } = job;
@@ -23,7 +24,7 @@ export const ExportJobId = ({ job }) => {
   const downloadFiles = (e) => {
     e.stopPropagation();
 
-    if (jobType === 'E_HOLDINGS') {
+    if (EXPORTED_JOB_TYPES.includes(jobType)) {
       downloadSecurely(fileNames[0]);
     } else {
       files.forEach((file) => {
