@@ -7,6 +7,7 @@
 * Export Manager app | Authority control updates. Refs UIEXPMGR-68.
 * Download refactoring to support /download endpoint (Circulation log). Refs UIEXPMGR-65.
 * Missing translation: exportJob.type.BULK_EDIT_IDENTIFIERS. Refs UIEXPMGR-73.
+* Support for downloading AUTH_HEADINGS_UPDATES and FAILED_LINKED_BIB_UPDATES job types. Refs UIEXPMGR-78.
 
 ## [2.3.1](https://github.com/folio-org/ui-export-manager/tree/v2.3.1) (2022-12-12)
 [Full Changelog](https://github.com/folio-org/ui-export-manager/compare/v2.3.0...v2.3.1)

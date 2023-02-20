@@ -15,4 +15,9 @@ export const EXPORT_JOB_STATUS_OPTIONS = Object.values(EXPORT_JOB_STATUSES).map(
 
 export const EXPORT_CONFIGS_API = 'data-export-spring/configs';
 export const EXPORT_JOBS_API = 'data-export-spring/jobs';
-export const EXPORTED_JOB_TYPES = ['CIRCULATION_LOG', 'E_HOLDINGS'];
+export const EXPORTED_JOB_TYPES = [
+  'CIRCULATION_LOG',
+  'E_HOLDINGS',
+  'AUTH_HEADINGS_UPDATES',
+  'FAILED_LINKED_BIB_UPDATES',
+];
