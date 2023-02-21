@@ -18,7 +18,7 @@
     "exportJob.status.IN_PROGRESS": "Probíhá",
     "exportJob.status.SUCCESSFUL": "Úspěšný",
     "exportJob.status.FAILED": "Neúspěšný",
-    "exportJob.type.CIRCULATION_LOG": "Výpůjčkový log",
+    "exportJob.type.CIRCULATION_LOG": "Cirkulační log",
     "exportJob.type.BURSAR_FEES_FINES": "Kvestor",
     "exportJob.organization": "Organizace",
     "exportJob.exportMethod": "Metoda exportu",
@@ -38,5 +38,7 @@
     "exportJob.details.action.resend.success": "Nahrávání vašeho souboru bylo úspěšně zahájeno.",
     "permission.jobs.downloadAndResend": "Správa exportu: Stahování a opětovné odesílání souborů",
     "exportJob.type.BULK_EDIT": "Hromadná úprava",
-    "exportJob.type.AUTH_HEADINGS_UPDATES": "Kontrola autority"
+    "exportJob.type.AUTH_HEADINGS_UPDATES": "Kontrola autority",
+    "exportJob.type.BULK_EDIT_IDENTIFIERS": "Identifikátory hromadných úprav",
+    "exportJob.type.BULK_EDIT_QUERY": "Dotaz pro hromadnou úpravu"
 }

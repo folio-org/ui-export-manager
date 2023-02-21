@@ -38,5 +38,7 @@
     "exportJob.details.action.resend.success": "파일 업로드가 성공적으로 시작되었습니다.",
     "permission.jobs.downloadAndResend": "반출 관리자: 파일 다운로드 및 다시 보내기",
     "exportJob.type.BULK_EDIT": "대량 편집(Bulk edit)",
-    "exportJob.type.AUTH_HEADINGS_UPDATES": "Authority control"
+    "exportJob.type.AUTH_HEADINGS_UPDATES": "Authority control",
+    "exportJob.type.BULK_EDIT_IDENTIFIERS": "Bulk edit identifiers",
+    "exportJob.type.BULK_EDIT_QUERY": "Bulk edit query"
 }
