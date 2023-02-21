@@ -38,5 +38,7 @@
     "exportJob.details.action.resend.success": "Hochladen der Datei wurde erfolgreich gestartet.",
     "permission.jobs.downloadAndResend": "Exportmanager: Herunterladen und erneutes Versenden der Dateien",
     "exportJob.type.BULK_EDIT": "Massenbearbeitungen",
-    "exportJob.type.AUTH_HEADINGS_UPDATES": "Authority control"
+    "exportJob.type.AUTH_HEADINGS_UPDATES": "Authority control",
+    "exportJob.type.BULK_EDIT_IDENTIFIERS": "Bulk edit identifiers",
+    "exportJob.type.BULK_EDIT_QUERY": "Bulk edit query"
 }
