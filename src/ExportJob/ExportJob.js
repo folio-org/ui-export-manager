@@ -81,7 +81,7 @@ export const ExportJob = ({ uuid }) => {
             label={formatMessage({ id: 'ui-export-manager.exportJob.type' })}
             value={
               exportJob.type
-              && formatMessage({ id: `ui-export-manager.exportJob.type.${exportJob.type}`, defaultMessage: exportJob.type })
+              && formatMessage({ id: `ui-export-manager.exportJob.details.type.${exportJob.type}`, defaultMessage: exportJob.type })
             }
           />
         </Col>
