@@ -34,6 +34,16 @@
   "exportJob.type.BULK_EDIT_IDENTIFIERS": "Bulk edit identifiers",
   "exportJob.type.BULK_EDIT_QUERY": "Bulk edit query",
 
+  "exportJob.details.type.CIRCULATION_LOG": "Circulation log",
+  "exportJob.details.type.BURSAR_FEES_FINES": "Bursar",
+  "exportJob.details.type.EDIFACT_ORDERS_EXPORT": "EDIFACT orders export",
+  "exportJob.details.type.E_HOLDINGS": "eHoldings",
+  "exportJob.details.type.BULK_EDIT": "Bulk edit",
+  "exportJob.details.type.AUTH_HEADINGS_UPDATES": "MARC authority headings updates",
+  "exportJob.details.type.FAILED_LINKED_BIB_UPDATES": "Failed updates: Linked bibliographic fields",
+  "exportJob.details.type.BULK_EDIT_IDENTIFIERS": "Bulk edit identifiers",
+  "exportJob.details.type.BULK_EDIT_QUERY": "Bulk edit query",
+
   "exportJob.details.action.download": "Download",
   "exportJob.details.action.download.error": "Your file download was failed.",
   "exportJob.details.action.rerun": "Rerun",
