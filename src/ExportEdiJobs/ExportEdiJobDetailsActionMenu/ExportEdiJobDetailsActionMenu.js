@@ -73,7 +73,7 @@ export const ExportEdiJobDetailsActionMenu = ({
 
   const onDownload = () => {
     onToggle();
-    downloadSecurely();
+    downloadSecurely(fileNames[0]);
   };
 
   const onResend = useCallback(async () => {
