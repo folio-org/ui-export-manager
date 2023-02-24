@@ -39,7 +39,7 @@ const resultsFormatter = {
       : exportJob.source
   ),
   status: exportJob => <FormattedMessage id={`ui-export-manager.exportJob.status.${exportJob.status}`} />,
-  type: exportJob => <FormattedMessage id={`ui-export-manager.exportJob.type.${exportJob.type}`} defaultMessage={exportJob.type} />,
+  type: exportJob => <FormattedMessage id={`ui-export-manager.exportJob.details.type.${exportJob.type}`} defaultMessage={exportJob.type} />,
   startTime: exportJob => Boolean(exportJob.startTime) && <FolioFormattedTime dateString={exportJob.startTime} />,
   endTime: exportJob => Boolean(exportJob.endTime) && <FolioFormattedTime dateString={exportJob.endTime} />,
 };
