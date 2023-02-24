@@ -2,6 +2,8 @@
 
 ## (IN PROGRESS)
 
+* Provide filename when download EDIFACT export job. Refs UIEXPMGR-80.
+
 ## [2.4.0](https://github.com/folio-org/ui-export-manager/tree/v2.4.0) (2023-02-22)
 [Full Changelog](https://github.com/folio-org/ui-export-manager/compare/v2.3.1...v2.4.0)
 
