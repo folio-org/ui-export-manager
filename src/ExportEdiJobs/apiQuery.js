@@ -21,6 +21,7 @@ const buildJobsQuery = makeQueryBuilder(
   },
   {
     jobId: 'name',
+    exportMethod: 'jsonb.exportTypeSpecificParameters.vendorEdiOrdersExportConfig.configName',
   },
 );
 
