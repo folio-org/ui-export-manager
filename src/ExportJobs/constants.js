@@ -6,6 +6,7 @@ export const EXPORT_JOB_TYPES = [
   'CIRCULATION_LOG',
   'E_HOLDINGS',
   'BULK_EDIT',
+  'EDIFACT_ORDERS_EXPORT',
 ];
 
 export const EXPORT_JOB_TYPES_REQUEST_MAP = {
