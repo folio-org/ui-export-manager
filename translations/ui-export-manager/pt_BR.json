@@ -40,5 +40,14 @@
     "exportJob.type.BULK_EDIT": "Edição em lote",
     "exportJob.type.AUTH_HEADINGS_UPDATES": "Controle de autoridade",
     "exportJob.type.BULK_EDIT_IDENTIFIERS": "Identificadores de edição em lote",
-    "exportJob.type.BULK_EDIT_QUERY": "Consulta de edição em lote"
+    "exportJob.type.BULK_EDIT_QUERY": "Consulta de edição em lote",
+    "exportJob.details.type.CIRCULATION_LOG": "Registro de circulação",
+    "exportJob.details.type.BURSAR_FEES_FINES": "Tesoureiro",
+    "exportJob.details.type.EDIFACT_ORDERS_EXPORT": "Exportação de pedidos EDIFACT",
+    "exportJob.details.type.E_HOLDINGS": "Coleção Eletrônica",
+    "exportJob.details.type.BULK_EDIT": "Edição em lote",
+    "exportJob.details.type.AUTH_HEADINGS_UPDATES": "Atualizações de cabeçalhos de autoridade MARC",
+    "exportJob.details.type.FAILED_LINKED_BIB_UPDATES": "Atualizações com falha: Campos bibliográficos vinculados",
+    "exportJob.details.type.BULK_EDIT_IDENTIFIERS": "Identificadores de edição em lote",
+    "exportJob.details.type.BULK_EDIT_QUERY": "Consulta de edição em lote"
 }
