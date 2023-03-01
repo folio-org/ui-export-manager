@@ -14,7 +14,7 @@
     "exportJob.errorDetails": "Detaily chyby",
     "exportJobs.search": "Vyhledávání",
     "exportJob.system": "Systém",
-    "exportJob.status.SCHEDULED": "Naplánováno",
+    "exportJob.status.SCHEDULED": "Rozvrženo",
     "exportJob.status.IN_PROGRESS": "Probíhá",
     "exportJob.status.SUCCESSFUL": "Úspěšný",
     "exportJob.status.FAILED": "Neúspěšný",
@@ -40,5 +40,14 @@
     "exportJob.type.BULK_EDIT": "Hromadná úprava",
     "exportJob.type.AUTH_HEADINGS_UPDATES": "Kontrola autority",
     "exportJob.type.BULK_EDIT_IDENTIFIERS": "Identifikátory hromadných úprav",
-    "exportJob.type.BULK_EDIT_QUERY": "Dotaz pro hromadnou úpravu"
+    "exportJob.type.BULK_EDIT_QUERY": "Dotaz pro hromadnou úpravu",
+    "exportJob.details.type.CIRCULATION_LOG": "Cirkulační log",
+    "exportJob.details.type.BURSAR_FEES_FINES": "Kvestor",
+    "exportJob.details.type.EDIFACT_ORDERS_EXPORT": "Export objednávek EDIFACT",
+    "exportJob.details.type.E_HOLDINGS": "eHoldingy",
+    "exportJob.details.type.BULK_EDIT": "Hromadná úprava",
+    "exportJob.details.type.AUTH_HEADINGS_UPDATES": "Aktualizace nadpisů MARC autorit",
+    "exportJob.details.type.FAILED_LINKED_BIB_UPDATES": "Neúspěšné aktualizace: Propojená bibliografická pole",
+    "exportJob.details.type.BULK_EDIT_IDENTIFIERS": "Hromadná úprava identifikátorů",
+    "exportJob.details.type.BULK_EDIT_QUERY": "Dotaz pro hromadnou úpravu"
 }
