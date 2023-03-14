@@ -51,7 +51,7 @@ export const ExportJobs = () => {
     isLoading,
     exportJobs,
     totalCount,
-  } = useExportJobsQuery(location.search, pagination);
+  } = useExportJobsQuery(location.search, pagination, filters);
 
   return (
     <Paneset>

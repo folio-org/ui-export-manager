@@ -37,7 +37,7 @@ const buildJobsQuery = makeQueryBuilder(
   },
 );
 
-export const useExportJobsQuery = (search, pagination) => {
+export const useExportJobsQuery = (search, pagination, filters) => {
   const ky = useOkapiKy();
 
   const {
@@ -59,6 +59,7 @@ export const useExportJobsQuery = (search, pagination) => {
 
       return { ...response };
     },
+    enabled: !!search.includes(...Object.keys(filters)),
     getNextPageParam: (lastPage) => lastPage.nextPage,
   });
 
