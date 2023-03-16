@@ -1,10 +1,11 @@
 # Change history for ui-export-manager
 
-## (IN PROGRESS)
+## [2.4.2](https://github.com/folio-org/ui-export-manager/tree/v2.4.2) (2023-03-16)
+[Full Changelog](https://github.com/folio-org/ui-export-manager/compare/v2.4.0...v2.4.1)
 
 * Export Manager app | Authority control updates. Refs UIEXPMGR-68.
 
-## [2.4.1](https://github.com/folio-org/ui-export-manager/tree/v2.4.0) (2023-03-10)
+## [2.4.1](https://github.com/folio-org/ui-export-manager/tree/v2.4.1) (2023-03-10)
 [Full Changelog](https://github.com/folio-org/ui-export-manager/compare/v2.4.0...v2.4.1)
 
 * Provide filename when download EDIFACT export job. Refs UIEXPMGR-80.
