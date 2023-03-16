@@ -18,7 +18,7 @@ export const ExportJobId = ({ job }) => {
     || stripes.hasPerm('ui-bulk-edit.app-edit.users');
   const hasInAppAnyPerms = stripes.hasPerm('ui-bulk-edit.app-view') || stripes.hasPerm('ui-bulk-edit.app-edit');
 
-  const showUsersLink = hasAnyUserEditPerms && hasAnyUserEditPerms && entityType === 'USER';
+  const showUsersLink = hasAnyUserEditPerms && entityType === 'USER';
   const showItemsLink = hasInAppAnyPerms && entityType === 'ITEM';
   const showAnyLink = (hasAnyUserEditPerms && hasInAppAnyPerms) || (!['USER', 'ITEM'].includes(entityType));
   const isShowLink = showUsersLink || showItemsLink || showAnyLink;
