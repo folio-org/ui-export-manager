@@ -37,9 +37,12 @@ describe('Export jobs api queries', () => {
       });
 
       const { result, waitFor } = renderHook(() => useExportJobsQuery(
-        {}, {
+        '?limit=100&offset=0&status=SCHEDULED', {
           offset: 30,
           limit: 30,
+        },
+        {
+          status: 'SCHEDULED',
         },
       ), { wrapper });
 
@@ -68,9 +71,12 @@ describe('Export jobs api queries', () => {
       });
 
       const { result, waitFor } = renderHook(() => useExportJobsQuery(
-        {}, {
+        '?limit=100&offset=0&status=SCHEDULED', {
           offset: 30,
           limit: 30,
+        },
+        {
+          status: 'SCHEDULED',
         },
       ), { wrapper });
 
