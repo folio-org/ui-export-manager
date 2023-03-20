@@ -3,8 +3,15 @@
 ## (IN PROGRESS)
 
 * Add EDIFACT orders export to job type filter in Export manager. Refs UIEXPMGR-62.
-* Sorting EDI export jobs by export method. Refs UIEXPMGR-81.
-* Landing page displays export jobs before any filter is selected. Refs UIEXPMGR-82. 
+* Sorting EDI export jobs by export method. Refs UIEXPMGR-81. 
+* Landing page displays export jobs before any filter is selected. Refs UIEXPMGR-82.
+* A hyperlink on the "JobID" column is not clickable with Users In app permissions. Refs UIEXPMGR-83.
+
+
+## [2.4.2](https://github.com/folio-org/ui-export-manager/tree/v2.4.2) (2023-03-16)
+[Full Changelog](https://github.com/folio-org/ui-export-manager/compare/v2.4.1...v2.4.2)
+
+* Export Manager app | Authority control updates. Refs UIEXPMGR-68.
 
 ## [2.4.1](https://github.com/folio-org/ui-export-manager/tree/v2.4.1) (2023-03-10)
 [Full Changelog](https://github.com/folio-org/ui-export-manager/compare/v2.4.0...v2.4.1)

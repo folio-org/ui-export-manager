@@ -13,12 +13,14 @@ export const ExportJobId = ({ job }) => {
   const stripes = useStripes();
   const { download: downloadSecurely } = useSecureDownload(id);
 
-  const hasCsvAnyPerms = stripes.hasPerm('ui-bulk-edit.view') || stripes.hasPerm('ui-bulk-edit.edit');
+  const hasAnyUserEditPerms = stripes.hasPerm('ui-bulk-edit.view')
+    || stripes.hasPerm('ui-bulk-edit.edit')
+    || stripes.hasPerm('ui-bulk-edit.app-edit.users');
   const hasInAppAnyPerms = stripes.hasPerm('ui-bulk-edit.app-view') || stripes.hasPerm('ui-bulk-edit.app-edit');
 
-  const showUsersLink = hasCsvAnyPerms && entityType === 'USER';
+  const showUsersLink = hasAnyUserEditPerms && entityType === 'USER';
   const showItemsLink = hasInAppAnyPerms && entityType === 'ITEM';
-  const showAnyLink = (hasCsvAnyPerms && hasInAppAnyPerms) || (!['USER', 'ITEM'].includes(entityType));
+  const showAnyLink = (hasAnyUserEditPerms && hasInAppAnyPerms) || (!['USER', 'ITEM'].includes(entityType));
   const isShowLink = showUsersLink || showItemsLink || showAnyLink;
 
   const downloadFiles = (e) => {
