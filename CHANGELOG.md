@@ -3,7 +3,7 @@
 ## (IN PROGRESS)
 
 * Add EDIFACT orders export to job type filter in Export manager. Refs UIEXPMGR-62.
-* Sorting EDI export jobs by export method. Refs UIEXPMGR-81.
+* Sorting EDI export jobs by export method. Refs UIEXPMGR-81. 
 * Landing page displays export jobs before any filter is selected. Refs UIEXPMGR-82.
 * A hyperlink on the "JobID" column is not clickable with Users In app permissions. Refs UIEXPMGR-83.
 

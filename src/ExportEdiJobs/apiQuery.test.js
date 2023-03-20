@@ -36,10 +36,15 @@ describe('Export EDI jobs api queries', () => {
         }),
       });
 
-      const { result, waitFor } = renderHook(() => useExportEdiJobsQuery({}, {
-        offset: 30,
-        limit: 30,
-      }), { wrapper });
+      const { result, waitFor } = renderHook(() => useExportEdiJobsQuery(
+        '?limit=100&offset=0&status=SCHEDULED', {
+          offset: 30,
+          limit: 30,
+        },
+        {
+          status: 'SCHEDULED',
+        },
+      ), { wrapper });
 
       await waitFor(() => {
         return !result.current.isLoading;
@@ -65,10 +70,15 @@ describe('Export EDI jobs api queries', () => {
         }),
       });
 
-      const { result, waitFor } = renderHook(() => useExportEdiJobsQuery({}, {
-        offset: 30,
-        limit: 30,
-      }), { wrapper });
+      const { result, waitFor } = renderHook(() => useExportEdiJobsQuery(
+        '?limit=100&offset=0&status=SCHEDULED', {
+          offset: 30,
+          limit: 30,
+        },
+        {
+          status: 'SCHEDULED',
+        },
+      ), { wrapper });
 
       await waitFor(() => {
         return !result.current.isLoading;
