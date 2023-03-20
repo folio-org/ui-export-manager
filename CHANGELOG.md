@@ -1,5 +1,8 @@
 # Change history for ui-export-manager
 
+## [2.4.3](https://github.com/folio-org/ui-export-manager/tree/v2.4.3) (2023-03-20)
+[Full Changelog](https://github.com/folio-org/ui-export-manager/compare/v2.4.2...v2.4.3)
+
 * A hyperlink on the "JobID" column is not clickable with Users In app permissions. Refs UIEXPMGR-83.
 
 ## [2.4.2](https://github.com/folio-org/ui-export-manager/tree/v2.4.2) (2023-03-16)
