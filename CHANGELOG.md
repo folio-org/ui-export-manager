@@ -3,7 +3,7 @@
 ## (IN PROGRESS)
 
 * Add EDIFACT orders export to job type filter in Export manager. Refs UIEXPMGR-62.
-* Sorting EDI export jobs by export method. Refs UIEXPMGR-81.
+* Sorting EDI export jobs by export method. Refs UIEXPMGR-81. 
 * Landing page displays export jobs before any filter is selected. Refs UIEXPMGR-82.
 
 ## [2.4.3](https://github.com/folio-org/ui-export-manager/tree/v2.4.3) (2023-03-20)

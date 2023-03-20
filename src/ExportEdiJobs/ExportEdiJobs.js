@@ -50,7 +50,7 @@ export const ExportEdiJobs = () => {
     exportEdiJobs,
     totalCount,
     refetch,
-  } = useExportEdiJobsQuery(location.search, pagination);
+  } = useExportEdiJobsQuery(location.search, pagination, filters);
 
   return (
     <Paneset>

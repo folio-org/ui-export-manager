@@ -25,7 +25,7 @@ const buildJobsQuery = makeQueryBuilder(
   },
 );
 
-export const useExportEdiJobsQuery = (search, pagination) => {
+export const useExportEdiJobsQuery = (search, pagination, filters) => {
   const ky = useOkapiKy();
   const [namespace] = useNamespace({ key: 'export-edi-jobs' });
 
@@ -49,6 +49,7 @@ export const useExportEdiJobsQuery = (search, pagination) => {
 
       return { ...response };
     },
+    enabled: !!search.includes(...Object.keys(filters)),
     getNextPageParam: (lastPage) => lastPage.nextPage,
   });
 
