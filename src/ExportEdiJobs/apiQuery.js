@@ -49,7 +49,7 @@ export const useExportEdiJobsQuery = (search, pagination, filters) => {
 
       return { ...response };
     },
-    enabled: !!search.includes(...Object.keys(filters)),
+    enabled: !![...Object.values(filters)].filter(Boolean).length,
     getNextPageParam: (lastPage) => lastPage.nextPage,
   });
 
