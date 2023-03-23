@@ -61,6 +61,7 @@
           "data-export.config.item.get",
           "data-export.job.collection.get",
           "data-export.job.item.get",
+          "data-export.job.item.post",
           "data-export.edifact.orders.create",
           "tags.collection.get",
           "usergroups.collection.get",

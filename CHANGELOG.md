@@ -5,6 +5,7 @@
 * Add EDIFACT orders export to job type filter in Export manager. Refs UIEXPMGR-62.
 * Sorting EDI export jobs by export method. Refs UIEXPMGR-81. 
 * Landing page displays export jobs before any filter is selected. Refs UIEXPMGR-82.
+* Missing permission, can't export "update authority headings" report. Refs UIEXPMGR-87.
 
 ## [2.4.3](https://github.com/folio-org/ui-export-manager/tree/v2.4.3) (2023-03-20)
 [Full Changelog](https://github.com/folio-org/ui-export-manager/compare/v2.4.2...v2.4.3)
