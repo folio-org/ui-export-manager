@@ -43,6 +43,7 @@
         "description": "",
         "visible": true,
         "subPermissions": [
+          "data-export.job.item.post",
           "data-export.job.item.download",
           "data-export.job.item.resend"
         ]
@@ -61,7 +62,6 @@
           "data-export.config.item.get",
           "data-export.job.collection.get",
           "data-export.job.item.get",
-          "data-export.job.item.post",
           "data-export.edifact.orders.create",
           "tags.collection.get",
           "usergroups.collection.get",
