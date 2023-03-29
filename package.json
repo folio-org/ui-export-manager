@@ -43,6 +43,7 @@
         "description": "",
         "visible": true,
         "subPermissions": [
+          "data-export.job.item.post",
           "data-export.job.item.download",
           "data-export.job.item.resend"
         ]
