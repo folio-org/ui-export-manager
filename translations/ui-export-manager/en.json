@@ -47,11 +47,11 @@
   "exportJob.details.action.download": "Download",
   "exportJob.details.action.download.error": "Your file download was failed.",
   "exportJob.details.action.rerun": "Rerun",
-  "exportJob.details.action.rerun.success": "Export job <b>{name}</b> was successfully reruned.",
   "exportJob.details.action.rerun.error": "Export job <b>{name}</b> rerun was failed.",
   "exportJob.details.action.resend": "Re-send",
   "exportJob.details.action.resend.error": "Your file upload was failed.",
   "exportJob.details.action.resend.success": "Your file upload has started successfully.",
+  "exportJob.details.action.rerun.success": "Export job <b>{name}</b> was successfully rerun.",
 
   "navigation.all": "All",
   "navigation.organizations": "Organizations",
