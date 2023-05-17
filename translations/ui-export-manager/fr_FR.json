@@ -25,7 +25,7 @@
     "navigation.all": "Tout",
     "navigation.organizations": "Organisations",
     "exportJob.details.action.rerun": "Rerun",
-    "exportJob.details.action.rerun.success": "Export job <b>{name}</b> was successfully reruned.",
+    "exportJob.details.action.rerun.success": "Export job <b>{name}</b> was successfully rerun.",
     "exportJob.details.action.rerun.error": "Export job <b>{name}</b> rerun was failed.",
     "exportJob.type.EDIFACT_ORDERS_EXPORT": "EDIFACT orders export",
     "exportJob.sentTo": "Envoyé à",
