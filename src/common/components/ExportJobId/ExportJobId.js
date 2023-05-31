@@ -29,8 +29,8 @@ export const ExportJobId = ({ job }) => {
     if (EXPORTED_JOB_TYPES.includes(jobType)) {
       downloadSecurely(fileNames[0]);
     } else {
-      files.forEach((file) => {
-        if (file) {
+      files.forEach((file, index) => {
+        if (file && index !== 2) {
           const link = document.createElement('a');
 
           link.href = file;
