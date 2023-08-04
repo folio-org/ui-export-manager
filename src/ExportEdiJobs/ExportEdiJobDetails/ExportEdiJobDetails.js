@@ -16,6 +16,7 @@ import {
 } from '@folio/stripes-acq-components';
 import { ViewMetaData } from '@folio/stripes/smart-components';
 
+import { useStripes } from '@folio/stripes/core';
 import { ExportJobId } from '../../common/components';
 import { useExportConfig } from '../../common/hooks';
 import { useNavigation } from '../../hooks';
@@ -24,8 +25,11 @@ import { useExportJobQuery } from '../../ExportJob/apiQuery';
 import { ExportEdiJobDetailsActionMenu } from '../ExportEdiJobDetailsActionMenu';
 
 export const ExportEdiJobDetails = ({ refetchJobs, uuid }) => {
+  const stripes = useStripes();
   const { formatMessage } = useIntl();
   const { navigateToEdiJobs } = useNavigation();
+
+  const hasAllExportManagerPerms = stripes.hasPerm('ui-export-manager.export-manager.all');
 
   const {
     isLoading: isJobLoading,
@@ -51,17 +55,22 @@ export const ExportEdiJobDetails = ({ refetchJobs, uuid }) => {
     { jobId: exportJob.jobId },
   );
 
-  const renderActionMenu = useCallback((props) => (
-    <ExportEdiJobDetailsActionMenu
-      exportJob={exportJob}
-      refetchJobs={refetchJobs}
-      isRerunDisabled={isError}
-      {...props}
-    />
-  ), [
+  const renderActionMenu = useCallback((props) => {
+    if (!hasAllExportManagerPerms) return null;
+
+    return (
+      <ExportEdiJobDetailsActionMenu
+        exportJob={exportJob}
+        refetchJobs={refetchJobs}
+        isRerunDisabled={isError}
+        {...props}
+      />
+    );
+  }, [
     exportJob,
     isError,
     refetchJobs,
+    hasAllExportManagerPerms,
   ]);
 
   const isLoading = isJobLoading || isConfigsLoading;

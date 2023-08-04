@@ -38,6 +38,26 @@
         "visible": false
       },
       {
+        "permissionName": "ui-export-manager.export-manager.view",
+        "displayName": "Export manager: View",
+        "description": "",
+        "visible": true,
+        "subPermissions": [
+          "module.export-manager.enabled",
+          "configuration.entries.collection.get",
+          "organizations.organizations.collection.get",
+          "organizations.organizations.item.get",
+          "data-export.config.collection.get",
+          "data-export.config.item.get",
+          "data-export.job.collection.get",
+          "data-export.job.item.get",
+          "tags.collection.get",
+          "usergroups.collection.get",
+          "users.collection.get",
+          "users.item.get"
+        ]
+      },
+      {
         "permissionName": "ui-export-manager.jobs.downloadAndResend",
         "displayName": "Export manager: Download and re-send files",
         "description": "",
@@ -54,19 +74,8 @@
         "description": "",
         "visible": true,
         "subPermissions": [
-          "module.export-manager.enabled",
-          "configuration.entries.collection.get",
-          "organizations.organizations.collection.get",
-          "organizations.organizations.item.get",
-          "data-export.config.collection.get",
-          "data-export.config.item.get",
-          "data-export.job.collection.get",
-          "data-export.job.item.get",
+          "ui-export-manager.export-manager.view",
           "data-export.edifact.orders.create",
-          "tags.collection.get",
-          "usergroups.collection.get",
-          "users.collection.get",
-          "users.item.get",
           "ui-export-manager.jobs.downloadAndResend"
         ]
       }
