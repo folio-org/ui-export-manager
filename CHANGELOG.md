@@ -7,6 +7,7 @@
 * Landing page displays export jobs before any filter is selected. Refs UIEXPMGR-82.
 * Missing permission, can't export "update authority headings" report. Refs UIEXPMGR-87.
 * Grammatical error in export job. Refs UIEXPMGR-89.
+* *BREAKING* Update `react` to `v18`. Refs 
 
 ## [2.4.3](https://github.com/folio-org/ui-export-manager/tree/v2.4.3) (2023-03-20)
 [Full Changelog](https://github.com/folio-org/ui-export-manager/compare/v2.4.2...v2.4.3)
