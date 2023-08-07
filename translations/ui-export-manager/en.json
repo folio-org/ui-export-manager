@@ -57,5 +57,6 @@
   "navigation.organizations": "Organizations",
 
   "permission.jobs.downloadAndResend": "Export manager: Download and re-send files",
-  "permission.export-manager.all": "Export manager: All"
+  "permission.export-manager.all": "Export manager: All",
+  "permission.export-manager.view": "Export manager: View"
 }
