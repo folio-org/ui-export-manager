@@ -17,11 +17,14 @@ export const ExportJobId = ({ job }) => {
     || stripes.hasPerm('ui-bulk-edit.edit')
     || stripes.hasPerm('ui-bulk-edit.app-edit.users');
   const hasInAppAnyPerms = stripes.hasPerm('ui-bulk-edit.app-view') || stripes.hasPerm('ui-bulk-edit.app-edit');
+  const hasAllExportManagerPerms = stripes.hasPerm('ui-export-manager.export-manager.all');
 
   const showUsersLink = hasAnyUserEditPerms && entityType === 'USER';
   const showItemsLink = hasInAppAnyPerms && entityType === 'ITEM';
   const showAnyLink = (hasAnyUserEditPerms && hasInAppAnyPerms) || (!['USER', 'ITEM'].includes(entityType));
-  const isShowLink = showUsersLink || showItemsLink || showAnyLink;
+  const isShowLink = hasAllExportManagerPerms && (showUsersLink || showItemsLink || showAnyLink);
+
+  const canDownloadFile = files?.length && isShowLink;
 
   const downloadFiles = (e) => {
     e.stopPropagation();
@@ -54,7 +57,7 @@ export const ExportJobId = ({ job }) => {
   };
 
   return (
-    files?.length && isShowLink ? (
+    canDownloadFile ? (
       <TextLink
         onClick={downloadFiles}
         data-testid="text-link"
