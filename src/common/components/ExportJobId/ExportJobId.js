@@ -6,6 +6,7 @@ import { TextLink } from '@folio/stripes/components';
 
 import { useSecureDownload } from '../../hooks';
 import { EXPORTED_JOB_TYPES } from '../../constants';
+import { BULK_ENTITY_TYPES, BULK_PERMISSIONS } from '../../../ExportJobs/constants';
 
 export const ExportJobId = ({ job }) => {
   const { id, name: jobId, files, fileNames, entityType, type: jobType } = job;
@@ -13,16 +14,17 @@ export const ExportJobId = ({ job }) => {
   const stripes = useStripes();
   const { download: downloadSecurely } = useSecureDownload(id);
 
-  const hasAnyUserEditPerms = stripes.hasPerm('ui-bulk-edit.view')
-    || stripes.hasPerm('ui-bulk-edit.edit')
-    || stripes.hasPerm('ui-bulk-edit.app-edit.users');
-  const hasInAppAnyPerms = stripes.hasPerm('ui-bulk-edit.app-view') || stripes.hasPerm('ui-bulk-edit.app-edit');
+  const hasAnyUserEditPerms = stripes.hasPerm(BULK_PERMISSIONS.BULK_EDIT_LOCAL_VIEW)
+    || stripes.hasPerm(BULK_PERMISSIONS.BULK_EDIT_IN_APP_EDIT_USERS);
+  const hasInAppAnyPerms = stripes.hasPerm(BULK_PERMISSIONS.BULK_EDIT_IN_APP_VIEW);
   const hasAllExportManagerPerms = stripes.hasPerm('ui-export-manager.export-manager.all');
 
-  const showUsersLink = hasAnyUserEditPerms && entityType === 'USER';
-  const showItemsLink = hasInAppAnyPerms && entityType === 'ITEM';
-  const showAnyLink = (hasAnyUserEditPerms && hasInAppAnyPerms) || (!['USER', 'ITEM'].includes(entityType));
-  const isShowLink = hasAllExportManagerPerms && (showUsersLink || showItemsLink || showAnyLink);
+  const itemsAndHoldings = [BULK_ENTITY_TYPES.ITEM, BULK_ENTITY_TYPES.HOLDINGS_RECORD];
+  const showUsersLink = hasAnyUserEditPerms && entityType === BULK_ENTITY_TYPES.USER;
+  const showItemsLink = hasInAppAnyPerms && itemsAndHoldings.includes(entityType);
+  const showAnyLink = hasAllExportManagerPerms && ((hasAnyUserEditPerms && hasInAppAnyPerms)
+      || (![BULK_ENTITY_TYPES.USER, ...itemsAndHoldings].includes(entityType)));
+  const isShowLink = showUsersLink || showItemsLink || showAnyLink;
 
   const canDownloadFile = files?.length && isShowLink;
 
