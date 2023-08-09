@@ -49,5 +49,6 @@
     "exportJob.details.type.AUTH_HEADINGS_UPDATES": "Actualización de los encabezamientos de autoridad MARC",
     "exportJob.details.type.FAILED_LINKED_BIB_UPDATES": "Actualizaciones fallidas: Campos bibliográficos enlazados",
     "exportJob.details.type.BULK_EDIT_IDENTIFIERS": "Cambios globales por identificadores",
-    "exportJob.details.type.BULK_EDIT_QUERY": "Consulta Cambios globales"
+    "exportJob.details.type.BULK_EDIT_QUERY": "Consulta Cambios globales",
+    "permission.export-manager.view": "Export manager: View"
 }
