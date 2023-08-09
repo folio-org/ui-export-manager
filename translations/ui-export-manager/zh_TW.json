@@ -49,5 +49,6 @@
     "exportJob.details.type.AUTH_HEADINGS_UPDATES": "MARC authority headings updates",
     "exportJob.details.type.FAILED_LINKED_BIB_UPDATES": "Failed updates: Linked bibliographic fields",
     "exportJob.details.type.BULK_EDIT_IDENTIFIERS": "Bulk edit identifiers",
-    "exportJob.details.type.BULK_EDIT_QUERY": "Bulk edit query"
+    "exportJob.details.type.BULK_EDIT_QUERY": "Bulk edit query",
+    "permission.export-manager.view": "Export manager: View"
 }
