@@ -43,11 +43,10 @@ const statusFilterOptions = EXPORT_JOB_STATUSES.map(status => ({
   value: status,
   label: <FormattedMessage id={`ui-export-manager.exportJob.status.${status}`} />,
 }));
-const typeFilterOptions = EXPORT_JOB_TYPES
-  .map(type => ({
-    value: type,
-    label: <FormattedMessage id={`ui-export-manager.exportJob.type.${type}`} />,
-  }));
+const typeFilterOptions = EXPORT_JOB_TYPES.map(type => ({
+  value: type,
+  label: <FormattedMessage id={`ui-export-manager.exportJob.type.${type}`} />,
+}));
 
 export const ExportJobsFilters = ({
   activeFilters,
