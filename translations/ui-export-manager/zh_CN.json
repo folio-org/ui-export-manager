@@ -25,7 +25,7 @@
     "navigation.all": "全部",
     "navigation.organizations": "机构",
     "exportJob.details.action.rerun": "重新运行",
-    "exportJob.details.action.rerun.success": "作业<b> {name}</b>重新导出成功。",
+    "exportJob.details.action.rerun.success": "导出任务<b> {name} </b>已成功重新运行。",
     "exportJob.details.action.rerun.error": "作业<b> {name}</b>重新导出失败。",
     "exportJob.type.EDIFACT_ORDERS_EXPORT": "EDIFACT(用于行政、商业和运输的电子数据交换)订单导出",
     "exportJob.sentTo": "送至",
@@ -49,5 +49,6 @@
     "exportJob.details.type.AUTH_HEADINGS_UPDATES": "MARC规范标题更新",
     "exportJob.details.type.FAILED_LINKED_BIB_UPDATES": "更新失败：链接的书目字段",
     "exportJob.details.type.BULK_EDIT_IDENTIFIERS": "批量编辑标识符",
-    "exportJob.details.type.BULK_EDIT_QUERY": "批量编辑查询"
+    "exportJob.details.type.BULK_EDIT_QUERY": "批量编辑查询",
+    "permission.export-manager.view": "Export manager: View"
 }

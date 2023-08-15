@@ -25,7 +25,7 @@
     "navigation.all": "All",
     "navigation.organizations": "Organizations",
     "exportJob.details.action.rerun": "Rerun",
-    "exportJob.details.action.rerun.success": "Export job <b>{name}</b> was successfully reruned.",
+    "exportJob.details.action.rerun.success": "Export job <b>{name}</b> was successfully rerun.",
     "exportJob.details.action.rerun.error": "Export job <b>{name}</b> rerun was failed.",
     "exportJob.type.EDIFACT_ORDERS_EXPORT": "EDIFACT orders export",
     "exportJob.sentTo": "Sent to",
@@ -49,5 +49,6 @@
     "exportJob.details.type.AUTH_HEADINGS_UPDATES": "MARC authority headings updates",
     "exportJob.details.type.FAILED_LINKED_BIB_UPDATES": "Failed updates: Linked bibliographic fields",
     "exportJob.details.type.BULK_EDIT_IDENTIFIERS": "Bulk edit identifiers",
-    "exportJob.details.type.BULK_EDIT_QUERY": "Bulk edit query"
+    "exportJob.details.type.BULK_EDIT_QUERY": "Bulk edit query",
+    "permission.export-manager.view": "Export manager: View"
 }

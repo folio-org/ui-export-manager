@@ -38,16 +38,17 @@
     "exportJob.details.action.resend.success": "Hochladen der Datei wurde erfolgreich gestartet.",
     "permission.jobs.downloadAndResend": "Exportmanager: Herunterladen und erneutes Versenden der Dateien",
     "exportJob.type.BULK_EDIT": "Massenbearbeitungen",
-    "exportJob.type.AUTH_HEADINGS_UPDATES": "Authority control",
-    "exportJob.type.BULK_EDIT_IDENTIFIERS": "Bulk edit identifiers",
+    "exportJob.type.AUTH_HEADINGS_UPDATES": "Normdaten",
+    "exportJob.type.BULK_EDIT_IDENTIFIERS": "Massenbearbeitung von Identifikatoren",
     "exportJob.type.BULK_EDIT_QUERY": "Massenbearbeitungsabfrage",
     "exportJob.details.type.CIRCULATION_LOG": "Ausleihprotokoll",
     "exportJob.details.type.BURSAR_FEES_FINES": "Bursar",
     "exportJob.details.type.EDIFACT_ORDERS_EXPORT": "EDIFACT-Bestellungen exportieren",
     "exportJob.details.type.E_HOLDINGS": "eHoldings",
     "exportJob.details.type.BULK_EDIT": "Massenbearbeitungen",
-    "exportJob.details.type.AUTH_HEADINGS_UPDATES": "MARC authority headings updates",
+    "exportJob.details.type.AUTH_HEADINGS_UPDATES": "Aktualisierungen von MARC Normdatenansetzungen",
     "exportJob.details.type.FAILED_LINKED_BIB_UPDATES": "Fehlgeschlagene Aktualisierungen: Verknüpfte bibliografische Felder",
-    "exportJob.details.type.BULK_EDIT_IDENTIFIERS": "Bulk edit identifiers",
-    "exportJob.details.type.BULK_EDIT_QUERY": "Massenbearbeitungsabfrage"
+    "exportJob.details.type.BULK_EDIT_IDENTIFIERS": "Massenbearbeitung von Identifikatoren",
+    "exportJob.details.type.BULK_EDIT_QUERY": "Massenbearbeitungsabfrage",
+    "permission.export-manager.view": "Export manager: View"
 }
