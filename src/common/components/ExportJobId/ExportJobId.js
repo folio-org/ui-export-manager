@@ -1,23 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { useStripes } from '@folio/stripes/core';
 import { TextLink } from '@folio/stripes/components';
 
-import { useSecureDownload } from '../../hooks';
+import {useExportManagerPerms, useSecureDownload} from '../../hooks';
 import { EXPORTED_JOB_TYPES } from '../../constants';
-import { BULK_ENTITY_TYPES, BULK_PERMISSIONS } from '../../../ExportJobs/constants';
+import { BULK_ENTITY_TYPES } from '../../../ExportJobs/constants';
 
 export const ExportJobId = ({ job }) => {
   const { id, name: jobId, files, fileNames, entityType, type: jobType } = job;
 
-  const stripes = useStripes();
+  const perms = useExportManagerPerms()
   const { download: downloadSecurely } = useSecureDownload(id);
 
-  const hasAnyUserEditPerms = stripes.hasPerm(BULK_PERMISSIONS.BULK_EDIT_LOCAL_VIEW)
-    || stripes.hasPerm(BULK_PERMISSIONS.BULK_EDIT_IN_APP_EDIT_USERS);
-  const hasInAppAnyPerms = stripes.hasPerm(BULK_PERMISSIONS.BULK_EDIT_IN_APP_VIEW);
-  const hasAllExportManagerPerms = stripes.hasPerm('ui-export-manager.export-manager.all');
+  const {
+    hasAnyUserEditPerms,
+    hasInAppAnyPerms,
+    hasAllExportManagerPerms,
+  } = perms
 
   const itemsAndHoldings = [BULK_ENTITY_TYPES.ITEM, BULK_ENTITY_TYPES.HOLDINGS_RECORD];
   const showUsersLink = hasAnyUserEditPerms && entityType === BULK_ENTITY_TYPES.USER;

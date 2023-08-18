@@ -16,20 +16,24 @@ import {
 } from '@folio/stripes-acq-components';
 import { ViewMetaData } from '@folio/stripes/smart-components';
 
-import { useStripes } from '@folio/stripes/core';
 import { ExportJobId } from '../../common/components';
-import { useExportConfig } from '../../common/hooks';
+import {
+  useExportConfig,
+  useExportManagerPerms
+} from '../../common/hooks';
 import { useNavigation } from '../../hooks';
 
 import { useExportJobQuery } from '../../ExportJob/apiQuery';
 import { ExportEdiJobDetailsActionMenu } from '../ExportEdiJobDetailsActionMenu';
 
 export const ExportEdiJobDetails = ({ refetchJobs, uuid }) => {
-  const stripes = useStripes();
   const { formatMessage } = useIntl();
   const { navigateToEdiJobs } = useNavigation();
+  const perms = useExportManagerPerms()
 
-  const hasAllExportManagerPerms = stripes.hasPerm('ui-export-manager.export-manager.all');
+  const {
+    hasAllExportManagerPerms
+  } = perms
 
   const {
     isLoading: isJobLoading,
