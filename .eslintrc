@@ -1,27 +1,12 @@
 {
+  "extends": ["@folio/eslint-config-stripes"],
   "parser": "@babel/eslint-parser",
-  "parserOptions": {
-    "requireConfigFile": false,
-    "sourceType": "module",
-    "babelOptions": {
-      "presets": ["@babel/preset-react"]
-    }
-  },
-  "extends": ["@folio/eslint-config-stripes/acquisitions"],
   "rules": {
-    "no-multiple-empty-lines": "off",
-    "react/react-in-jsx-scope": 0
+    "import/prefer-default-export": "off"
   },
-  "settings": {
-    "react": {
-      "version": "detect"
-    },
-
-    "import/resolver": {
-      "node": {
-        "paths": ["src"],
-        "extensions": [".js", ".jsx", ".ts", ".tsx"]
-      }
+  "overrides": [
+    {
+      "files": [ "src/**/tests/*", "test/**/*" ]
     }
-  }
+  ]
 }

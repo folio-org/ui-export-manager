@@ -3,21 +3,21 @@ import PropTypes from 'prop-types';
 
 import { TextLink } from '@folio/stripes/components';
 
-import {useExportManagerPerms, useSecureDownload} from '../../hooks';
+import { useExportManagerPerms, useSecureDownload } from '../../hooks';
 import { EXPORTED_JOB_TYPES } from '../../constants';
 import { BULK_ENTITY_TYPES } from '../../../ExportJobs/constants';
 
 export const ExportJobId = ({ job }) => {
   const { id, name: jobId, files, fileNames, entityType, type: jobType } = job;
 
-  const perms = useExportManagerPerms()
+  const perms = useExportManagerPerms();
   const { download: downloadSecurely } = useSecureDownload(id);
 
   const {
     hasAnyUserEditPerms,
     hasInAppAnyPerms,
     hasAllExportManagerPerms,
-  } = perms
+  } = perms;
 
   const itemsAndHoldings = [BULK_ENTITY_TYPES.ITEM, BULK_ENTITY_TYPES.HOLDINGS_RECORD];
   const showUsersLink = hasAnyUserEditPerms && entityType === BULK_ENTITY_TYPES.USER;
