@@ -10,6 +10,7 @@
 * Export Manager downloads extra file. Refs UIEXPMGR-90.
 * *BREAKING* Update `react` to `v18`. Refs UIEXPMGR-93
 * Refactor permissions to display link to download bulk-edit upload files. Refs UIEXPMGR-91.
+* Update Node.js to v18 in GitHub Actions. Refs UIEXPMGR-94.
 
 ## [2.4.3](https://github.com/folio-org/ui-export-manager/tree/v2.4.3) (2023-03-20)
 [Full Changelog](https://github.com/folio-org/ui-export-manager/compare/v2.4.2...v2.4.3)
