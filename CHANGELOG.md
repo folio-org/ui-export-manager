@@ -3,7 +3,7 @@
 ## (IN PROGRESS)
 
 * Add EDIFACT orders export to job type filter in Export manager. Refs UIEXPMGR-62.
-* Sorting EDI export jobs by export method. Refs UIEXPMGR-81. 
+* Sorting EDI export jobs by export method. Refs UIEXPMGR-81.
 * Landing page displays export jobs before any filter is selected. Refs UIEXPMGR-82.
 * Missing permission, can't export "update authority headings" report. Refs UIEXPMGR-87.
 * Grammatical error in export job. Refs UIEXPMGR-89.
@@ -11,6 +11,7 @@
 * *BREAKING* Update `react` to `v18`. Refs UIEXPMGR-93
 * Refactor permissions to display link to download bulk-edit upload files. Refs UIEXPMGR-91.
 * Update Node.js to v18 in GitHub Actions. Refs UIEXPMGR-94.
+* *BREAKING* bump `react-intl` to `v6.4.4`. Refs UIEXPMGR-95.
 
 ## [2.4.3](https://github.com/folio-org/ui-export-manager/tree/v2.4.3) (2023-03-20)
 [Full Changelog](https://github.com/folio-org/ui-export-manager/compare/v2.4.2...v2.4.3)
