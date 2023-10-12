@@ -2,6 +2,9 @@
 
 ## (IN PROGRESS)
 
+## [3.0.0](https://github.com/folio-org/ui-export-manager/tree/v3.0.0) (2023-10-12)
+[Full Changelog](https://github.com/folio-org/ui-export-manager/compare/v2.4.3...v3.0.0)
+
 * Add EDIFACT orders export to job type filter in Export manager. Refs UIEXPMGR-62.
 * Sorting EDI export jobs by export method. Refs UIEXPMGR-81.
 * Landing page displays export jobs before any filter is selected. Refs UIEXPMGR-82.
