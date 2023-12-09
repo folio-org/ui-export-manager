@@ -12,7 +12,7 @@
     "exportJob": "Exportovat úlohu {jobId}",
     "exportJob.outputType": "Typ výstupu",
     "exportJob.errorDetails": "Detaily chyby",
-    "exportJobs.search": "Vyhledávání",
+    "exportJobs.search": "Vyhledat",
     "exportJob.system": "Systém",
     "exportJob.status.SCHEDULED": "Rozvrženo",
     "exportJob.status.IN_PROGRESS": "Probíhá",
