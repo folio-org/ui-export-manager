@@ -23,7 +23,7 @@
     "exportJob.organization": "机构",
     "exportJob.exportMethod": "导出方式",
     "navigation.all": "全部",
-    "navigation.organizations": "机构",
+    "navigation.organizations": "组织",
     "exportJob.details.action.rerun": "重新运行",
     "exportJob.details.action.rerun.success": "导出任务<b> {name} </b>已成功重新运行。",
     "exportJob.details.action.rerun.error": "作业<b> {name}</b>重新导出失败。",
