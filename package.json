@@ -16,7 +16,7 @@
     "route": "/export-manager",
     "okapiInterfaces": {
       "configuration": "2.0",
-      "data-export-spring": "1.0",
+      "data-export-spring": "1.0 2.0",
       "organizations.organizations": "1.0",
       "tags": "1.0",
       "users": "15.0 16.0"
