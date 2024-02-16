@@ -2,6 +2,7 @@ import React from 'react';
 import { MemoryRouter } from 'react-router';
 import { render, screen } from '@testing-library/react';
 
+import { runAxeTest } from '@folio/stripes-testing';
 import Navigation from './Navigation';
 
 const renderNavigation = (props) => render(
@@ -17,5 +18,13 @@ describe('Navigation', () => {
 
     expect(screen.getByText('ui-export-manager.navigation.all')).toBeDefined();
     expect(screen.getByText('ui-export-manager.navigation.organizations')).toBeDefined();
+  });
+
+  it('should render with no axe errors', async () => {
+    renderNavigation();
+
+    await runAxeTest({
+      rootNode: document.body,
+    });
   });
 });

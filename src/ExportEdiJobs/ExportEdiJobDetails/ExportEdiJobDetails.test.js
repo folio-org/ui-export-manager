@@ -1,6 +1,7 @@
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { screen, render } from '@testing-library/react';
 
+import { runAxeTest } from '@folio/stripes-testing';
 import { useExportJobQuery } from '../../ExportJob/apiQuery';
 import { ExportEdiJobDetails } from './ExportEdiJobDetails';
 
@@ -77,6 +78,16 @@ describe('ExportEdiJobDetails', () => {
     expect(screen.getByTestId('export-edi-job-loading')).toBeDefined();
   });
 
+  it('should render with no axe errors when data is fetching', async () => {
+    useExportJobQuery.mockReturnValue({ isLoading: true, exportJob });
+
+    renderExportEdiJobDetails();
+
+    await runAxeTest({
+      rootNode: document.body,
+    });
+  });
+
   it('should display job details fields', () => {
     useExportJobQuery.mockReturnValue({ isLoading: false, exportJob });
 
@@ -97,5 +108,15 @@ describe('ExportEdiJobDetails', () => {
     ].forEach(label => (
       expect(screen.getByText(label)).toBeInTheDocument()
     ));
+  });
+
+  it('should render with no axe errors when data is fetched', async () => {
+    useExportJobQuery.mockReturnValue({ isLoading: false, exportJob });
+
+    renderExportEdiJobDetails();
+
+    await runAxeTest({
+      rootNode: document.body,
+    });
   });
 });

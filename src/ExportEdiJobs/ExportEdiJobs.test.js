@@ -3,8 +3,10 @@ import { render } from '@testing-library/react';
 
 import '@folio/stripes-acq-components/test/jest/__mock__';
 
+import { runAxeTest } from '@folio/stripes-testing';
 import { useExportEdiJobsQuery } from './apiQuery';
 import { ExportEdiJobs } from './ExportEdiJobs';
+import { useExportJobQuery } from '../ExportJob/apiQuery';
 
 jest.mock('react-virtualized-auto-sizer', () => {
   return jest.fn(({ children }) => <div>{children({})}</div>);
@@ -72,6 +74,14 @@ describe('ExportEdiJobs', () => {
 
       expect(getByText('ExportEdiJobsFilters')).toBeDefined();
     });
+
+    it('should render with no axe errors', async () => {
+      renderExportEdiJobs();
+
+      await runAxeTest({
+        rootNode: document.body,
+      });
+    });
   });
 
   describe('Results section', () => {
@@ -79,6 +89,13 @@ describe('ExportEdiJobs', () => {
       const { getByText } = renderExportEdiJobs();
 
       expect(getByText('ExportEdiJobsList')).toBeDefined();
+    });
+    it('should render with no axe errors', async () => {
+      renderExportEdiJobs();
+
+      await runAxeTest({
+        rootNode: document.body,
+      });
     });
   });
 });
