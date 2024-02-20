@@ -6,7 +6,6 @@ import '@folio/stripes-acq-components/test/jest/__mock__';
 import { runAxeTest } from '@folio/stripes-testing';
 import { useExportEdiJobsQuery } from './apiQuery';
 import { ExportEdiJobs } from './ExportEdiJobs';
-import { useExportJobQuery } from '../ExportJob/apiQuery';
 
 jest.mock('react-virtualized-auto-sizer', () => {
   return jest.fn(({ children }) => <div>{children({})}</div>);
