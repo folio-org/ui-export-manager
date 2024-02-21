@@ -8,6 +8,7 @@ import {
   useShowCallout,
 } from '@folio/stripes-acq-components';
 
+import { runAxeTest } from '@folio/stripes-testing';
 import { EXPORT_JOB_STATUSES } from '../../common/constants';
 import { useExportJobScheduler } from '../../common/hooks';
 import { ExportEdiJobDetailsActionMenu } from './ExportEdiJobDetailsActionMenu';
@@ -142,5 +143,13 @@ describe('ExportEdiJobDetailsActionMenu', () => {
     expect(showCallout).toHaveBeenCalledWith(expect.objectContaining({
       messageId: toastMessage`resend.error`,
     }));
+  });
+
+  it('should render with no axe errors', async () => {
+    renderExportEdiJobDetailsActionMenu();
+
+    await runAxeTest({
+      rootNode: document.body,
+    });
   });
 });

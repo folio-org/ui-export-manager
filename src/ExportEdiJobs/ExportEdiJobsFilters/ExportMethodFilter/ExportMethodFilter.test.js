@@ -2,6 +2,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import '@folio/stripes-acq-components/test/jest/__mock__';
 
+import { runAxeTest } from '@folio/stripes-testing';
 import Filter from './ExportMethodFilter';
 
 jest.mock('./useConfigs', () => ({
@@ -31,5 +32,13 @@ describe('ExportMethodFilter', () => {
     const { getByLabelText } = renderFilter();
 
     expect(getByLabelText(`${filterAccordionTitle} filter list`).getAttribute('aria-expanded') || 'false').toBe('false');
+  });
+
+  it('should render with no axe errors', async () => {
+    renderFilter();
+
+    await runAxeTest({
+      rootNode: document.body,
+    });
   });
 });

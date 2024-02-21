@@ -3,6 +3,7 @@ import { render } from '@testing-library/react';
 
 import '@folio/stripes-acq-components/test/jest/__mock__';
 
+import { runAxeTest } from '@folio/stripes-testing';
 import { ExportEdiJobsList } from './ExportEdiJobsList';
 
 jest.mock('react-virtualized-auto-sizer', () => {
@@ -63,5 +64,13 @@ describe('ExportEdiJobsList', () => {
     expect(getByText('ui-export-manager.exportJob.startTime')).toBeDefined();
     expect(getByText('ui-export-manager.exportJob.endTime')).toBeDefined();
     expect(getByText('ui-export-manager.exportJob.exportMethod')).toBeDefined();
+  });
+
+  it('should render with no axe errors', async () => {
+    getExportJob();
+
+    await runAxeTest({
+      rootNode: document.body,
+    });
   });
 });

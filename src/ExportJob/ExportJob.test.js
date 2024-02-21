@@ -3,6 +3,7 @@ import { render } from '@testing-library/react';
 
 import '@folio/stripes-acq-components/test/jest/__mock__';
 
+import { runAxeTest } from '@folio/stripes-testing';
 import { useExportJobQuery } from './apiQuery';
 import { ExportJob } from './ExportJob';
 
@@ -69,5 +70,17 @@ describe('ExportJob', () => {
     const { getByTestId } = renderExportJobsList();
 
     expect(getByTestId('export-job')).toBeDefined();
+  });
+
+  it('should render with no axe errors', async () => {
+    const exportJob = getExportJob();
+
+    useExportJobQuery.mockReturnValue({ isLoading: true, exportJob });
+
+    renderExportJobsList();
+
+    await runAxeTest({
+      rootNode: document.body,
+    });
   });
 });

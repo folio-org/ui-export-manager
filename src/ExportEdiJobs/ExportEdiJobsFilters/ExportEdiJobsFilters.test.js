@@ -3,6 +3,7 @@ import { render } from '@testing-library/react';
 
 import '@folio/stripes-acq-components/test/jest/__mock__';
 
+import { runAxeTest } from '@folio/stripes-testing';
 import {
   EXPORT_JOB_STATUS_OPTIONS,
 } from '../../common/constants';
@@ -89,5 +90,13 @@ describe('ExportEdiJobsFilters', () => {
     const { getByText } = renderExportEdiJobsFilters();
 
     expect(getByText('ui-export-manager.exportJob.organization')).toBeDefined();
+  });
+
+  it('should render with no axe errors', async () => {
+    renderExportEdiJobsFilters();
+
+    await runAxeTest({
+      rootNode: document.body,
+    });
   });
 });

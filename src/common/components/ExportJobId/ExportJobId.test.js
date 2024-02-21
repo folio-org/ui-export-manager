@@ -4,6 +4,7 @@ import user from '@testing-library/user-event';
 
 import '@folio/stripes-acq-components/test/jest/__mock__';
 
+import { runAxeTest } from '@folio/stripes-testing';
 import { useSecureDownload } from '../../hooks';
 import { ExportJobId } from './ExportJobId';
 
@@ -71,5 +72,18 @@ describe('ExportJobId', () => {
     user.click(getByTestId('text-link'));
 
     expect(downloadSecurelyMock).not.toHaveBeenCalled();
+  });
+
+  it('should render with no axe errors', async () => {
+    const jobName = '1001';
+    renderExportJobId({
+      name: jobName,
+      files: ['/test.png'],
+      type: 'BURSAR_FEES_FINES',
+    });
+
+    await runAxeTest({
+      rootNode: document.body,
+    });
   });
 });
