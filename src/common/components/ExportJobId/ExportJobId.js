@@ -40,7 +40,6 @@ export const ExportJobId = ({ job }) => {
 
           link.href = file;
           link.download = jobId;
-          link.target = '_blank';
 
           document.body.appendChild(link);
 
