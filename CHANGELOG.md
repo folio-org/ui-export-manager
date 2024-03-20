@@ -6,6 +6,7 @@
 [Full Changelog](https://github.com/folio-org/ui-export-manager/compare/v3.0.0...v3.1.0)
 
 * Export manager - Add accessibility testing to automated tests. Refs UIEXPMGR-101.
+* Screen refreshes every time user clicks links. Refs UIEXPMGR-102.
 
 ## [3.0.0](https://github.com/folio-org/ui-export-manager/tree/v3.0.0) (2023-10-12)
 [Full Changelog](https://github.com/folio-org/ui-export-manager/compare/v2.4.3...v3.0.0)
