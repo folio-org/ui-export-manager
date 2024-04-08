@@ -7,6 +7,10 @@ import {
 import { useIntl } from 'react-intl';
 
 import {
+  TitleManager,
+  useStripes,
+} from '@folio/stripes/core';
+import {
   Paneset,
 } from '@folio/stripes/components';
 import {
@@ -30,6 +34,7 @@ const resetData = () => {};
 export const ExportEdiJobs = () => {
   const { formatMessage } = useIntl();
   const history = useHistory();
+  const stripes = useStripes();
   const location = useLocation();
   const params = useParams();
 
@@ -53,8 +58,9 @@ export const ExportEdiJobs = () => {
   } = useExportEdiJobsQuery(location.search, pagination, filters);
 
   return (
-    <Paneset>
-      {
+    <TitleManager stripes={stripes} record={formatMessage({ id: 'ui-export-manager.title.organizations' })}>
+      <Paneset>
+        {
         isFiltersOpened && (
           <FiltersPane
             toggleFilters={toggleFilters}
@@ -84,32 +90,32 @@ export const ExportEdiJobs = () => {
         )
       }
 
-      <ResultsPane
-        title={formatMessage({ id: 'ui-export-manager.exportJobs' })}
-        count={totalCount}
-        filters={filters}
-        toggleFiltersPane={toggleFilters}
-        isFiltersOpened={isFiltersOpened}
-        isLoading={isLoading}
-        autosize
-      >
-        {(({ height, width }) => (
-          <ExportEdiJobsList
-            isLoading={isLoading}
-            onNeedMoreData={changePage}
-            exportJobs={exportEdiJobs}
-            totalCount={totalCount}
-            filters={filters}
-            isFiltersOpened={isFiltersOpened}
-            toggleFilters={toggleFilters}
-            height={height}
-            width={width}
-            pagination={pagination}
-          />
-        ))}
-      </ResultsPane>
+        <ResultsPane
+          title={formatMessage({ id: 'ui-export-manager.exportJobs' })}
+          count={totalCount}
+          filters={filters}
+          toggleFiltersPane={toggleFilters}
+          isFiltersOpened={isFiltersOpened}
+          isLoading={isLoading}
+          autosize
+        >
+          {(({ height, width }) => (
+            <ExportEdiJobsList
+              isLoading={isLoading}
+              onNeedMoreData={changePage}
+              exportJobs={exportEdiJobs}
+              totalCount={totalCount}
+              filters={filters}
+              isFiltersOpened={isFiltersOpened}
+              toggleFilters={toggleFilters}
+              height={height}
+              width={width}
+              pagination={pagination}
+            />
+          ))}
+        </ResultsPane>
 
-      {
+        {
         Boolean(params.id) && (
           <ExportEdiJobDetails
             refetchJobs={refetch}
@@ -117,6 +123,7 @@ export const ExportEdiJobs = () => {
           />
         )
       }
-    </Paneset>
+      </Paneset>
+    </TitleManager>
   );
 };

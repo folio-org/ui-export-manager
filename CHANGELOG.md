@@ -2,6 +2,8 @@
 
 ## (IN PROGRESS)
 
+* Update HTML Page Title on Export Manager Tabs Page. Refs UIEXPMGR-105.
+
 ## [3.1.0](https://github.com/folio-org/ui-export-manager/tree/v3.1.0) (2024-03-19)
 [Full Changelog](https://github.com/folio-org/ui-export-manager/compare/v3.0.0...v3.1.0)
 

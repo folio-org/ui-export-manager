@@ -7,6 +7,10 @@ import {
 import { useIntl } from 'react-intl';
 
 import {
+  TitleManager,
+  useStripes,
+} from '@folio/stripes/core';
+import {
   Paneset,
 } from '@folio/stripes/components';
 import {
@@ -33,6 +37,7 @@ export const ExportJobs = () => {
   const { formatMessage } = useIntl();
   const history = useHistory();
   const location = useLocation();
+  const stripes = useStripes();
   const params = useParams();
   const RESULT_COUNT_INCREMENT = 100;
 
@@ -54,8 +59,9 @@ export const ExportJobs = () => {
   } = useExportJobsQuery(location.search, pagination, filters);
 
   return (
-    <Paneset>
-      {
+    <TitleManager stripes={stripes} record={formatMessage({ id: 'ui-export-manager.title.all' })}>
+      <Paneset>
+        {
         isFiltersOpened && (
           <FiltersPane
             toggleFilters={toggleFilters}
@@ -85,36 +91,37 @@ export const ExportJobs = () => {
         )
       }
 
-      <ResultsPane
-        title={formatMessage({ id: 'ui-export-manager.exportJobs' })}
-        count={totalCount}
-        autosize
-        filters={filters}
-        toggleFiltersPane={toggleFilters}
-        isFiltersOpened={isFiltersOpened}
-        isLoading={isLoading}
-      >
-        {(({ height, width }) => (
-          <ExportJobsList
-            isLoading={isLoading}
-            onNeedMoreData={changePage}
-            exportJobs={exportJobs}
-            totalCount={totalCount}
-            filters={filters}
-            isFiltersOpened={isFiltersOpened}
-            toggleFilters={toggleFilters}
-            pagination={pagination}
-            height={height}
-            width={width}
-          />
-        ))}
-      </ResultsPane>
+        <ResultsPane
+          title={formatMessage({ id: 'ui-export-manager.exportJobs' })}
+          count={totalCount}
+          autosize
+          filters={filters}
+          toggleFiltersPane={toggleFilters}
+          isFiltersOpened={isFiltersOpened}
+          isLoading={isLoading}
+        >
+          {(({ height, width }) => (
+            <ExportJobsList
+              isLoading={isLoading}
+              onNeedMoreData={changePage}
+              exportJobs={exportJobs}
+              totalCount={totalCount}
+              filters={filters}
+              isFiltersOpened={isFiltersOpened}
+              toggleFilters={toggleFilters}
+              pagination={pagination}
+              height={height}
+              width={width}
+            />
+          ))}
+        </ResultsPane>
 
-      {
+        {
         Boolean(params.id) && (
           <ExportJob uuid={params.id} />
         )
       }
-    </Paneset>
+      </Paneset>
+    </TitleManager>
   );
 };
