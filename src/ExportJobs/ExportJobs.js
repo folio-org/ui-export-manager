@@ -8,7 +8,6 @@ import { useIntl } from 'react-intl';
 
 import {
   TitleManager,
-  useStripes,
 } from '@folio/stripes/core';
 import {
   Paneset,
@@ -37,7 +36,6 @@ export const ExportJobs = () => {
   const { formatMessage } = useIntl();
   const history = useHistory();
   const location = useLocation();
-  const stripes = useStripes();
   const params = useParams();
   const RESULT_COUNT_INCREMENT = 100;
 
@@ -59,7 +57,7 @@ export const ExportJobs = () => {
   } = useExportJobsQuery(location.search, pagination, filters);
 
   return (
-    <TitleManager stripes={stripes} record={formatMessage({ id: 'ui-export-manager.title.all' })}>
+    <TitleManager record={formatMessage({ id: 'ui-export-manager.title.all' })}>
       <Paneset>
         {
         isFiltersOpened && (
