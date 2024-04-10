@@ -1,5 +1,7 @@
 {
   "meta.title": "Export manager",
+  "title.all": "All",
+  "title.organizations": "Organizations",
 
   "exportJobs": "Export jobs",
   "exportJobs.search": "Search",

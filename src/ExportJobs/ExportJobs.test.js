@@ -10,6 +10,11 @@ import '@folio/stripes-acq-components/test/jest/__mock__';
 import { useExportJobsQuery } from './apiQuery';
 import { ExportJobs } from './ExportJobs';
 
+jest.mock('@folio/stripes/core', () => ({
+  ...jest.requireActual('@folio/stripes/core'),
+  TitleManager: ({ children }) => <>{children}</>,
+}), { virtual: true });
+
 jest.mock('react-virtualized-auto-sizer', () => {
   return jest.fn(({ children }) => <div>{children({})}</div>);
 });
