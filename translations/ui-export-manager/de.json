@@ -50,5 +50,7 @@
     "exportJob.details.type.FAILED_LINKED_BIB_UPDATES": "Fehlgeschlagene Aktualisierungen: Verknüpfte bibliografische Felder",
     "exportJob.details.type.BULK_EDIT_IDENTIFIERS": "Massenbearbeitung von Identifikatoren",
     "exportJob.details.type.BULK_EDIT_QUERY": "Massenbearbeitungsabfrage",
-    "permission.export-manager.view": "Exportmanager: Ansicht"
+    "permission.export-manager.view": "Exportmanager: Ansicht",
+    "title.all": "All",
+    "title.organizations": "Organizations"
 }

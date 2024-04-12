@@ -50,5 +50,7 @@
     "exportJob.details.type.FAILED_LINKED_BIB_UPDATES": "Failed updates: Linked bibliographic fields",
     "exportJob.details.type.BULK_EDIT_IDENTIFIERS": "Bulk edit identifiers",
     "exportJob.details.type.BULK_EDIT_QUERY": "Bulk edit query",
-    "permission.export-manager.view": "Export manager: View"
+    "permission.export-manager.view": "Export manager: View",
+    "title.all": "All",
+    "title.organizations": "Organizations"
 }

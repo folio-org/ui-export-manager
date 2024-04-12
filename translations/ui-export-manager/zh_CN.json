@@ -50,5 +50,7 @@
     "exportJob.details.type.FAILED_LINKED_BIB_UPDATES": "更新失败：链接的书目字段",
     "exportJob.details.type.BULK_EDIT_IDENTIFIERS": "批量编辑标识符",
     "exportJob.details.type.BULK_EDIT_QUERY": "批量编辑查询",
-    "permission.export-manager.view": "导出管理：查看"
+    "permission.export-manager.view": "导出管理：查看",
+    "title.all": "All",
+    "title.organizations": "Organizations"
 }

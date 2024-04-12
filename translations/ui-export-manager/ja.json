@@ -31,7 +31,7 @@
     "exportJob.sentTo": "Sent to",
     "exportJob.fileName": "File name",
     "exportJob.type.E_HOLDINGS": "eHoldings",
-    "exportJob.details.action.download": "Download",
+    "exportJob.details.action.download": "ダウンロード",
     "exportJob.details.action.download.error": "Your file download was failed.",
     "exportJob.details.action.resend": "Re-send",
     "exportJob.details.action.resend.error": "Your file upload was failed.",
@@ -50,5 +50,7 @@
     "exportJob.details.type.FAILED_LINKED_BIB_UPDATES": "Failed updates: Linked bibliographic fields",
     "exportJob.details.type.BULK_EDIT_IDENTIFIERS": "Bulk edit identifiers",
     "exportJob.details.type.BULK_EDIT_QUERY": "Bulk edit query",
-    "permission.export-manager.view": "Export manager: View"
+    "permission.export-manager.view": "Export manager: View",
+    "title.all": "All",
+    "title.organizations": "Organizations"
 }

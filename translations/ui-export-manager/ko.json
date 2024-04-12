@@ -50,5 +50,7 @@
     "exportJob.details.type.FAILED_LINKED_BIB_UPDATES": "실패한 업데이트: 연결된 서지 필드",
     "exportJob.details.type.BULK_EDIT_IDENTIFIERS": "대량 편집(Bulk edit) 식별자",
     "exportJob.details.type.BULK_EDIT_QUERY": "대량 편집(Bulk edit) 쿼리",
-    "permission.export-manager.view": "Export manager: View"
+    "permission.export-manager.view": "Export manager: View",
+    "title.all": "All",
+    "title.organizations": "Organizations"
 }

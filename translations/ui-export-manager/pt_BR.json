@@ -50,5 +50,7 @@
     "exportJob.details.type.FAILED_LINKED_BIB_UPDATES": "Atualizações com falha: Campos bibliográficos vinculados",
     "exportJob.details.type.BULK_EDIT_IDENTIFIERS": "Identificadores de edição em massa",
     "exportJob.details.type.BULK_EDIT_QUERY": "Consulta de edição em massa",
-    "permission.export-manager.view": "Gerenciador de exportação: Ver"
+    "permission.export-manager.view": "Gerenciador de exportação: Ver",
+    "title.all": "Todos",
+    "title.organizations": "Organizações"
 }
