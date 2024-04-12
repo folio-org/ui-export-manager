@@ -42,7 +42,7 @@ describe('useSecureDownload', () => {
       () => useSecureDownload(jobId),
     );
 
-    await result.current.download('fileName.csv');
+    await result.current.download(['fileName.csv']);
 
     expect(kyGetMock).toHaveBeenCalled();
   });
@@ -54,7 +54,7 @@ describe('useSecureDownload', () => {
       () => useSecureDownload(jobId),
     );
 
-    await result.current.download('fileName.csv');
+    await result.current.download(['fileName.csv']);
 
     expect(showCallout).toHaveBeenCalledWith(expect.objectContaining({
       messageId: toastMessage`download.error`,

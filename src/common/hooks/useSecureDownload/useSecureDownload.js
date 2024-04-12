@@ -13,13 +13,13 @@ export const useSecureDownload = (jobId) => {
   const ky = useOkapiKy();
   const showCallout = useShowCallout();
 
-  const download = async (fileName) => {
-    return ky.get(`${EXPORT_JOBS_API}/${jobId}/download`, {
+  const downloadSingleFile = async (fileName) => {
+    return ky.get(`${EXPORT_JOBS_API}/${jobId}/download?key=${fileName}`, {
       headers: { accept: 'application/octet-stream' },
     })
       .blob()
       .then(data => {
-        downloadBase64(fileName, URL.createObjectURL(data));
+        downloadBase64(fileName.replace(`${jobId}/`, ''), URL.createObjectURL(data));
       })
       .catch(() => {
         showCallout({
@@ -28,6 +28,10 @@ export const useSecureDownload = (jobId) => {
         });
       });
   };
+
+  const download = async (fileNames) => {
+    return Promise.all(fileNames.map(downloadSingleFile));
+  }
 
   return { download };
 };
