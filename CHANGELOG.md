@@ -2,6 +2,8 @@
 
 ## (IN PROGRESS)
 
+* Update logic related to download files. Refs UIEXPMGR-106.
+
 ## [3.1.1](https://github.com/folio-org/ui-export-manager/tree/v3.1.1) (2024-04-02)
 [Full Changelog](https://github.com/folio-org/ui-export-manager/compare/v3.1.0...v3.1.1)
 * Screen refreshes every time user clicks links. Refs UIEXPMGR-102.

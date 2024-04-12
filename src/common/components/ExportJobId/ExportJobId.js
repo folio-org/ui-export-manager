@@ -32,7 +32,7 @@ export const ExportJobId = ({ job }) => {
     e.stopPropagation();
 
     if (EXPORTED_JOB_TYPES.includes(jobType)) {
-      downloadSecurely(fileNames[0]);
+      downloadSecurely(fileNames);
     } else {
       files.forEach((file, index) => {
         if (file && index !== 2) {
