@@ -14,7 +14,9 @@ export const useSecureDownload = (jobId) => {
   const showCallout = useShowCallout();
 
   const downloadSingleFile = async (fileName) => {
-    return ky.get(`${EXPORT_JOBS_API}/${jobId}/download?key=${fileName}`, {
+    const key = encodeURIComponent(fileName);
+
+    return ky.get(`${EXPORT_JOBS_API}/${jobId}/download?key=${key}`, {
       headers: { accept: 'application/octet-stream' },
     })
       .blob()

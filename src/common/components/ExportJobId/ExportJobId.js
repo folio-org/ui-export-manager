@@ -31,7 +31,7 @@ export const ExportJobId = ({ job }) => {
   const downloadFiles = (e) => {
     e.stopPropagation();
 
-    if (EXPORTED_JOB_TYPES.includes(jobType)) {
+    if (EXPORTED_JOB_TYPES.includes(jobType) && fileNames) {
       downloadSecurely(fileNames);
     } else {
       files.forEach((file, index) => {
