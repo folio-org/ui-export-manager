@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { TextLink } from '@folio/stripes/components';
 
 import { useExportManagerPerms, useSecureDownload } from '../../hooks';
-import { EXPORTED_JOB_TYPES } from '../../constants';
+import { MULTIPLE_EXPORTED_JOB_TYPES, EXPORTED_JOB_TYPES } from '../../constants';
 import { BULK_ENTITY_TYPES } from '../../../ExportJobs/constants';
 
 export const ExportJobId = ({ job }) => {
@@ -32,7 +32,7 @@ export const ExportJobId = ({ job }) => {
     e.stopPropagation();
 
     if (EXPORTED_JOB_TYPES.includes(jobType) && fileNames) {
-      downloadSecurely(fileNames);
+      downloadSecurely(fileNames, MULTIPLE_EXPORTED_JOB_TYPES.includes(jobType));
     } else {
       files.forEach((file, index) => {
         if (file && index !== 2) {
