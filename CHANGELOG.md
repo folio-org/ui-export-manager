@@ -2,6 +2,9 @@
 
 ## (IN PROGRESS)
 
+## [3.1.2](https://github.com/folio-org/ui-export-manager/tree/v3.1.2) (2024-04-16)
+[Full Changelog](https://github.com/folio-org/ui-export-manager/compare/v3.1.1...v3.1.2)
+
 * Update logic related to download files. Refs UIEXPMGR-106.
 
 ## [3.1.1](https://github.com/folio-org/ui-export-manager/tree/v3.1.1) (2024-04-02)
