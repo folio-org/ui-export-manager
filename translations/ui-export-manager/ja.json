@@ -51,6 +51,6 @@
     "exportJob.details.type.BULK_EDIT_IDENTIFIERS": "Bulk edit identifiers",
     "exportJob.details.type.BULK_EDIT_QUERY": "Bulk edit query",
     "permission.export-manager.view": "Export manager: View",
-    "title.all": "All",
-    "title.organizations": "Organizations"
+    "title.all": "全て",
+    "title.organizations": "組織"
 }
