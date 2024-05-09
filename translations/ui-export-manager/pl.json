@@ -51,6 +51,6 @@
     "exportJob.details.type.BULK_EDIT_IDENTIFIERS": "Identyfikatory edycji grupowej",
     "exportJob.details.type.BULK_EDIT_QUERY": "Zapytanie edycji grupowej",
     "permission.export-manager.view": "Export manager: View",
-    "title.all": "All",
+    "title.all": "Wszystko",
     "title.organizations": "Organizations"
 }

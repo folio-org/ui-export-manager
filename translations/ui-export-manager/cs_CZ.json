@@ -51,6 +51,6 @@
     "exportJob.details.type.BULK_EDIT_IDENTIFIERS": "Hromadná úprava identifikátorů",
     "exportJob.details.type.BULK_EDIT_QUERY": "Dotaz pro hromadnou úpravu",
     "permission.export-manager.view": "Správa exportu: Zobrazit",
-    "title.all": "All",
-    "title.organizations": "Organizations"
+    "title.all": "Všechny",
+    "title.organizations": "Organizace"
 }
