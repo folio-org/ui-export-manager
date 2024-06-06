@@ -21,9 +21,9 @@ import { ExportMethodFilter } from './ExportMethodFilter';
 const applyFiltersAdapter = (applyFilters) => ({ name, values }) => applyFilters(name, values);
 
 export const ExportEdiJobsFilters = ({
-  activeFilters,
-  applyFilters,
-  disabled,
+    disabled = false,
+    activeFilters,
+    applyFilters,
 }) => {
   const adaptedApplyFilters = useCallback(
     applyFiltersAdapter(applyFilters),
@@ -103,8 +103,4 @@ ExportEdiJobsFilters.propTypes = {
   activeFilters: PropTypes.object.isRequired,
   applyFilters: PropTypes.func.isRequired,
   disabled: PropTypes.bool,
-};
-
-ExportEdiJobsFilters.defaultProps = {
-  disabled: false,
 };
