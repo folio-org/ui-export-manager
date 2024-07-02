@@ -4,6 +4,7 @@ import { render } from '@testing-library/react';
 import '@folio/stripes-acq-components/test/jest/__mock__';
 
 import { runAxeTest } from '@folio/stripes-testing';
+import { QueryClient, QueryClientProvider } from 'react-query';
 import {
   EXPORT_JOB_STATUS_OPTIONS,
 } from '../../common/constants';
@@ -34,16 +35,20 @@ const defaultProps = {
   disabled: false,
 };
 
+const queryClient = new QueryClient();
+
 const renderExportEdiJobsFilters = ({
   activeFilters,
   applyFilters,
   disabled,
 } = defaultProps) => (render(
-  <ExportEdiJobsFilters
-    activeFilters={activeFilters}
-    applyFilters={applyFilters}
-    disabled={disabled}
-  />,
+  <QueryClientProvider client={queryClient}>
+    <ExportEdiJobsFilters
+      activeFilters={activeFilters}
+      applyFilters={applyFilters}
+      disabled={disabled}
+    />
+  </QueryClientProvider>
 ));
 
 describe('ExportEdiJobsFilters', () => {
