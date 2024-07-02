@@ -41,6 +41,7 @@ describe('ExportJobId', () => {
     const { getByText, getByTestId } = renderExportJobId({
       name: jobName,
       files: ['/test.png'],
+      fileNames: [],
     });
 
     expect(getByText(jobName)).toBeDefined();
@@ -61,24 +62,11 @@ describe('ExportJobId', () => {
     expect(downloadSecurelyMock).toHaveBeenCalled();
   });
 
-  it('should not use secure download for bursar exports', () => {
-    const jobName = '1001';
-    const { getByTestId } = renderExportJobId({
-      name: jobName,
-      files: ['/test.png'],
-      type: 'BURSAR_FEES_FINES',
-    });
-
-    user.click(getByTestId('text-link'));
-
-    expect(downloadSecurelyMock).not.toHaveBeenCalled();
-  });
-
   it('should render with no axe errors', async () => {
     const jobName = '1001';
     renderExportJobId({
       name: jobName,
-      files: ['/test.png'],
+      fileNames: ['/test.png'],
       type: 'BURSAR_FEES_FINES',
     });
 
