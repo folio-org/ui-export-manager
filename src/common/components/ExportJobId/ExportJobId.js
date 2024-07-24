@@ -19,11 +19,11 @@ export const ExportJobId = ({ job }) => {
     hasAllExportManagerPerms,
   } = perms;
 
-  const itemsAndHoldings = [BULK_ENTITY_TYPES.ITEM, BULK_ENTITY_TYPES.HOLDINGS_RECORD];
+  const inventoryRecords = [BULK_ENTITY_TYPES.ITEM, BULK_ENTITY_TYPES.HOLDINGS_RECORD, BULK_ENTITY_TYPES.INSTANCE];
   const showUsersLink = hasAnyUserEditPerms && entityType === BULK_ENTITY_TYPES.USER;
-  const showItemsLink = hasInAppAnyPerms && itemsAndHoldings.includes(entityType);
+  const showItemsLink = hasInAppAnyPerms && inventoryRecords.includes(entityType);
   const showAnyLink = hasAllExportManagerPerms && ((hasAnyUserEditPerms && hasInAppAnyPerms)
-      || (![BULK_ENTITY_TYPES.USER, ...itemsAndHoldings].includes(entityType)));
+      || (![BULK_ENTITY_TYPES.USER, ...inventoryRecords].includes(entityType)));
   const isShowLink = showUsersLink || showItemsLink || showAnyLink;
 
   const canDownloadFile = files?.length && isShowLink;
