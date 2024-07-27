@@ -46,7 +46,7 @@
     "exportJob.details.type.EDIFACT_ORDERS_EXPORT": "EDIFACT orders export",
     "exportJob.details.type.E_HOLDINGS": "e-Zasoby",
     "exportJob.details.type.BULK_EDIT": "Edycja masowa",
-    "exportJob.details.type.AUTH_HEADINGS_UPDATES": "MARC authority headings updates",
+    "exportJob.details.type.AUTH_HEADINGS_UPDATES": "Aktualizacje haseł KHW",
     "exportJob.details.type.FAILED_LINKED_BIB_UPDATES": "Failed updates: Linked bibliographic fields",
     "exportJob.details.type.BULK_EDIT_IDENTIFIERS": "Identyfikatory edycji grupowej",
     "exportJob.details.type.BULK_EDIT_QUERY": "Zapytanie edycji grupowej",
