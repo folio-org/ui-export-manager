@@ -7,6 +7,7 @@
 * React v19: refactor away from default props for functional components. Refs UIEXPMGR-108.
 * Download refactoring to support /download endpoint (Bursar). Refs UIEXPMGR-66.
 * Permissions cleanup for  Instance records. Refs UIEXPMGR-109.
+* Sort logs by Description and Source. Refs UIEXPMGR-110.
 
 ## [3.1.0](https://github.com/folio-org/ui-export-manager/tree/v3.1.0) (2024-03-19)
 [Full Changelog](https://github.com/folio-org/ui-export-manager/compare/v3.0.0...v3.1.0)
