@@ -107,6 +107,7 @@ export const ExportEdiJobsList = ({
         pagingType="none"
         onRowClick={openEdiJobDetails}
         interactive
+        showSortIndicator
       />
       {exportJobs.length > 0 && (
         <PrevNextPagination
