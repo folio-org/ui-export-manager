@@ -102,6 +102,7 @@ export const ExportJobsList = ({
         pagingType="none"
         onRowClick={openJobDetails}
         interactive
+        showSortIndicator
       />
       {exportJobs.length > 0 && (
         <PrevNextPagination
