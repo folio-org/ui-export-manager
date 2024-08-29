@@ -7,18 +7,19 @@ import {
 import { FormattedMessage } from 'react-intl';
 
 import {
-  MultiColumnList, NoValue,
+  MultiColumnList,
+  NoValue,
 } from '@folio/stripes/components';
 import {
   FolioFormattedTime,
-  NoResultsMessage, PrevNextPagination,
+  NoResultsMessage,
+  PrevNextPagination,
   useLocationSorting,
 } from '@folio/stripes-acq-components';
 
 import { ExportJobId } from '../../common/components';
 import { useNavigation } from '../../hooks';
 
-const sortableFields = ['jobId', 'status', 'startTime', 'endTime', 'exportMethod'];
 const visibleColumns = ['jobId', 'status', 'description', 'source', 'startTime', 'endTime', 'exportMethod'];
 const columnMapping = {
   jobId: <FormattedMessage id="ui-export-manager.exportJob.jobId" />,
@@ -67,7 +68,7 @@ export const ExportEdiJobsList = ({
     sortingField,
     sortingDirection,
     changeSorting,
-  ] = useLocationSorting(location, history, resetData, sortableFields);
+  ] = useLocationSorting(location, history, resetData, visibleColumns);
 
   const { navigateToEdiJobDetails } = useNavigation();
 
