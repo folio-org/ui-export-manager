@@ -12,7 +12,10 @@ import {
 import {
   DESC_DIRECTION,
   FolioFormattedTime,
-  NoResultsMessage, PrevNextPagination, SORTING_DIRECTION_PARAMETER, SORTING_PARAMETER,
+  NoResultsMessage,
+  PrevNextPagination,
+  SORTING_DIRECTION_PARAMETER,
+  SORTING_PARAMETER,
   useLocationSorting,
 } from '@folio/stripes-acq-components';
 
