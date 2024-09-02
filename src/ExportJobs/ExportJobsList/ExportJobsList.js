@@ -10,8 +10,12 @@ import {
   MultiColumnList,
 } from '@folio/stripes/components';
 import {
+  DESC_DIRECTION,
   FolioFormattedTime,
-  NoResultsMessage, PrevNextPagination,
+  NoResultsMessage,
+  PrevNextPagination,
+  SORTING_DIRECTION_PARAMETER,
+  SORTING_PARAMETER,
   useLocationSorting,
 } from '@folio/stripes-acq-components';
 
@@ -58,12 +62,13 @@ export const ExportJobsList = ({
 }) => {
   const history = useHistory();
   const location = useLocation();
+  const DEFAULT_SORTING = { [SORTING_PARAMETER]: 'jobId', [SORTING_DIRECTION_PARAMETER]: DESC_DIRECTION };
 
   const [
     sortingField,
     sortingDirection,
     changeSorting,
-  ] = useLocationSorting(location, history, resetData, visibleColumns);
+  ] = useLocationSorting(location, history, resetData, visibleColumns, DEFAULT_SORTING);
 
   const { navigateToJobDetails } = useNavigation();
 
