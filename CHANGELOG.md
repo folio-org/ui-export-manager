@@ -9,11 +9,14 @@
 * Permissions cleanup for  Instance records. Refs UIEXPMGR-109.
 * Sort logs by Description and Source. Refs UIEXPMGR-110.
 
+## [3.1.1](https://github.com/folio-org/ui-export-manager/tree/v3.1.1) (2024-04-02)
+[Full Changelog](https://github.com/folio-org/ui-export-manager/compare/v3.1.0...v3.1.1)
+* Screen refreshes every time user clicks links. Refs UIEXPMGR-102.
+
 ## [3.1.0](https://github.com/folio-org/ui-export-manager/tree/v3.1.0) (2024-03-19)
 [Full Changelog](https://github.com/folio-org/ui-export-manager/compare/v3.0.0...v3.1.0)
 
 * Export manager - Add accessibility testing to automated tests. Refs UIEXPMGR-101.
-* Screen refreshes every time user clicks links. Refs UIEXPMGR-102.
 
 ## [3.0.0](https://github.com/folio-org/ui-export-manager/tree/v3.0.0) (2023-10-12)
 [Full Changelog](https://github.com/folio-org/ui-export-manager/compare/v2.4.3...v3.0.0)
