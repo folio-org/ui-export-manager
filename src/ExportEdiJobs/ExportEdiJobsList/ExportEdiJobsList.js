@@ -66,7 +66,7 @@ export const ExportEdiJobsList = ({
 }) => {
   const history = useHistory();
   const location = useLocation();
-  const DEFAULT_SORTING = { [SORTING_PARAMETER]: 'endTime', [SORTING_DIRECTION_PARAMETER]: DESC_DIRECTION };
+  const DEFAULT_SORTING = { [SORTING_PARAMETER]: 'jobId', [SORTING_DIRECTION_PARAMETER]: DESC_DIRECTION };
 
   const [
     sortingField,
