@@ -7,18 +7,22 @@ import {
 import { FormattedMessage } from 'react-intl';
 
 import {
-  MultiColumnList, NoValue,
+  MultiColumnList,
+  NoValue,
 } from '@folio/stripes/components';
 import {
+  DESC_DIRECTION,
   FolioFormattedTime,
-  NoResultsMessage, PrevNextPagination,
+  NoResultsMessage,
+  PrevNextPagination,
+  SORTING_DIRECTION_PARAMETER,
+  SORTING_PARAMETER,
   useLocationSorting,
 } from '@folio/stripes-acq-components';
 
 import { ExportJobId } from '../../common/components';
 import { useNavigation } from '../../hooks';
 
-const sortableFields = ['jobId', 'status', 'startTime', 'endTime', 'exportMethod'];
 const visibleColumns = ['jobId', 'status', 'description', 'source', 'startTime', 'endTime', 'exportMethod'];
 const columnMapping = {
   jobId: <FormattedMessage id="ui-export-manager.exportJob.jobId" />,
@@ -62,12 +66,13 @@ export const ExportEdiJobsList = ({
 }) => {
   const history = useHistory();
   const location = useLocation();
+  const DEFAULT_SORTING = { [SORTING_PARAMETER]: 'jobId', [SORTING_DIRECTION_PARAMETER]: DESC_DIRECTION };
 
   const [
     sortingField,
     sortingDirection,
     changeSorting,
-  ] = useLocationSorting(location, history, resetData, sortableFields);
+  ] = useLocationSorting(location, history, resetData, visibleColumns, DEFAULT_SORTING);
 
   const { navigateToEdiJobDetails } = useNavigation();
 
@@ -106,6 +111,7 @@ export const ExportEdiJobsList = ({
         pagingType="none"
         onRowClick={openEdiJobDetails}
         interactive
+        showSortIndicator
       />
       {exportJobs.length > 0 && (
         <PrevNextPagination

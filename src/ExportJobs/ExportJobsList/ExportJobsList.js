@@ -10,15 +10,18 @@ import {
   MultiColumnList,
 } from '@folio/stripes/components';
 import {
+  DESC_DIRECTION,
   FolioFormattedTime,
-  NoResultsMessage, PrevNextPagination,
+  NoResultsMessage,
+  PrevNextPagination,
+  SORTING_DIRECTION_PARAMETER,
+  SORTING_PARAMETER,
   useLocationSorting,
 } from '@folio/stripes-acq-components';
 
 import { ExportJobId } from '../../common/components';
 import { useNavigation } from '../../hooks';
 
-const sortableFields = ['jobId', 'status', 'type', 'startTime', 'endTime'];
 const visibleColumns = ['jobId', 'status', 'type', 'description', 'source', 'startTime', 'endTime'];
 const columnMapping = {
   jobId: <FormattedMessage id="ui-export-manager.exportJob.jobId" />,
@@ -59,12 +62,13 @@ export const ExportJobsList = ({
 }) => {
   const history = useHistory();
   const location = useLocation();
+  const DEFAULT_SORTING = { [SORTING_PARAMETER]: 'jobId', [SORTING_DIRECTION_PARAMETER]: DESC_DIRECTION };
 
   const [
     sortingField,
     sortingDirection,
     changeSorting,
-  ] = useLocationSorting(location, history, resetData, sortableFields);
+  ] = useLocationSorting(location, history, resetData, visibleColumns, DEFAULT_SORTING);
 
   const { navigateToJobDetails } = useNavigation();
 
@@ -103,6 +107,7 @@ export const ExportJobsList = ({
         pagingType="none"
         onRowClick={openJobDetails}
         interactive
+        showSortIndicator
       />
       {exportJobs.length > 0 && (
         <PrevNextPagination

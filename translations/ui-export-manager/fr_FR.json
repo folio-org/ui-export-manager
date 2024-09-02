@@ -1,6 +1,6 @@
 {
-    "meta.title": "Module d'exportation",
-    "permission.export-manager.all": "Module d'exportation: tout",
+    "meta.title": "Module d'export",
+    "permission.export-manager.all": "Module d'export: tout",
     "exportJobs": "Exporter les tâches",
     "exportJob.jobId": "ID de la tâche",
     "exportJob.status": "Statut",
@@ -45,10 +45,12 @@
     "exportJob.details.type.BURSAR_FEES_FINES": "Bursar",
     "exportJob.details.type.EDIFACT_ORDERS_EXPORT": "EDIFACT orders export",
     "exportJob.details.type.E_HOLDINGS": "eHoldings",
-    "exportJob.details.type.BULK_EDIT": "Bulk edit",
+    "exportJob.details.type.BULK_EDIT": "Modification par lot",
     "exportJob.details.type.AUTH_HEADINGS_UPDATES": "MARC authority headings updates",
     "exportJob.details.type.FAILED_LINKED_BIB_UPDATES": "Failed updates: Linked bibliographic fields",
     "exportJob.details.type.BULK_EDIT_IDENTIFIERS": "Bulk edit identifiers",
     "exportJob.details.type.BULK_EDIT_QUERY": "Bulk edit query",
-    "permission.export-manager.view": "Export manager: View"
+    "permission.export-manager.view": "Export manager: View",
+    "title.all": "All",
+    "title.organizations": "Organizations"
 }

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { TextLink } from '@folio/stripes/components';
 
 import { useExportManagerPerms, useSecureDownload } from '../../hooks';
-import { EXPORTED_JOB_TYPES } from '../../constants';
+import { MULTIPLE_EXPORTED_JOB_TYPES } from '../../constants';
 import { BULK_ENTITY_TYPES } from '../../../ExportJobs/constants';
 
 export const ExportJobId = ({ job }) => {
@@ -19,11 +19,11 @@ export const ExportJobId = ({ job }) => {
     hasAllExportManagerPerms,
   } = perms;
 
-  const itemsAndHoldings = [BULK_ENTITY_TYPES.ITEM, BULK_ENTITY_TYPES.HOLDINGS_RECORD];
+  const inventoryRecords = [BULK_ENTITY_TYPES.ITEM, BULK_ENTITY_TYPES.HOLDINGS_RECORD, BULK_ENTITY_TYPES.INSTANCE];
   const showUsersLink = hasAnyUserEditPerms && entityType === BULK_ENTITY_TYPES.USER;
-  const showItemsLink = hasInAppAnyPerms && itemsAndHoldings.includes(entityType);
+  const showItemsLink = hasInAppAnyPerms && inventoryRecords.includes(entityType);
   const showAnyLink = hasAllExportManagerPerms && ((hasAnyUserEditPerms && hasInAppAnyPerms)
-      || (![BULK_ENTITY_TYPES.USER, ...itemsAndHoldings].includes(entityType)));
+      || (![BULK_ENTITY_TYPES.USER, ...inventoryRecords].includes(entityType)));
   const isShowLink = showUsersLink || showItemsLink || showAnyLink;
 
   const canDownloadFile = files?.length && isShowLink;
@@ -31,8 +31,8 @@ export const ExportJobId = ({ job }) => {
   const downloadFiles = (e) => {
     e.stopPropagation();
 
-    if (EXPORTED_JOB_TYPES.includes(jobType)) {
-      downloadSecurely(fileNames[0]);
+    if (fileNames?.length) {
+      downloadSecurely(fileNames, MULTIPLE_EXPORTED_JOB_TYPES.includes(jobType));
     } else {
       files.forEach((file, index) => {
         if (file && index !== 2) {

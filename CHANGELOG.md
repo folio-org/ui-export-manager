@@ -2,6 +2,13 @@
 
 ## (IN PROGRESS)
 
+* Update HTML Page Title on Export Manager Tabs Page. Refs UIEXPMGR-105.
+* Update logic related to download files. Refs UIEXPMGR-106.
+* React v19: refactor away from default props for functional components. Refs UIEXPMGR-108.
+* Download refactoring to support /download endpoint (Bursar). Refs UIEXPMGR-66.
+* Permissions cleanup for  Instance records. Refs UIEXPMGR-109.
+* Sort logs by Description and Source. Refs UIEXPMGR-110.
+
 ## [3.1.1](https://github.com/folio-org/ui-export-manager/tree/v3.1.1) (2024-04-02)
 [Full Changelog](https://github.com/folio-org/ui-export-manager/compare/v3.1.0...v3.1.1)
 * Screen refreshes every time user clicks links. Refs UIEXPMGR-102.

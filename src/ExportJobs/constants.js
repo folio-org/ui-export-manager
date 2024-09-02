@@ -10,6 +10,7 @@ export const BULK_ENTITY_TYPES = {
   USER: 'USER',
   ITEM: 'ITEM',
   HOLDINGS_RECORD: 'HOLDINGS_RECORD',
+  INSTANCE: 'INSTANCE',
 };
 
 export const EXPORT_JOB_TYPE_KEYS = {

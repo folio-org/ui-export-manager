@@ -50,5 +50,7 @@
     "exportJob.details.type.FAILED_LINKED_BIB_UPDATES": "Neúspěšné aktualizace: Propojená bibliografická pole",
     "exportJob.details.type.BULK_EDIT_IDENTIFIERS": "Hromadná úprava identifikátorů",
     "exportJob.details.type.BULK_EDIT_QUERY": "Dotaz pro hromadnou úpravu",
-    "permission.export-manager.view": "Správa exportu: Zobrazit"
+    "permission.export-manager.view": "Správa exportu: Zobrazit",
+    "title.all": "Všechny",
+    "title.organizations": "Organizace"
 }
