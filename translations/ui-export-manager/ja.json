@@ -38,7 +38,7 @@
     "exportJob.details.action.resend.success": "Your file upload has started successfully.",
     "permission.jobs.downloadAndResend": "Export manager: Download and re-send files",
     "exportJob.type.BULK_EDIT": "一括編集",
-    "exportJob.type.AUTH_HEADINGS_UPDATES": "Authority control",
+    "exportJob.type.AUTH_HEADINGS_UPDATES": "典拠コントロール",
     "exportJob.type.BULK_EDIT_IDENTIFIERS": "IDの一括編集",
     "exportJob.type.BULK_EDIT_QUERY": "Bulk edit query",
     "exportJob.details.type.CIRCULATION_LOG": "貸出/返却 ログ",
