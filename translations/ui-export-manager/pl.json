@@ -33,7 +33,7 @@
     "exportJob.type.E_HOLDINGS": "e-Zasoby",
     "exportJob.details.action.download": "Download",
     "exportJob.details.action.download.error": "Your file download was failed.",
-    "exportJob.details.action.resend": "Re-send",
+    "exportJob.details.action.resend": "Resend",
     "exportJob.details.action.resend.error": "Your file upload was failed.",
     "exportJob.details.action.resend.success": "Your file upload has started successfully.",
     "permission.jobs.downloadAndResend": "Export manager: Download and re-send files",
