@@ -59,7 +59,7 @@
       },
       {
         "permissionName": "ui-export-manager.jobs.downloadAndResend",
-        "displayName": "Export manager: Download and re-send files",
+        "displayName": "Export manager: Download and resend files",
         "description": "",
         "visible": true,
         "subPermissions": [

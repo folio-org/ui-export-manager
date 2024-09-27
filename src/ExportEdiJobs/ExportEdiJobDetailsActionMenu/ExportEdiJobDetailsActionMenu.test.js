@@ -122,7 +122,7 @@ describe('ExportEdiJobDetailsActionMenu', () => {
     }));
   });
 
-  it('should handle export job re-send', async () => {
+  it('should handle export job resend', async () => {
     renderExportEdiJobDetailsActionMenu();
 
     await act(async () => user.click(screen.getByTestId('job-action-resend')));
@@ -133,7 +133,7 @@ describe('ExportEdiJobDetailsActionMenu', () => {
     }));
   });
 
-  it('should handle export job re-send error', async () => {
+  it('should handle export job resend error', async () => {
     kyPostMock.mockReturnValue(Promise.reject());
 
     renderExportEdiJobDetailsActionMenu();
