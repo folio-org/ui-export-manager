@@ -36,7 +36,6 @@
     "exportJob.details.action.resend": "重新发送",
     "exportJob.details.action.resend.error": "文件上传失败。",
     "exportJob.details.action.resend.success": "文件上传已成功开始。",
-    "permission.jobs.downloadAndResend": "导出管理：下载并重新发送文件",
     "exportJob.type.BULK_EDIT": "批量编辑",
     "exportJob.type.AUTH_HEADINGS_UPDATES": "规范控制",
     "exportJob.type.BULK_EDIT_IDENTIFIERS": "批量编辑标识符",
@@ -52,5 +51,6 @@
     "exportJob.details.type.BULK_EDIT_QUERY": "批量编辑查询",
     "permission.export-manager.view": "导出管理：查看",
     "title.all": "全部",
-    "title.organizations": "组织"
+    "title.organizations": "组织",
+    "permission.jobs.downloadAndResend.execute": "Export manager: Download and resend files"
 }

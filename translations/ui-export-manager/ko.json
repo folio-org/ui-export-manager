@@ -36,7 +36,6 @@
     "exportJob.details.action.resend": "다시 보내기",
     "exportJob.details.action.resend.error": "파일 업로드에 실패했습니다.",
     "exportJob.details.action.resend.success": "파일 업로드가 성공적으로 시작되었습니다.",
-    "permission.jobs.downloadAndResend": "반출 관리자: 파일 다운로드 및 다시 보내기",
     "exportJob.type.BULK_EDIT": "대량 편집(Bulk edit)",
     "exportJob.type.AUTH_HEADINGS_UPDATES": "전거 제어",
     "exportJob.type.BULK_EDIT_IDENTIFIERS": "대량 편집(Bulk edit) 식별자",
@@ -52,5 +51,6 @@
     "exportJob.details.type.BULK_EDIT_QUERY": "대량 편집(Bulk edit) 쿼리",
     "permission.export-manager.view": "Export manager: View",
     "title.all": "All",
-    "title.organizations": "Organizations"
+    "title.organizations": "Organizations",
+    "permission.jobs.downloadAndResend.execute": "Export manager: Download and resend files"
 }
