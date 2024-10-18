@@ -36,7 +36,6 @@
     "exportJob.details.action.resend": "Znovu odeslat",
     "exportJob.details.action.resend.error": "Nahrání vašeho souboru se nezdařilo.",
     "exportJob.details.action.resend.success": "Nahrávání vašeho souboru bylo úspěšně zahájeno.",
-    "permission.jobs.downloadAndResend": "Správa exportu: Stahování a opětovné odesílání souborů",
     "exportJob.type.BULK_EDIT": "Hromadná úprava",
     "exportJob.type.AUTH_HEADINGS_UPDATES": "Kontrola autority",
     "exportJob.type.BULK_EDIT_IDENTIFIERS": "Identifikátory hromadných úprav",
@@ -52,5 +51,6 @@
     "exportJob.details.type.BULK_EDIT_QUERY": "Dotaz pro hromadnou úpravu",
     "permission.export-manager.view": "Správa exportu: Zobrazit",
     "title.all": "Všechny",
-    "title.organizations": "Organizace"
+    "title.organizations": "Organizace",
+    "permission.jobs.downloadAndResend.execute": "Export manager: Download and resend files"
 }

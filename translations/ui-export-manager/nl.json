@@ -36,7 +36,6 @@
     "exportJob.details.action.resend": "Opnieuw versturen",
     "exportJob.details.action.resend.error": "Het uploaden van uw bestand is mislukt.",
     "exportJob.details.action.resend.success": "Het uploaden van uw bestand is succesvol gestart.",
-    "permission.jobs.downloadAndResend": "Exportmanager: Bestanden downloaden en opnieuw verzenden",
     "exportJob.type.BULK_EDIT": "Bulkbewerking",
     "exportJob.type.AUTH_HEADINGS_UPDATES": "Authority-controle",
     "exportJob.type.BULK_EDIT_IDENTIFIERS": "Bulkbewerking identificatiekenmerken",
@@ -52,5 +51,6 @@
     "exportJob.details.type.BULK_EDIT_QUERY": "Bulkbewerking query",
     "permission.export-manager.view": "Exportmanager: Bekijken",
     "title.all": "Alle",
-    "title.organizations": "Organisaties"
+    "title.organizations": "Organisaties",
+    "permission.jobs.downloadAndResend.execute": "Export manager: Download and resend files"
 }

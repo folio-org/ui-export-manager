@@ -36,7 +36,6 @@
     "exportJob.details.action.resend": "Vuelva a enviar",
     "exportJob.details.action.resend.error": "Su carga de archivo falló.",
     "exportJob.details.action.resend.success": "La carga de archivos se ha iniciado correctamente.",
-    "permission.jobs.downloadAndResend": "Gestor de exportaciones: Descarga y reenvío de archivos",
     "exportJob.type.BULK_EDIT": "Cambios globales",
     "exportJob.type.AUTH_HEADINGS_UPDATES": "Control de la autoridad",
     "exportJob.type.BULK_EDIT_IDENTIFIERS": "Identificadores de edición masiva",
@@ -52,5 +51,6 @@
     "exportJob.details.type.BULK_EDIT_QUERY": "Consulta Cambios globales",
     "permission.export-manager.view": "Gestor de exportaciones: Ver",
     "title.all": "All",
-    "title.organizations": "Organizations"
+    "title.organizations": "Organizations",
+    "permission.jobs.downloadAndResend.execute": "Export manager: Download and resend files"
 }

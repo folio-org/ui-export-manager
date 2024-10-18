@@ -36,7 +36,6 @@
     "exportJob.details.action.resend": "重新寄送",
     "exportJob.details.action.resend.error": "檔案上傳失敗",
     "exportJob.details.action.resend.success": "檔案已開始成功上傳",
-    "permission.jobs.downloadAndResend": "匯出管理員：下載並重新寄送檔案",
     "exportJob.type.BULK_EDIT": "批次編輯",
     "exportJob.type.AUTH_HEADINGS_UPDATES": "權威控制",
     "exportJob.type.BULK_EDIT_IDENTIFIERS": "批次編輯識別號",
@@ -52,5 +51,6 @@
     "exportJob.details.type.BULK_EDIT_QUERY": "批次編輯查詢",
     "permission.export-manager.view": "匯出管理員：檢視",
     "title.all": "全部",
-    "title.organizations": "組織機構"
+    "title.organizations": "組織機構",
+    "permission.jobs.downloadAndResend.execute": "Export manager: Download and resend files"
 }
