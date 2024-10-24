@@ -1,9 +1,9 @@
 export const EXPORT_JOB_STATUSES = ['SCHEDULED', 'IN_PROGRESS', 'SUCCESSFUL', 'FAILED'];
 
 export const BULK_PERMISSIONS = {
-  BULK_EDIT_IN_APP_VIEW: 'ui-bulk-edit.app-view',
-  BULK_EDIT_LOCAL_VIEW: 'ui-bulk-edit.view',
-  BULK_EDIT_IN_APP_EDIT_USERS: 'ui-bulk-edit.app-edit.users',
+  BULK_EDIT_IN_APP_VIEW: 'ui-bulk-edit.inventory.view',
+  BULK_EDIT_LOCAL_VIEW: 'ui-bulk-edit.users.csv.view',
+  BULK_EDIT_IN_APP_EDIT_USERS: 'ui-bulk-edit.users.edit',
 };
 
 export const BULK_ENTITY_TYPES = {
