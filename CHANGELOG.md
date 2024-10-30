@@ -2,6 +2,9 @@
 
 ## (IN PROGRESS)
 
+## [3.2.0](https://github.com/folio-org/ui-export-manager/tree/v3.2.0) (2024-10-31)
+[Full Changelog](https://github.com/folio-org/ui-export-manager/compare/v3.1.1...v3.2.0)
+
 * Update HTML Page Title on Export Manager Tabs Page. Refs UIEXPMGR-105.
 * Update logic related to download files. Refs UIEXPMGR-106.
 * React v19: refactor away from default props for functional components. Refs UIEXPMGR-108.
