@@ -13,6 +13,7 @@
 * Sort logs by Description and Source. Refs UIEXPMGR-110.
 * UX: Removal of hyphen in Resend. Refs UIEXPMGR-112.
 * Bump "@folio/stripes-acq-components" version to v6.0.0
+* Review and cleanup Module Descriptors for ui-export-manager. Refs UIEXPMGR-119.
 
 ## [3.1.1](https://github.com/folio-org/ui-export-manager/tree/v3.1.1) (2024-04-02)
 [Full Changelog](https://github.com/folio-org/ui-export-manager/compare/v3.1.0...v3.1.1)
