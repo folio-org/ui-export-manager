@@ -52,5 +52,5 @@
     "permission.export-manager.view": "Správa exportu: Zobrazit",
     "title.all": "Všechny",
     "title.organizations": "Organizace",
-    "permission.jobs.downloadAndResend.execute": "Export manager: Download and resend files"
+    "permission.jobs.downloadAndResend.execute": "Správa exportu: Stahování a opětovné odesílání souborů"
 }
