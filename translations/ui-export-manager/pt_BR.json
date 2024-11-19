@@ -12,7 +12,7 @@
     "exportJob": "Trabalho de exportação {jobId}",
     "exportJob.outputType": "Tipo de saída",
     "exportJob.errorDetails": "Detalhes do erro",
-    "exportJobs.search": "Pesquisar",
+    "exportJobs.search": "Buscar",
     "exportJob.system": "Sistema",
     "exportJob.status.SCHEDULED": "Agendado",
     "exportJob.status.IN_PROGRESS": "Em andamento",
