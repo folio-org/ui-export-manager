@@ -1,6 +1,6 @@
 {
     "meta.title": "Zarządzanie eksportem",
-    "permission.export-manager.all": "Menedżer eksportu: Wszystkie",
+    "permission.export-manager.all": "Zarządzanie eksportem: wszystko",
     "exportJobs": "Zadania eksportu",
     "exportJob.jobId": "ID zadania",
     "exportJob.status": "Status",
@@ -46,11 +46,11 @@
     "exportJob.details.type.E_HOLDINGS": "e-Zasoby",
     "exportJob.details.type.BULK_EDIT": "Edycja masowa",
     "exportJob.details.type.AUTH_HEADINGS_UPDATES": "Aktualizacje haseł KHW",
-    "exportJob.details.type.FAILED_LINKED_BIB_UPDATES": "Failed updates: Linked bibliographic fields",
+    "exportJob.details.type.FAILED_LINKED_BIB_UPDATES": "Nieudane aktualizacje: połączeń haseł z opisami bibliograficznymi",
     "exportJob.details.type.BULK_EDIT_IDENTIFIERS": "Identyfikatory edycji grupowej",
     "exportJob.details.type.BULK_EDIT_QUERY": "Zapytanie edycji grupowej",
-    "permission.export-manager.view": "Export manager: View",
+    "permission.export-manager.view": "Zarządzanie eksportem: wyświetlanie",
     "title.all": "Wszystko",
     "title.organizations": "Organizacje",
-    "permission.jobs.downloadAndResend.execute": "Export manager: Download and resend files"
+    "permission.jobs.downloadAndResend.execute": "Zarządzanie eksportem: pobieranie i ponowne wysyłanie plików"
 }
