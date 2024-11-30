@@ -14,7 +14,7 @@
     "exportJob.errorDetails": "Detaily chyby",
     "exportJobs.search": "Vyhledat",
     "exportJob.system": "Systém",
-    "exportJob.status.SCHEDULED": "Rozvrženo",
+    "exportJob.status.SCHEDULED": "Naplánováno",
     "exportJob.status.IN_PROGRESS": "Probíhá",
     "exportJob.status.SUCCESSFUL": "Úspěšný",
     "exportJob.status.FAILED": "Neúspěšný",
