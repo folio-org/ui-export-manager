@@ -52,5 +52,5 @@
     "permission.export-manager.view": "导出管理：查看",
     "title.all": "全部",
     "title.organizations": "组织",
-    "permission.jobs.downloadAndResend.execute": "Export manager: Download and resend files"
+    "permission.jobs.downloadAndResend.execute": "导出管理：下载并重新发送文件"
 }
