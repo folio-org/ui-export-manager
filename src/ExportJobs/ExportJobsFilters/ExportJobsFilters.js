@@ -49,9 +49,9 @@ const typeFilterOptions = EXPORT_JOB_TYPES.map(type => ({
 }));
 
 export const ExportJobsFilters = ({
-    disabled = false,
-    activeFilters,
-    applyFilters,
+  disabled = false,
+  activeFilters,
+  applyFilters,
 }) => {
   const adaptedApplyFilters = useCallback(
     applyFiltersAdapter(applyFilters),
