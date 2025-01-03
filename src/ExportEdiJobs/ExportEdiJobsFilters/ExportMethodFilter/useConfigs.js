@@ -1,12 +1,33 @@
-import React from 'react';
 import { useQuery } from 'react-query';
 
 import {
   useNamespace,
   useOkapiKy,
 } from '@folio/stripes/core';
+import {
+  CQL_OR_OPERATOR,
+  DATA_EXPORT_CONFIGS_API,
+  LIMIT_MAX,
+  ORGANIZATION_INTEGRATION_EXPORT_TYPES,
+} from '@folio/stripes-acq-components';
 
-import { LIMIT_MAX } from '@folio/stripes-acq-components';
+const JOIN_STRING = ` ${CQL_OR_OPERATOR} `;
+
+const buildConfigNameCql = (organizationId) => {
+  const configName = ORGANIZATION_INTEGRATION_EXPORT_TYPES
+    .map(type => `"${type}_${organizationId}*"`)
+    .join(JOIN_STRING);
+
+  return `configName==(${configName})`;
+};
+
+const buildTypeCql = () => {
+  const type = ORGANIZATION_INTEGRATION_EXPORT_TYPES
+    .map((t) => `"${t}"`)
+    .join(JOIN_STRING);
+
+  return `type==(${type})`;
+};
 
 export const useConfigs = (organizationId) => {
   const ky = useOkapiKy();
@@ -14,14 +35,14 @@ export const useConfigs = (organizationId) => {
 
   const searchParams = {
     query: organizationId
-      ? `configName==EDIFACT_ORDERS_EXPORT_${organizationId}*`
-      : 'type==EDIFACT_ORDERS_EXPORT',
+      ? buildConfigNameCql(organizationId)
+      : buildTypeCql(),
     limit: LIMIT_MAX,
   };
 
   const { isFetching, data = {} } = useQuery(
     [namespace, organizationId],
-    () => ky.get('data-export-spring/configs', { searchParams }).json(),
+    () => ky.get(DATA_EXPORT_CONFIGS_API, { searchParams }).json(),
   );
 
   return ({

@@ -7,6 +7,7 @@
   "exportJobs.search": "Search",
 
   "exportJob": "Export job {jobId}",
+  "exportJob.download": "Download",
   "exportJob.jobId": "Job ID",
   "exportJob.status": "Status",
   "exportJob.type": "Job type",
@@ -22,6 +23,10 @@
   "exportJob.sentTo": "Sent to",
   "exportJob.fileName": "File name",
 
+  "exportJob.integrationType": "Integration type",
+  "exportJob.integrationType.claiming": "Claims",
+  "exportJob.integrationType.ordering": "Orders",
+
   "exportJob.status.SCHEDULED": "Scheduled",
   "exportJob.status.IN_PROGRESS": "In progress",
   "exportJob.status.SUCCESSFUL": "Successful",
@@ -29,12 +34,13 @@
 
   "exportJob.type.CIRCULATION_LOG": "Circulation log",
   "exportJob.type.BURSAR_FEES_FINES": "Bursar",
-  "exportJob.type.EDIFACT_ORDERS_EXPORT": "EDIFACT orders export",
   "exportJob.type.E_HOLDINGS": "eHoldings",
   "exportJob.type.BULK_EDIT": "Bulk edit",
   "exportJob.type.AUTH_HEADINGS_UPDATES": "Authority control",
   "exportJob.type.BULK_EDIT_IDENTIFIERS": "Bulk edit identifiers",
   "exportJob.type.BULK_EDIT_QUERY": "Bulk edit query",
+  "exportJob.type.ORDERS_EDI": "Orders (EDI)",
+  "exportJob.type.ORDERS_CSV": "Orders (CSV)",
 
   "exportJob.details.type.CIRCULATION_LOG": "Circulation log",
   "exportJob.details.type.BURSAR_FEES_FINES": "Bursar",

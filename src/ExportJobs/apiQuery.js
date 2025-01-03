@@ -1,15 +1,37 @@
-import { useInfiniteQuery } from 'react-query';
 import queryString from 'query-string';
+import { useInfiniteQuery } from 'react-query';
 
 import { useOkapiKy } from '@folio/stripes/core';
 import {
   buildDateRangeQuery,
+  CQL_OR_OPERATOR,
   makeQueryBuilder,
+  ORGANIZATION_INTEGRATION_EXPORT_TYPES,
 } from '@folio/stripes-acq-components';
 
-const BULK_EDIT_QUERY = 'type==("BULK_EDIT_IDENTIFIERS" or "BULK_EDIT_QUERY" or "BULK_EDIT_UPDATE")';
+import { EXPORT_JOB_TYPE_KEYS } from './constants';
+
 const BULK_EDIT_TYPE = '"BULK_EDIT_IDENTIFIERS" or "BULK_EDIT_QUERY" or "BULK_EDIT_UPDATE"';
-const BULK_EDIT = 'BULK_EDIT';
+
+const ORDERS_JOB_TYPES = [
+  EXPORT_JOB_TYPE_KEYS.ORDERS_CSV,
+  EXPORT_JOB_TYPE_KEYS.ORDERS_EDI,
+];
+const ORDERS_JOB_TYPES_CQL_VALUE = ORGANIZATION_INTEGRATION_EXPORT_TYPES
+  .map((type) => `"${type}"`)
+  .join(CQL_OR_OPERATOR);
+
+const buildOrdersJobTypeQuery = () => {};
+
+const mapJobTypesToCql = (types) => {
+  const value = types.map(v => {
+    if (v === EXPORT_JOB_TYPE_KEYS.BULK_EDIT) {
+      return BULK_EDIT_TYPE;
+    } else return `"${v}"`;
+  }).join(' or ');
+
+  return `type==(${value})`;
+};
 
 const buildJobsQuery = makeQueryBuilder(
   'cql.allRecords=1',
@@ -21,15 +43,17 @@ const buildJobsQuery = makeQueryBuilder(
     endTime: buildDateRangeQuery.bind(null, ['endTime']),
     startTime: buildDateRangeQuery.bind(null, ['startTime']),
     type: (query) => {
-      if (query === BULK_EDIT) {
-        return BULK_EDIT_QUERY;
-      } else if (Array.isArray(query)) {
-        return `type==(${query.map(v => {
-          if (v === BULK_EDIT) {
-            return BULK_EDIT_TYPE;
-          } else return `"${v}"`;
-        }).join(' or ')})`;
-      } else return `type==${query}`;
+      const queryDict = {
+        [EXPORT_JOB_TYPE_KEYS.BULK_EDIT]: `(${BULK_EDIT_TYPE})`,
+        [EXPORT_JOB_TYPE_KEYS.ORDERS_CSV]: `(${ORDERS_JOB_TYPES_CQL_VALUE})`,
+        [EXPORT_JOB_TYPE_KEYS.ORDERS_EDI]: `(${ORDERS_JOB_TYPES_CQL_VALUE})`,
+      };
+
+      if (Array.isArray(query)) {
+        return mapJobTypesToCql(query);
+      } else {
+        return `type==${queryDict[query] ?? query}`;
+      }
     },
   },
   {
