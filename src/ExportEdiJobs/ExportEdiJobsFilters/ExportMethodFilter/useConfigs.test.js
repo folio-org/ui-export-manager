@@ -47,7 +47,7 @@ describe('useConfigs', () => {
       'data-export-spring/configs',
       {
         searchParams: {
-          query: 'type==EDIFACT_ORDERS_EXPORT',
+          query: 'type==("CLAIMS" or "EDIFACT_ORDERS_EXPORT")',
           limit: LIMIT_MAX,
         },
       },
