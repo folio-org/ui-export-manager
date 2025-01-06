@@ -38,3 +38,8 @@ export const EXPORTED_JOB_TYPES = [
   'AUTH_HEADINGS_UPDATES',
   'FAILED_LINKED_BIB_UPDATES',
 ];
+
+export const EXPORT_FILE_TYPE = {
+  edi: 'EDI',
+  csv: 'CSV',
+};

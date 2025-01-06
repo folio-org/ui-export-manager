@@ -4,57 +4,87 @@ import { useInfiniteQuery } from 'react-query';
 import { useOkapiKy } from '@folio/stripes/core';
 import {
   buildDateRangeQuery,
+  CQL_AND_OPERATOR,
   CQL_OR_OPERATOR,
   makeQueryBuilder,
   ORGANIZATION_INTEGRATION_EXPORT_TYPES,
 } from '@folio/stripes-acq-components';
 
+import { EXPORT_FILE_TYPE } from '../common/constants';
 import { EXPORT_JOB_TYPE_KEYS } from './constants';
 
+const AND_SEPARATOR = ` ${CQL_AND_OPERATOR} `;
+const OR_SEPARATOR = ` ${CQL_OR_OPERATOR} `;
 const BULK_EDIT_TYPE = '"BULK_EDIT_IDENTIFIERS" or "BULK_EDIT_QUERY" or "BULK_EDIT_UPDATE"';
+const EDI_ORDERS_FILE_FORMAT_KEY = 'jsonb.exportTypeSpecificParameters.vendorEdiOrdersExportConfig.fileFormat';
 
-const ORDERS_JOB_TYPES = [
-  EXPORT_JOB_TYPE_KEYS.ORDERS_CSV,
-  EXPORT_JOB_TYPE_KEYS.ORDERS_EDI,
-];
-const ORDERS_JOB_TYPES_CQL_VALUE = ORGANIZATION_INTEGRATION_EXPORT_TYPES
-  .map((type) => `"${type}"`)
-  .join(CQL_OR_OPERATOR);
+const ORDERS_JOB_TYPES_CQL_VALUE = ORGANIZATION_INTEGRATION_EXPORT_TYPES.join(` ${CQL_OR_OPERATOR} `);
 
-const buildOrdersJobTypeQuery = () => {};
+const buildOrdersJobTypeQueryDict = (fileType) => ({
+  type: `${ORDERS_JOB_TYPES_CQL_VALUE}`,
+  [EDI_ORDERS_FILE_FORMAT_KEY]: `"${fileType}"`,
+});
 
+const typeQueryDict = {
+  [EXPORT_JOB_TYPE_KEYS.BULK_EDIT]: { type: `${BULK_EDIT_TYPE}` },
+  [EXPORT_JOB_TYPE_KEYS.ORDERS_CSV]: buildOrdersJobTypeQueryDict(EXPORT_FILE_TYPE.csv),
+  [EXPORT_JOB_TYPE_KEYS.ORDERS_EDI]: buildOrdersJobTypeQueryDict(EXPORT_FILE_TYPE.edi),
+};
+
+/*
+ * Function to build CQL query from an array of dictionaries (objects)
+ */
+const buildCqlQueryFromDicts = (arr) => {
+  /* Group objects by their keys to optimize the CQL query */
+  const grouped = arr.reduce((acc, obj) => {
+    const key = Object.keys(obj).sort().join('_');
+
+    acc[key] = acc[key] || [];
+    acc[key].push(obj);
+
+    return acc;
+  }, {});
+
+  /* Transform grouped objects into CQL conditions */
+  const cqlParts = Object.values(grouped).map((group) => {
+    const uniqueConditions = group.reduce((acc, obj) => {
+      Object.entries(obj).forEach(([key, value]) => {
+        if (!acc[key]) {
+          acc[key] = new Set();
+        }
+        acc[key].add(value);
+      });
+
+      return acc;
+    }, {});
+
+    const conditions = Object.entries(uniqueConditions)
+      .map(([key, values]) => `${key}==(${[...values].join(OR_SEPARATOR)})`)
+      .join(AND_SEPARATOR);
+
+    return `(${conditions})`;
+  });
+
+  return cqlParts.join(OR_SEPARATOR);
+};
+
+/*
+ * Function to map job types to their CQL representation
+*/
 const mapJobTypesToCql = (types) => {
-  const value = types.map(v => {
-    if (v === EXPORT_JOB_TYPE_KEYS.BULK_EDIT) {
-      return BULK_EDIT_TYPE;
-    } else return `"${v}"`;
-  }).join(' or ');
+  const queryDicts = types.map((type) => typeQueryDict[type] ?? { type });
 
-  return `type==(${value})`;
+  return buildCqlQueryFromDicts(queryDicts);
 };
 
 const buildJobsQuery = makeQueryBuilder(
   'cql.allRecords=1',
-  (query) => {
-    return `name="*${query}*" or description="*${query}*"`;
-  },
+  (query) => `name="*${query}*" or description="*${query}*"`,
   'sortby name/sort.descending',
   {
     endTime: buildDateRangeQuery.bind(null, ['endTime']),
     startTime: buildDateRangeQuery.bind(null, ['startTime']),
-    type: (query) => {
-      const queryDict = {
-        [EXPORT_JOB_TYPE_KEYS.BULK_EDIT]: `(${BULK_EDIT_TYPE})`,
-        [EXPORT_JOB_TYPE_KEYS.ORDERS_CSV]: `(${ORDERS_JOB_TYPES_CQL_VALUE})`,
-        [EXPORT_JOB_TYPE_KEYS.ORDERS_EDI]: `(${ORDERS_JOB_TYPES_CQL_VALUE})`,
-      };
-
-      if (Array.isArray(query)) {
-        return mapJobTypesToCql(query);
-      } else {
-        return `type==${queryDict[query] ?? query}`;
-      }
-    },
+    type: (query) => mapJobTypesToCql(Array.isArray(query) ? query : [query]),
   },
   {
     jobId: 'name',
