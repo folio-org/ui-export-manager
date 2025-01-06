@@ -37,7 +37,9 @@ const typeQueryDict = {
 const buildCqlQueryFromDicts = (arr) => {
   /* Group objects by their keys to optimize the CQL query */
   const grouped = arr.reduce((acc, obj) => {
-    const key = Object.keys(obj).sort().join('_');
+    const key = Object.keys(obj)
+      .sort((a, b) => a.localeCompare(b))
+      .join('_');
 
     acc[key] = acc[key] || [];
     acc[key].push(obj);
