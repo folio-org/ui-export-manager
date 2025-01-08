@@ -18,7 +18,9 @@ const OR_SEPARATOR = ` ${CQL_OR_OPERATOR} `;
 const BULK_EDIT_TYPE = '"BULK_EDIT_IDENTIFIERS" or "BULK_EDIT_QUERY" or "BULK_EDIT_UPDATE"';
 const EDI_ORDERS_FILE_FORMAT_KEY = 'jsonb.exportTypeSpecificParameters.vendorEdiOrdersExportConfig.fileFormat';
 
-const ORDERS_JOB_TYPES_CQL_VALUE = ORGANIZATION_INTEGRATION_EXPORT_TYPES.join(` ${CQL_OR_OPERATOR} `);
+const ORDERS_JOB_TYPES_CQL_VALUE = ORGANIZATION_INTEGRATION_EXPORT_TYPES
+  .map((t) => `"${t}"`)
+  .join(` ${CQL_OR_OPERATOR} `);
 
 const buildOrdersJobTypeQueryDict = (fileType) => ({
   type: `${ORDERS_JOB_TYPES_CQL_VALUE}`,
