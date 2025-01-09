@@ -1,14 +1,29 @@
-import { useInfiniteQuery } from 'react-query';
 import queryString from 'query-string';
+import { useInfiniteQuery } from 'react-query';
 
-import { useOkapiKy, useNamespace } from '@folio/stripes/core';
+import {
+  useOkapiKy,
+  useNamespace,
+} from '@folio/stripes/core';
 import {
   buildDateRangeQuery,
+  CQL_OR_OPERATOR,
   makeQueryBuilder,
+  ORGANIZATION_INTEGRATION_EXPORT_TYPES,
 } from '@folio/stripes-acq-components';
 
+const buildIntegrationTypesCqlValue = (type) => {
+  if (!Array.isArray(type)) return type;
+
+  const value = type
+    .map((t) => `"${t}"`)
+    .join(` ${CQL_OR_OPERATOR} `);
+
+  return `(${value})`;
+};
+
 const buildJobsQuery = makeQueryBuilder(
-  'type="EDIFACT_ORDERS_EXPORT"',
+  `type=${buildIntegrationTypesCqlValue(ORGANIZATION_INTEGRATION_EXPORT_TYPES)}`,
   (query) => {
     return `name="*${query}*" or description="*${query}*"`;
   },
@@ -18,6 +33,9 @@ const buildJobsQuery = makeQueryBuilder(
     startTime: buildDateRangeQuery.bind(null, ['startTime']),
     vendorId: (id) => `jsonb.exportTypeSpecificParameters.vendorEdiOrdersExportConfig.vendorId=="${id}"`,
     exportConfigId: (id) => `jsonb.exportTypeSpecificParameters.vendorEdiOrdersExportConfig.exportConfigId=="${id}"`,
+    integrationType: (type) => (
+      `jsonb.exportTypeSpecificParameters.vendorEdiOrdersExportConfig.integrationType==${buildIntegrationTypesCqlValue(type)}`
+    ),
   },
   {
     jobId: 'name',
@@ -41,7 +59,10 @@ export const useExportEdiJobsQuery = (search, pagination, filters) => {
         searchParams: {
           limit: pagination.limit,
           offset: pagination.offset,
-          query: buildJobsQuery(queryString.parse(`${search}&type=EDIFACT_ORDERS_EXPORT`)),
+          query: buildJobsQuery({
+            type: ORGANIZATION_INTEGRATION_EXPORT_TYPES,
+            ...queryString.parse(`${search}`),
+          }),
         },
       };
 

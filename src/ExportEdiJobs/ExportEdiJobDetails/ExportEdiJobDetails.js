@@ -1,6 +1,9 @@
-import React, { useCallback } from 'react';
+import { useCallback } from 'react';
 import PropTypes from 'prop-types';
-import { FormattedMessage, useIntl } from 'react-intl';
+import {
+  FormattedMessage,
+  useIntl,
+} from 'react-intl';
 
 import {
   Col,
@@ -26,14 +29,24 @@ import { useNavigation } from '../../hooks';
 import { useExportJobQuery } from '../../ExportJob/apiQuery';
 import { ExportEdiJobDetailsActionMenu } from '../ExportEdiJobDetailsActionMenu';
 
+const FILE_DOWNLOAD = 'File download';
+
+const getSentToValue = (exportConfig, intl) => {
+  if (exportConfig?.transmissionMethod === FILE_DOWNLOAD) {
+    return intl.formatMessage({ id: 'ui-export-manager.exportJob.download' });
+  }
+
+  return `${exportConfig?.ediFtp?.serverAddress}${exportConfig?.ediFtp?.orderDirectory || ''}`;
+};
+
 export const ExportEdiJobDetails = ({ refetchJobs, uuid }) => {
-  const { formatMessage } = useIntl();
+  const intl = useIntl();
   const { navigateToEdiJobs } = useNavigation();
-  const perms = useExportManagerPerms()
+  const perms = useExportManagerPerms();
 
   const {
     hasAllExportManagerPerms
-  } = perms
+  } = perms;
 
   const {
     isLoading: isJobLoading,
@@ -54,7 +67,7 @@ export const ExportEdiJobDetails = ({ refetchJobs, uuid }) => {
     isLoading: isOrganizationLoading,
   } = useOrganization(exportConfig?.vendorId);
 
-  const title = formatMessage(
+  const title = intl.formatMessage(
     { id: 'ui-export-manager.exportJob' },
     { jobId: exportJob.jobId },
   );
@@ -164,7 +177,7 @@ export const ExportEdiJobDetails = ({ refetchJobs, uuid }) => {
         <Col xs={3}>
           <KeyValue
             label={<FormattedMessage id="ui-export-manager.exportJob.sentTo" />}
-            value={`${exportConfig?.ediFtp?.serverAddress}${exportConfig?.ediFtp?.orderDirectory || ''}`}
+            value={getSentToValue(exportConfig, intl)}
           />
         </Col>
 

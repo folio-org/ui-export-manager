@@ -15,15 +15,18 @@ import {
   PluggableOrganizationFilter,
 } from '@folio/stripes-acq-components';
 
-import { EXPORT_JOB_STATUS_OPTIONS } from '../../common/constants';
+import {
+  EXPORT_JOB_STATUS_OPTIONS,
+  ORGANIZATION_INTEGRATION_TYPE_OPTIONS,
+} from '../../common/constants';
 import { ExportMethodFilter } from './ExportMethodFilter';
 
 const applyFiltersAdapter = (applyFilters) => ({ name, values }) => applyFilters(name, values);
 
 export const ExportEdiJobsFilters = ({
-    disabled = false,
-    activeFilters,
-    applyFilters,
+  disabled = false,
+  activeFilters,
+  applyFilters,
 }) => {
   const adaptedApplyFilters = useCallback(
     applyFiltersAdapter(applyFilters),
@@ -40,6 +43,17 @@ export const ExportEdiJobsFilters = ({
         name="status"
         onChange={adaptedApplyFilters}
         options={EXPORT_JOB_STATUS_OPTIONS}
+        closedByDefault={false}
+      />
+
+      <AcqCheckboxFilter
+        id="integration-type-filter"
+        activeFilters={activeFilters?.integrationType}
+        disabled={disabled}
+        labelId="ui-export-manager.exportJob.integrationType"
+        name="integrationType"
+        onChange={adaptedApplyFilters}
+        options={ORGANIZATION_INTEGRATION_TYPE_OPTIONS}
         closedByDefault={false}
       />
 
