@@ -27,7 +27,6 @@
     "exportJob.details.action.rerun": "Executar novamente",
     "exportJob.details.action.rerun.success": "O trabalho de exportação <b>{name}</b> foi executado novamente com sucesso.",
     "exportJob.details.action.rerun.error": "A reexecução do trabalho de exportação <b> {name} </b> falhou.",
-    "exportJob.type.EDIFACT_ORDERS_EXPORT": "Exportação de pedidos EDIFACT",
     "exportJob.sentTo": "Enviado para",
     "exportJob.fileName": "Nome do arquivo",
     "exportJob.type.E_HOLDINGS": "Coleção eletrônica",
@@ -52,5 +51,11 @@
     "permission.export-manager.view": "Gerenciador de exportação: Ver",
     "title.all": "Todos",
     "title.organizations": "Organizações",
-    "permission.jobs.downloadAndResend.execute": "Gerenciador de exportação: Baixe e reenvie arquivos"
+    "permission.jobs.downloadAndResend.execute": "Gerenciador de exportação: Baixe e reenvie arquivos",
+    "exportJob.download": "Baixar",
+    "exportJob.integrationType": "Tipo de integração",
+    "exportJob.integrationType.claiming": "Reclamatórias",
+    "exportJob.integrationType.ordering": "Pedidos",
+    "exportJob.type.ORDERS_EDI": "Pedidos (EDI)",
+    "exportJob.type.ORDERS_CSV": "Pedidos (CSV)"
 }

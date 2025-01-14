@@ -27,7 +27,6 @@
     "exportJob.details.action.rerun": "إعادة تشغيل",
     "exportJob.details.action.rerun.success": "تمت إعادة تشغيل مهمة التصدير <b>{name}</b> بنجاح.",
     "exportJob.details.action.rerun.error": "فشلت إعادة تشغيل مهمة التصدير <b>{name}</b>.",
-    "exportJob.type.EDIFACT_ORDERS_EXPORT": "تصدير طلبيات EDIFACT",
     "exportJob.sentTo": "تم إرساله إلى",
     "exportJob.fileName": "اسم الملف",
     "exportJob.type.E_HOLDINGS": "المقتنيات الإلكترونية",
@@ -52,5 +51,11 @@
     "permission.export-manager.view": "Export manager: View",
     "title.all": "All",
     "title.organizations": "Organizations",
-    "permission.jobs.downloadAndResend.execute": "Export manager: Download and resend files"
+    "permission.jobs.downloadAndResend.execute": "Export manager: Download and resend files",
+    "exportJob.download": "Download",
+    "exportJob.integrationType": "Integration type",
+    "exportJob.integrationType.claiming": "Claims",
+    "exportJob.integrationType.ordering": "Orders",
+    "exportJob.type.ORDERS_EDI": "Orders (EDI)",
+    "exportJob.type.ORDERS_CSV": "Orders (CSV)"
 }

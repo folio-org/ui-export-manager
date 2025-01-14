@@ -27,7 +27,6 @@
     "exportJob.details.action.rerun": "재실행",
     "exportJob.details.action.rerun.success": "반출 작업 <b> {name} </b> 이(가) 성공적으로 다시 실행되었습니다.",
     "exportJob.details.action.rerun.error": "반출 작업 <b> {name} </b> 재실행에 실패했습니다.",
-    "exportJob.type.EDIFACT_ORDERS_EXPORT": "EDIFACT 주문 반출",
     "exportJob.sentTo": "전송(To)",
     "exportJob.fileName": "파일 이름",
     "exportJob.type.E_HOLDINGS": "전자자원 리스트(eHoldings)",
@@ -52,5 +51,11 @@
     "permission.export-manager.view": "Export manager: View",
     "title.all": "All",
     "title.organizations": "Organizations",
-    "permission.jobs.downloadAndResend.execute": "Export manager: Download and resend files"
+    "permission.jobs.downloadAndResend.execute": "Export manager: Download and resend files",
+    "exportJob.download": "Download",
+    "exportJob.integrationType": "Integration type",
+    "exportJob.integrationType.claiming": "Claims",
+    "exportJob.integrationType.ordering": "Orders",
+    "exportJob.type.ORDERS_EDI": "Orders (EDI)",
+    "exportJob.type.ORDERS_CSV": "Orders (CSV)"
 }

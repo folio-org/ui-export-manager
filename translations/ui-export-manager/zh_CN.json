@@ -27,7 +27,6 @@
     "exportJob.details.action.rerun": "重新运行",
     "exportJob.details.action.rerun.success": "导出任务<b> {name} </b>已成功重新运行。",
     "exportJob.details.action.rerun.error": "作业<b> {name}</b>重新导出失败。",
-    "exportJob.type.EDIFACT_ORDERS_EXPORT": "EDIFACT(用于行政、商业和运输的电子数据交换)订单导出",
     "exportJob.sentTo": "送至",
     "exportJob.fileName": "文件名",
     "exportJob.type.E_HOLDINGS": "电子馆藏",
@@ -52,5 +51,11 @@
     "permission.export-manager.view": "导出管理：查看",
     "title.all": "全部",
     "title.organizations": "组织",
-    "permission.jobs.downloadAndResend.execute": "导出管理：下载并重新发送文件"
+    "permission.jobs.downloadAndResend.execute": "导出管理：下载并重新发送文件",
+    "exportJob.download": "Download",
+    "exportJob.integrationType": "Integration type",
+    "exportJob.integrationType.claiming": "Claims",
+    "exportJob.integrationType.ordering": "Orders",
+    "exportJob.type.ORDERS_EDI": "Orders (EDI)",
+    "exportJob.type.ORDERS_CSV": "Orders (CSV)"
 }

@@ -27,7 +27,6 @@
     "exportJob.details.action.rerun": "Rerun",
     "exportJob.details.action.rerun.success": "Export job <b>{name}</b> was successfully rerun.",
     "exportJob.details.action.rerun.error": "Export job <b>{name}</b> rerun was failed.",
-    "exportJob.type.EDIFACT_ORDERS_EXPORT": "EDIFACT orders export",
     "exportJob.sentTo": "Sent to",
     "exportJob.fileName": "ファイル名",
     "exportJob.type.E_HOLDINGS": "電子所蔵",
@@ -52,5 +51,11 @@
     "permission.export-manager.view": "Export manager: View",
     "title.all": "全て",
     "title.organizations": "組織",
-    "permission.jobs.downloadAndResend.execute": "Export manager: Download and resend files"
+    "permission.jobs.downloadAndResend.execute": "Export manager: Download and resend files",
+    "exportJob.download": "Download",
+    "exportJob.integrationType": "Integration type",
+    "exportJob.integrationType.claiming": "Claims",
+    "exportJob.integrationType.ordering": "Orders",
+    "exportJob.type.ORDERS_EDI": "Orders (EDI)",
+    "exportJob.type.ORDERS_CSV": "Orders (CSV)"
 }

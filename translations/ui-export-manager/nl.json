@@ -27,7 +27,6 @@
     "exportJob.details.action.rerun": "Opnieuw uitvoeren",
     "exportJob.details.action.rerun.success": "Exporttaak <b>{name}</b> is met succes opnieuw uitgevoerd.",
     "exportJob.details.action.rerun.error": "Het opnieuw uitvoeren van de exporttaak <b>{name}</b> is mislukt.",
-    "exportJob.type.EDIFACT_ORDERS_EXPORT": "EDIFACT-orders exporteren",
     "exportJob.sentTo": "Verzonden naar",
     "exportJob.fileName": "Bestandsnaam",
     "exportJob.type.E_HOLDINGS": "E-holdings",
@@ -52,5 +51,11 @@
     "permission.export-manager.view": "Exportmanager: Bekijken",
     "title.all": "Alle",
     "title.organizations": "Organisaties",
-    "permission.jobs.downloadAndResend.execute": "Export manager: Download and resend files"
+    "permission.jobs.downloadAndResend.execute": "Export manager: Download and resend files",
+    "exportJob.download": "Download",
+    "exportJob.integrationType": "Integration type",
+    "exportJob.integrationType.claiming": "Claims",
+    "exportJob.integrationType.ordering": "Orders",
+    "exportJob.type.ORDERS_EDI": "Orders (EDI)",
+    "exportJob.type.ORDERS_CSV": "Orders (CSV)"
 }
