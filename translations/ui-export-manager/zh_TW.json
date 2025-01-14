@@ -27,7 +27,6 @@
     "exportJob.details.action.rerun": "重新執行",
     "exportJob.details.action.rerun.success": "匯出工作 <b>{name}</b> 已經成功重新執行",
     "exportJob.details.action.rerun.error": "匯出工作 <b>{name}</b> 重新執行失敗。",
-    "exportJob.type.EDIFACT_ORDERS_EXPORT": "EDIFACT訂單匯出",
     "exportJob.sentTo": "送至",
     "exportJob.fileName": "檔案名稱",
     "exportJob.type.E_HOLDINGS": "電子館藏",
@@ -52,5 +51,11 @@
     "permission.export-manager.view": "匯出管理員：檢視",
     "title.all": "全部",
     "title.organizations": "組織機構",
-    "permission.jobs.downloadAndResend.execute": "Export manager: Download and resend files"
+    "permission.jobs.downloadAndResend.execute": "Export manager: Download and resend files",
+    "exportJob.download": "Download",
+    "exportJob.integrationType": "Integration type",
+    "exportJob.integrationType.claiming": "Claims",
+    "exportJob.integrationType.ordering": "Orders",
+    "exportJob.type.ORDERS_EDI": "Orders (EDI)",
+    "exportJob.type.ORDERS_CSV": "Orders (CSV)"
 }

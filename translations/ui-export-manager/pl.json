@@ -27,7 +27,6 @@
     "exportJob.details.action.rerun": "Rerun",
     "exportJob.details.action.rerun.success": "Export job <b>{name}</b> was successfully rerun.",
     "exportJob.details.action.rerun.error": "Export job <b>{name}</b> rerun was failed.",
-    "exportJob.type.EDIFACT_ORDERS_EXPORT": "EDIFACT orders export",
     "exportJob.sentTo": "Sent to",
     "exportJob.fileName": "File name",
     "exportJob.type.E_HOLDINGS": "e-Zasoby",
@@ -52,5 +51,11 @@
     "permission.export-manager.view": "Zarządzanie eksportem: wyświetlanie",
     "title.all": "Wszystko",
     "title.organizations": "Organizacje",
-    "permission.jobs.downloadAndResend.execute": "Zarządzanie eksportem: pobieranie i ponowne wysyłanie plików"
+    "permission.jobs.downloadAndResend.execute": "Zarządzanie eksportem: pobieranie i ponowne wysyłanie plików",
+    "exportJob.download": "Download",
+    "exportJob.integrationType": "Integration type",
+    "exportJob.integrationType.claiming": "Claims",
+    "exportJob.integrationType.ordering": "Orders",
+    "exportJob.type.ORDERS_EDI": "Orders (EDI)",
+    "exportJob.type.ORDERS_CSV": "Orders (CSV)"
 }

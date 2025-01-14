@@ -27,7 +27,6 @@
     "exportJob.details.action.rerun": "Znovu spustit",
     "exportJob.details.action.rerun.success": "Úloha exportu <b>{name}</b> byla úspěšně znovu spuštěna.",
     "exportJob.details.action.rerun.error": "Opětovné spuštění úlohy exportu <b>{name}</b> se nezdařilo.",
-    "exportJob.type.EDIFACT_ORDERS_EXPORT": "Export objednávek EDIFACT",
     "exportJob.sentTo": "Odeslat do",
     "exportJob.fileName": "Název souboru",
     "exportJob.type.E_HOLDINGS": "eHoldingy",
@@ -52,5 +51,11 @@
     "permission.export-manager.view": "Správa exportu: Zobrazit",
     "title.all": "Všechny",
     "title.organizations": "Organizace",
-    "permission.jobs.downloadAndResend.execute": "Správa exportu: Stahování a opětovné odesílání souborů"
+    "permission.jobs.downloadAndResend.execute": "Správa exportu: Stahování a opětovné odesílání souborů",
+    "exportJob.download": "Download",
+    "exportJob.integrationType": "Integration type",
+    "exportJob.integrationType.claiming": "Claims",
+    "exportJob.integrationType.ordering": "Orders",
+    "exportJob.type.ORDERS_EDI": "Orders (EDI)",
+    "exportJob.type.ORDERS_CSV": "Orders (CSV)"
 }
