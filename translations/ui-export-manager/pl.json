@@ -52,10 +52,10 @@
     "title.all": "Wszystko",
     "title.organizations": "Organizacje",
     "permission.jobs.downloadAndResend.execute": "Zarządzanie eksportem: pobieranie i ponowne wysyłanie plików",
-    "exportJob.download": "Download",
-    "exportJob.integrationType": "Integration type",
+    "exportJob.download": "Pobierz",
+    "exportJob.integrationType": "Typ integracji",
     "exportJob.integrationType.claiming": "Claims",
-    "exportJob.integrationType.ordering": "Orders",
-    "exportJob.type.ORDERS_EDI": "Orders (EDI)",
-    "exportJob.type.ORDERS_CSV": "Orders (CSV)"
+    "exportJob.integrationType.ordering": "Zamówienia",
+    "exportJob.type.ORDERS_EDI": "Zamówienia (EDI)",
+    "exportJob.type.ORDERS_CSV": "Zamówienia (CSV)"
 }
