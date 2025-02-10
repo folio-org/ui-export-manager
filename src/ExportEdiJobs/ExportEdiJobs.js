@@ -69,20 +69,18 @@ export const ExportEdiJobs = () => {
               applySearch={applySearch}
               changeSearch={changeSearch}
               searchQuery={searchQuery}
-              isLoading={isLoading}
               ariaLabelId="ui-export-manager.exportJobs.search"
             />
 
             <ResetButton
               id="reset-job-exports-filters"
               reset={resetFilters}
-              disabled={!location.search || isLoading}
+              disabled={!location.search}
             />
 
             <ExportEdiJobsFilters
               activeFilters={filters}
               applyFilters={applyFilters}
-              disabled={isLoading}
             />
           </FiltersPane>
         )
@@ -94,7 +92,6 @@ export const ExportEdiJobs = () => {
           filters={filters}
           toggleFiltersPane={toggleFilters}
           isFiltersOpened={isFiltersOpened}
-          isLoading={isLoading}
           autosize
         >
           {(({ height, width }) => (

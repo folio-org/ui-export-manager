@@ -54,8 +54,9 @@ export const useExportEdiJobsQuery = (search, pagination, filters) => {
     refetch,
   } = useInfiniteQuery({
     queryKey: [namespace, search],
-    queryFn: async () => {
+    queryFn: async ({ signal }) => {
       const kyOptions = {
+        signal,
         searchParams: {
           limit: pagination.limit,
           offset: pagination.offset,
