@@ -17,7 +17,8 @@ import {
   ResetButton,
   ResultsPane,
   SingleSearchForm,
-  useLocationFilters, usePagination,
+  useLocationFilters,
+  usePagination,
   useToggle,
 } from '@folio/stripes-acq-components';
 
@@ -83,7 +84,6 @@ export const ExportJobs = () => {
             <ExportJobsFilters
               activeFilters={filters}
               applyFilters={applyFilters}
-              disabled={isLoading}
             />
           </FiltersPane>
         )
@@ -96,7 +96,6 @@ export const ExportJobs = () => {
           filters={filters}
           toggleFiltersPane={toggleFilters}
           isFiltersOpened={isFiltersOpened}
-          isLoading={isLoading}
         >
           {(({ height, width }) => (
             <ExportJobsList

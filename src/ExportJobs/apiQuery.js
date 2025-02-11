@@ -104,8 +104,9 @@ export const useExportJobsQuery = (search, pagination, filters) => {
     data = {},
   } = useInfiniteQuery({
     queryKey: ['ui-export-manager', 'export-jobs', search],
-    queryFn: async () => {
+    queryFn: async ({ signal }) => {
       const kyOptions = {
+        signal,
         searchParams: {
           limit: pagination.limit,
           offset: pagination.offset,
@@ -117,6 +118,7 @@ export const useExportJobsQuery = (search, pagination, filters) => {
 
       return { ...response };
     },
+    keepPreviousData: true,
     enabled: !![...Object.values(filters)].filter(Boolean).length,
     getNextPageParam: (lastPage) => lastPage.nextPage,
   });

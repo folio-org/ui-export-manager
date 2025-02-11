@@ -49,7 +49,6 @@ const typeFilterOptions = EXPORT_JOB_TYPES.map(type => ({
 }));
 
 export const ExportJobsFilters = ({
-  disabled = false,
   activeFilters,
   applyFilters,
 }) => {
@@ -62,7 +61,6 @@ export const ExportJobsFilters = ({
     <AccordionSet>
       <AcqCheckboxFilter
         activeFilters={activeFilters?.status}
-        disabled={disabled}
         labelId="ui-export-manager.exportJob.status"
         name="status"
         onChange={adaptedApplyFilters}
@@ -72,7 +70,6 @@ export const ExportJobsFilters = ({
 
       <AcqCheckboxFilter
         activeFilters={activeFilters?.type}
-        disabled={disabled}
         labelId="ui-export-manager.exportJob.type"
         name="type"
         onChange={({ name, values }) => adaptedApplyFilters({ name, values: mapJobTypeValues(values) })}
@@ -85,12 +82,10 @@ export const ExportJobsFilters = ({
         labelId="ui-export-manager.exportJob.system"
         name="isSystemSource"
         onChange={adaptedApplyFilters}
-        disabled={disabled}
       />
 
       <PluggableUserFilter
         activeFilters={activeFilters?.createdByUserId}
-        disabled={disabled}
         labelId="ui-export-manager.exportJob.source"
         name="createdByUserId"
         onChange={adaptedApplyFilters}
@@ -101,7 +96,6 @@ export const ExportJobsFilters = ({
         labelId="ui-export-manager.exportJob.startTime"
         name="startTime"
         onChange={adaptedApplyFilters}
-        disabled={disabled}
       />
 
       <AcqDateRangeFilter
@@ -109,7 +103,6 @@ export const ExportJobsFilters = ({
         labelId="ui-export-manager.exportJob.endTime"
         name="endTime"
         onChange={adaptedApplyFilters}
-        disabled={disabled}
       />
     </AccordionSet>
   );
@@ -118,5 +111,4 @@ export const ExportJobsFilters = ({
 ExportJobsFilters.propTypes = {
   activeFilters: PropTypes.object.isRequired,
   applyFilters: PropTypes.func.isRequired,
-  disabled: PropTypes.bool,
 };

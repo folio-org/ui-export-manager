@@ -24,7 +24,6 @@ import { ExportMethodFilter } from './ExportMethodFilter';
 const applyFiltersAdapter = (applyFilters) => ({ name, values }) => applyFilters(name, values);
 
 export const ExportEdiJobsFilters = ({
-  disabled = false,
   activeFilters,
   applyFilters,
 }) => {
@@ -38,7 +37,6 @@ export const ExportEdiJobsFilters = ({
       <AcqCheckboxFilter
         id="edi-status-filter"
         activeFilters={activeFilters?.status}
-        disabled={disabled}
         labelId="ui-export-manager.exportJob.status"
         name="status"
         onChange={adaptedApplyFilters}
@@ -49,7 +47,6 @@ export const ExportEdiJobsFilters = ({
       <AcqCheckboxFilter
         id="integration-type-filter"
         activeFilters={activeFilters?.integrationType}
-        disabled={disabled}
         labelId="ui-export-manager.exportJob.integrationType"
         name="integrationType"
         onChange={adaptedApplyFilters}
@@ -60,7 +57,6 @@ export const ExportEdiJobsFilters = ({
       <ExportMethodFilter
         id="exportConfigId"
         activeFilters={activeFilters?.exportConfigId}
-        disabled={disabled}
         labelId="ui-export-manager.exportJob.exportMethod"
         name="exportConfigId"
         onChange={adaptedApplyFilters}
@@ -69,7 +65,6 @@ export const ExportEdiJobsFilters = ({
 
       <PluggableOrganizationFilter
         activeFilters={activeFilters?.vendorId}
-        disabled={disabled}
         labelId="ui-export-manager.exportJob.organization"
         name="vendorId"
         onChange={adaptedApplyFilters}
@@ -81,12 +76,10 @@ export const ExportEdiJobsFilters = ({
         labelId="ui-export-manager.exportJob.system"
         name="isSystemSource"
         onChange={adaptedApplyFilters}
-        disabled={disabled}
       />
 
       <PluggableUserFilter
         activeFilters={activeFilters?.createdByUserId}
-        disabled={disabled}
         labelId="ui-export-manager.exportJob.source"
         name="createdByUserId"
         onChange={adaptedApplyFilters}
@@ -98,7 +91,6 @@ export const ExportEdiJobsFilters = ({
         labelId="ui-export-manager.exportJob.startTime"
         name="startTime"
         onChange={adaptedApplyFilters}
-        disabled={disabled}
       />
 
       <AcqDateRangeFilter
@@ -107,7 +99,6 @@ export const ExportEdiJobsFilters = ({
         labelId="ui-export-manager.exportJob.endTime"
         name="endTime"
         onChange={adaptedApplyFilters}
-        disabled={disabled}
       />
     </AccordionSet>
   );
@@ -116,5 +107,4 @@ export const ExportEdiJobsFilters = ({
 ExportEdiJobsFilters.propTypes = {
   activeFilters: PropTypes.object.isRequired,
   applyFilters: PropTypes.func.isRequired,
-  disabled: PropTypes.bool,
 };
