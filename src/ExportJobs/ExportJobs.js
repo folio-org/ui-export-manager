@@ -53,6 +53,7 @@ export const ExportJobs = () => {
   const { pagination, changePage } = usePagination({ limit: RESULT_COUNT_INCREMENT, offset: 0 });
   const {
     isLoading,
+    isFetching,
     exportJobs,
     totalCount,
   } = useExportJobsQuery(location.search, pagination, filters);
@@ -66,12 +67,10 @@ export const ExportJobs = () => {
             toggleFilters={toggleFilters}
           >
             <Navigation />
-
             <SingleSearchForm
               applySearch={applySearch}
               changeSearch={changeSearch}
               searchQuery={searchQuery}
-              isLoading={isLoading}
               ariaLabelId="ui-export-manager.exportJobs.search"
             />
 
@@ -80,7 +79,6 @@ export const ExportJobs = () => {
               reset={resetFilters}
               disabled={!location.search || isLoading}
             />
-
             <ExportJobsFilters
               activeFilters={filters}
               applyFilters={applyFilters}
@@ -88,7 +86,6 @@ export const ExportJobs = () => {
           </FiltersPane>
         )
       }
-
         <ResultsPane
           title={formatMessage({ id: 'ui-export-manager.exportJobs' })}
           count={totalCount}
@@ -99,7 +96,7 @@ export const ExportJobs = () => {
         >
           {(({ height, width }) => (
             <ExportJobsList
-              isLoading={isLoading}
+              isLoading={isFetching}
               onNeedMoreData={changePage}
               exportJobs={exportJobs}
               totalCount={totalCount}

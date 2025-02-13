@@ -49,7 +49,7 @@ export const ExportEdiJobs = () => {
 
   const { pagination, changePage } = usePagination({ limit: RESULT_COUNT_INCREMENT, offset: 0 });
   const {
-    isLoading,
+    isFetching,
     exportEdiJobs,
     totalCount,
     refetch,
@@ -96,7 +96,7 @@ export const ExportEdiJobs = () => {
         >
           {(({ height, width }) => (
             <ExportEdiJobsList
-              isLoading={isLoading}
+              isLoading={isFetching}
               onNeedMoreData={changePage}
               exportJobs={exportEdiJobs}
               totalCount={totalCount}
