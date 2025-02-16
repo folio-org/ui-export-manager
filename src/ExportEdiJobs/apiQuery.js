@@ -11,7 +11,7 @@ import {
   makeQueryBuilder,
   ORGANIZATION_INTEGRATION_EXPORT_TYPES,
 } from '@folio/stripes-acq-components';
-import { getDataByFiltersState } from '../common/helpers';
+import { areFilersEmpty } from '../common/helpers';
 
 const buildIntegrationTypesCqlValue = (type) => {
   if (!Array.isArray(type)) return type;
@@ -47,7 +47,7 @@ const buildJobsQuery = makeQueryBuilder(
 export const useExportEdiJobsQuery = (search, pagination, filters) => {
   const ky = useOkapiKy();
   const [namespace] = useNamespace({ key: 'export-edi-jobs' });
-  const areFiltersPristine = Object.keys(filters).length === 0;
+  const filtersEmpty = areFilersEmpty(filters);
 
   const {
     fetchNextPage,
@@ -73,10 +73,9 @@ export const useExportEdiJobsQuery = (search, pagination, filters) => {
       return ky.get('data-export-spring/jobs', kyOptions).json();
     },
 
-    keepPreviousData: true,
-    enabled: !areFiltersPristine,
+    keepPreviousData: !filtersEmpty,
+    enabled: !filtersEmpty,
     getNextPageParam: (lastPage) => lastPage.nextPage,
-    select: (response) => getDataByFiltersState(response, filters),
   });
 
   const pages = data.pages || [];
