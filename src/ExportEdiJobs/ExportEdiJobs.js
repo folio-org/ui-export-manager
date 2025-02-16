@@ -77,7 +77,7 @@ export const ExportEdiJobs = () => {
             <ResetButton
               id="reset-job-exports-filters"
               reset={resetFilters}
-              disabled={!location.search || filtersEmpty}
+              disabled={filtersEmpty}
             />
 
             <ExportEdiJobsFilters
