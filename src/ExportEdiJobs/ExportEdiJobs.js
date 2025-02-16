@@ -17,7 +17,8 @@ import {
   ResetButton,
   ResultsPane,
   SingleSearchForm,
-  useLocationFilters, usePagination,
+  useLocationFilters,
+  usePagination,
   useToggle,
 } from '@folio/stripes-acq-components';
 
