@@ -1,7 +1,7 @@
 import queryString from 'query-string';
 import { useInfiniteQuery } from 'react-query';
 
-import { useOkapiKy } from '@folio/stripes/core';
+import { useNamespace, useOkapiKy } from '@folio/stripes/core';
 import {
   buildDateRangeQuery,
   CQL_AND_OPERATOR,
@@ -12,7 +12,7 @@ import {
 
 import { EXPORT_FILE_TYPE } from '../common/constants';
 import { EXPORT_JOB_TYPE_KEYS } from './constants';
-import { getDataByFiltersState } from '../common/helpers';
+import { areFilersEmpty } from '../common/helpers';
 
 const AND_SEPARATOR = ` ${CQL_AND_OPERATOR} `;
 const OR_SEPARATOR = ` ${CQL_OR_OPERATOR} `;
@@ -98,7 +98,8 @@ const buildJobsQuery = makeQueryBuilder(
 
 export const useExportJobsQuery = (search, pagination, filters) => {
   const ky = useOkapiKy();
-  const areFiltersPristine = Object.keys(filters).length === 0;
+  const [namespace] = useNamespace({ key: 'export-jobs' });
+  const filtersEmpty = areFilersEmpty(filters);
 
   const {
     fetchNextPage,
@@ -106,7 +107,7 @@ export const useExportJobsQuery = (search, pagination, filters) => {
     isFetching,
     data = {},
   } = useInfiniteQuery({
-    queryKey: ['export-jobs', search],
+    queryKey: [namespace, search],
     queryFn: async ({ signal }) => {
       const kyOptions = {
         signal,
@@ -119,10 +120,9 @@ export const useExportJobsQuery = (search, pagination, filters) => {
 
       return ky.get('data-export-spring/jobs', kyOptions).json();
     },
-    keepPreviousData: true,
-    enabled: !areFiltersPristine,
+    keepPreviousData: !filtersEmpty,
+    enabled: !filtersEmpty,
     getNextPageParam: (lastPage) => lastPage.nextPage,
-    select: (response) => getDataByFiltersState(response, filters),
   });
 
   const pages = data.pages || [];

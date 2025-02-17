@@ -17,7 +17,8 @@ import {
   ResetButton,
   ResultsPane,
   SingleSearchForm,
-  useLocationFilters, usePagination,
+  useLocationFilters,
+  usePagination,
   useToggle,
 } from '@folio/stripes-acq-components';
 
@@ -27,6 +28,7 @@ import { useExportEdiJobsQuery } from './apiQuery';
 import { ExportEdiJobsFilters } from './ExportEdiJobsFilters';
 import { ExportEdiJobsList } from './ExportEdiJobsList';
 import { ExportEdiJobDetails } from './ExportEdiJobDetails';
+import { areFilersEmpty } from '../common/helpers';
 
 const resetData = () => {};
 
@@ -35,7 +37,6 @@ export const ExportEdiJobs = () => {
   const history = useHistory();
   const location = useLocation();
   const params = useParams();
-
   const [
     filters,
     searchQuery,
@@ -46,6 +47,7 @@ export const ExportEdiJobs = () => {
   ] = useLocationFilters(location, history, resetData);
   const [isFiltersOpened, toggleFilters] = useToggle(true);
   const RESULT_COUNT_INCREMENT = 100;
+  const filtersEmpty = areFilersEmpty(filters);
 
   const { pagination, changePage } = usePagination({ limit: RESULT_COUNT_INCREMENT, offset: 0 });
   const {
@@ -75,7 +77,7 @@ export const ExportEdiJobs = () => {
             <ResetButton
               id="reset-job-exports-filters"
               reset={resetFilters}
-              disabled={!location.search}
+              disabled={filtersEmpty}
             />
 
             <ExportEdiJobsFilters

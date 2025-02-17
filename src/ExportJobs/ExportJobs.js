@@ -30,6 +30,7 @@ import {
 } from './apiQuery';
 import { ExportJobsFilters } from './ExportJobsFilters';
 import { ExportJobsList } from './ExportJobsList';
+import { areFilersEmpty } from '../common/helpers';
 
 const resetData = () => {};
 
@@ -49,10 +50,10 @@ export const ExportJobs = () => {
     resetFilters,
   ] = useLocationFilters(location, history, resetData);
   const [isFiltersOpened, toggleFilters] = useToggle(true);
+  const filtersEmpty = areFilersEmpty(filters);
 
   const { pagination, changePage } = usePagination({ limit: RESULT_COUNT_INCREMENT, offset: 0 });
   const {
-    isLoading,
     isFetching,
     exportJobs,
     totalCount,
@@ -77,7 +78,7 @@ export const ExportJobs = () => {
             <ResetButton
               id="reset-job-exports-filters"
               reset={resetFilters}
-              disabled={!location.search || isLoading}
+              disabled={filtersEmpty}
             />
             <ExportJobsFilters
               activeFilters={filters}
