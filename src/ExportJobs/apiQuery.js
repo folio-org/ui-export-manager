@@ -70,7 +70,7 @@ const buildCqlQueryFromDicts = (arr) => {
     return `(${conditions})`;
   });
 
-  return cqlParts.join(OR_SEPARATOR);
+  return `(${cqlParts.join(OR_SEPARATOR)})`;
 };
 
 /*
@@ -82,7 +82,7 @@ const mapJobTypesToCql = (types) => {
   return buildCqlQueryFromDicts(queryDicts);
 };
 
-const buildJobsQuery = makeQueryBuilder(
+export const buildJobsQuery = makeQueryBuilder(
   'cql.allRecords=1',
   (query) => `name="*${query}*" or description="*${query}*"`,
   'sortby name/sort.descending',
