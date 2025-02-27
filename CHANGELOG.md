@@ -6,6 +6,8 @@
 * Support CSV claims export. Refs UIEXPMGR-114.
 * Selecting one checkbox refreshes entire form. Refs UIEXPMGR-122.
 * Migrate to shared GA workflows. Refs UIEXPMGR-123.
+* *BREAKING* migrate react-intl to v7. Refs UIEXPMGR-125.
+* *BREAKING* migrate stripes-* dependencies. Refs UIEXPMGR-124.
 
 ## [3.2.0](https://github.com/folio-org/ui-export-manager/tree/v3.2.0) (2024-10-31)
 [Full Changelog](https://github.com/folio-org/ui-export-manager/compare/v3.1.1...v3.2.0)
