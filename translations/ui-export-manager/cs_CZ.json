@@ -54,7 +54,7 @@
     "permission.jobs.downloadAndResend.execute": "Správa exportu: Stahování a opětovné odesílání souborů",
     "exportJob.download": "Stáhnout",
     "exportJob.integrationType": "Typ integrace",
-    "exportJob.integrationType.claiming": "Nároky",
+    "exportJob.integrationType.claiming": "Reklamace",
     "exportJob.integrationType.ordering": "Objednávky",
     "exportJob.type.ORDERS_EDI": "Objednávky (EDI)",
     "exportJob.type.ORDERS_CSV": "Objednávky (CSV)"
