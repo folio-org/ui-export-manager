@@ -2,6 +2,9 @@
 
 ## (IN PROGRESS)
 
+## [4.0.0](https://github.com/folio-org/ui-export-manager/tree/v4.0.0) (2025-03-12)
+[Full Changelog](https://github.com/folio-org/ui-export-manager/compare/v3.2.0...v4.0.0)
+
 * Support EDIFACT claims export. Refs UIEXPMGR-113.
 * Support CSV claims export. Refs UIEXPMGR-114.
 * Selecting one checkbox refreshes entire form. Refs UIEXPMGR-122.
