@@ -51,11 +51,11 @@
     "permission.export-manager.view": "Exportmanager: Bekijken",
     "title.all": "Alle",
     "title.organizations": "Organisaties",
-    "permission.jobs.downloadAndResend.execute": "Export manager: Download and resend files",
-    "exportJob.download": "Download",
-    "exportJob.integrationType": "Integration type",
-    "exportJob.integrationType.claiming": "Claims",
-    "exportJob.integrationType.ordering": "Orders",
-    "exportJob.type.ORDERS_EDI": "Orders (EDI)",
-    "exportJob.type.ORDERS_CSV": "Orders (CSV)"
+    "permission.jobs.downloadAndResend.execute": "Exportmanager: Bestanden downloaden en opnieuw verzenden",
+    "exportJob.download": "Downloaden",
+    "exportJob.integrationType": "Type integratie",
+    "exportJob.integrationType.claiming": "Schade",
+    "exportJob.integrationType.ordering": "Bestellingen",
+    "exportJob.type.ORDERS_EDI": "Bestellingen (EDI)",
+    "exportJob.type.ORDERS_CSV": "Bestellingen (CSV)"
 }
