@@ -49,13 +49,13 @@
     "exportJob.details.type.BULK_EDIT_IDENTIFIERS": "Massenbearbeitung von Identifikatoren",
     "exportJob.details.type.BULK_EDIT_QUERY": "Massenbearbeitungsabfrage",
     "permission.export-manager.view": "Exportmanager: Ansicht",
-    "title.all": "All",
-    "title.organizations": "Organizations",
-    "permission.jobs.downloadAndResend.execute": "Export manager: Download and resend files",
-    "exportJob.download": "Download",
+    "title.all": "Alles",
+    "title.organizations": "Organisationen",
+    "permission.jobs.downloadAndResend.execute": "Exportmanager: Herunterladen und erneutes Versenden der Dateien",
+    "exportJob.download": "Herunterladen",
     "exportJob.integrationType": "Integration type",
     "exportJob.integrationType.claiming": "Claims",
-    "exportJob.integrationType.ordering": "Orders",
-    "exportJob.type.ORDERS_EDI": "Orders (EDI)",
-    "exportJob.type.ORDERS_CSV": "Orders (CSV)"
+    "exportJob.integrationType.ordering": "Bestellungen",
+    "exportJob.type.ORDERS_EDI": "Bestellungen (EDI)",
+    "exportJob.type.ORDERS_CSV": "Bestellungen (CSV)"
 }
