@@ -1,6 +1,6 @@
 {
     "meta.title": "Zarządzanie eksportem",
-    "permission.export-manager.all": "Zarządzanie eksportem: wszystko",
+    "permission.export-manager.all": "Menedżer eksportu: wszystko",
     "exportJobs": "Zadania eksportu",
     "exportJob.jobId": "ID zadania",
     "exportJob.status": "Status",
