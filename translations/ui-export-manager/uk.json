@@ -1,6 +1,6 @@
 {
     "meta.title": "Export manager",
-    "permission.export-manager.all": "Export manager: All",
+    "permission.export-manager.all": "Менеджер експорту: Все",
     "exportJobs": "Export jobs",
     "exportJob.jobId": "Job ID",
     "exportJob.status": "Status",
@@ -48,7 +48,7 @@
     "exportJob.details.type.FAILED_LINKED_BIB_UPDATES": "Failed updates: Linked bibliographic fields",
     "exportJob.details.type.BULK_EDIT_IDENTIFIERS": "Bulk edit identifiers",
     "exportJob.details.type.BULK_EDIT_QUERY": "Bulk edit query",
-    "permission.export-manager.view": "Export manager: View",
+    "permission.export-manager.view": "Менеджер експорту: Перегляд",
     "title.all": "All",
     "title.organizations": "Organizations",
     "permission.jobs.downloadAndResend.execute": "Export manager: Download and resend files",
