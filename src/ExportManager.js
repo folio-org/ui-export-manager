@@ -5,10 +5,15 @@ import {
   Route,
 } from 'react-router-dom';
 
+import { useStripes } from '@folio/stripes/core';
+
+import { BE_INTERFACE } from './common/constants';
 import { ExportJobs } from './ExportJobs';
 import { ExportEdiJobs } from './ExportEdiJobs';
 
 export const ExportManager = () => {
+  const stripes = useStripes();
+
   return (
     <Switch>
       <Route
@@ -24,15 +29,27 @@ export const ExportManager = () => {
       />
 
       <Route
-        exact
-        component={ExportEdiJobs}
         path="/export-manager/edi-jobs"
-      />
+        render={({ match }) => {
+          if (!stripes.hasInterface(BE_INTERFACE.organizations)) {
+            return <Redirect to="/export-manager/jobs" />;
+          }
 
-      <Route
-        exact
-        component={ExportEdiJobs}
-        path="/export-manager/edi-jobs/:id"
+          return (
+            <Switch>
+              <Route
+                exact
+                component={ExportEdiJobs}
+                path={`${match.url}`}
+              />
+              <Route
+                exact
+                component={ExportEdiJobs}
+                path={`${match.url}/:id`}
+              />
+            </Switch>
+          );
+        }}
       />
 
       <Route
