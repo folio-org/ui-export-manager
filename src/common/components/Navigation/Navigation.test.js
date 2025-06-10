@@ -3,7 +3,13 @@ import { MemoryRouter } from 'react-router';
 import { render, screen } from '@testing-library/react';
 
 import { runAxeTest } from '@folio/stripes-testing';
+
 import Navigation from './Navigation';
+
+jest.mock('@folio/stripes/core', () => ({
+  ...jest.requireActual('@folio/stripes/core'),
+  IfInterface: ({ children }) => <>{children}</>,
+}));
 
 const renderNavigation = (props) => render(
   <Navigation

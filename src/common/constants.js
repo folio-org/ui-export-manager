@@ -43,3 +43,7 @@ export const EXPORT_FILE_TYPE = {
   edi: 'EDI',
   csv: 'CSV',
 };
+
+export const BE_INTERFACE = {
+  organizations: 'organizations.organizations',
+};
