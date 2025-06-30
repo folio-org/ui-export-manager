@@ -1,7 +1,7 @@
 import { render } from '@folio/jest-config-stripes/testing-library/react';
 import userEvent from '@folio/jest-config-stripes/testing-library/user-event';
-
 import { runAxeTest } from '@folio/stripes-testing';
+
 import { useSecureDownload } from '../../hooks';
 import { ExportJobId } from './ExportJobId';
 
@@ -61,6 +61,7 @@ describe('ExportJobId', () => {
 
   it('should render with no axe errors', async () => {
     const jobName = '1001';
+
     renderExportJobId({
       name: jobName,
       fileNames: ['/test.png'],

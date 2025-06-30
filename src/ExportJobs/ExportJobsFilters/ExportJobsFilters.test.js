@@ -33,7 +33,7 @@ const renderExportJobsFilters = ({
       applyFilters={applyFilters}
       disabled={disabled}
     />
-  </QueryClientProvider>
+  </QueryClientProvider>,
 ));
 
 describe('ExportJobsFilters', () => {

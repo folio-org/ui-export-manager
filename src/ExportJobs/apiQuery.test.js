@@ -120,9 +120,9 @@ describe('buildJobsQuery', () => {
   it('should generate correct query', () => {
     const parsedQuery = {
       status: 'SUCCESSFUL',
-      type: ['ORDERS_CSV', 'ORDERS_EDI', 'BURSAR_FEES_FINES']
+      type: ['ORDERS_CSV', 'ORDERS_EDI', 'BURSAR_FEES_FINES'],
     };
 
     expect(buildJobsQuery(parsedQuery)).toEqual('(status=="SUCCESSFUL" and ((type==("CLAIMS" or "EDIFACT_ORDERS_EXPORT") and jsonb.exportTypeSpecificParameters.vendorEdiOrdersExportConfig.fileFormat==("CSV" or "EDI")) or (type==(BURSAR_FEES_FINES)))) sortby name/sort.descending');
-  })
+  });
 });

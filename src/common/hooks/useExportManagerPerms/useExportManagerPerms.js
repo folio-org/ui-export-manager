@@ -1,17 +1,18 @@
-import { useStripes } from "@folio/stripes/core";
-import { BULK_PERMISSIONS } from "../../../ExportJobs/constants";
+import { useStripes } from '@folio/stripes/core';
 
-export const useExportManagerPerms =()=>{
-    const stripes = useStripes();
+import { BULK_PERMISSIONS } from '../../../ExportJobs/constants';
 
-    const hasAnyUserEditPerms = stripes.hasPerm(BULK_PERMISSIONS.BULK_EDIT_LOCAL_VIEW)
-        || stripes.hasPerm(BULK_PERMISSIONS.BULK_EDIT_IN_APP_EDIT_USERS);
-    const hasInAppAnyPerms = stripes.hasPerm(BULK_PERMISSIONS.BULK_EDIT_IN_APP_VIEW);
-    const hasAllExportManagerPerms = stripes.hasPerm('ui-export-manager.export-manager.all');
+export const useExportManagerPerms = () => {
+  const stripes = useStripes();
 
-    return {
-        hasAnyUserEditPerms,
-        hasInAppAnyPerms,
-        hasAllExportManagerPerms,
-    };
+  const hasAnyUserEditPerms = stripes.hasPerm(BULK_PERMISSIONS.BULK_EDIT_LOCAL_VIEW)
+    || stripes.hasPerm(BULK_PERMISSIONS.BULK_EDIT_IN_APP_EDIT_USERS);
+  const hasInAppAnyPerms = stripes.hasPerm(BULK_PERMISSIONS.BULK_EDIT_IN_APP_VIEW);
+  const hasAllExportManagerPerms = stripes.hasPerm('ui-export-manager.export-manager.all');
+
+  return {
+    hasAnyUserEditPerms,
+    hasInAppAnyPerms,
+    hasAllExportManagerPerms,
+  };
 };

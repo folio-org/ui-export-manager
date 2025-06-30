@@ -46,7 +46,7 @@ const renderExportEdiJobsFilters = ({
       applyFilters={applyFilters}
       disabled={disabled}
     />
-  </QueryClientProvider>
+  </QueryClientProvider>,
 ));
 
 describe('ExportEdiJobsFilters', () => {

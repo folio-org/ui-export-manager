@@ -5,9 +5,7 @@ import {
   useShowCallout,
 } from '@folio/stripes-acq-components';
 
-import {
-  EXPORT_JOBS_API,
-} from '../../constants';
+import { EXPORT_JOBS_API } from '../../constants';
 
 export const useSecureDownload = (jobId) => {
   const ky = useOkapiKy();
@@ -33,7 +31,7 @@ export const useSecureDownload = (jobId) => {
 
   const download = async (fileNames, parameterized) => {
     return Promise.all(fileNames.map((fileName) => downloadSingleFile(fileName, parameterized)));
-  }
+  };
 
   return { download };
 };
