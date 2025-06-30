@@ -41,13 +41,13 @@ describe('useExportJobsQuery', () => {
     });
 
     const { result, waitFor } = renderHook(() => useExportJobsQuery(
-      '?limit=100&offset=0&status=SCHEDULED&type=BULK_EDIT', {
+      '?limit=100&offset=0&status=SCHEDULED&type=CLAIMS', {
         offset: 30,
         limit: 30,
       },
       {
         status: 'SCHEDULED',
-        type: 'BULK_EDIT',
+        type: 'CLAIMS',
       },
     ), { wrapper });
 

@@ -3,6 +3,7 @@
 ## (IN PROGRESS)
 
 * Make the `organizations.organizations` interface optional. Refs UIEXPMGR-127.
+* Remove "Bulk edit" references. Refs UIEXPMGR-128.
 
 ## [4.0.0](https://github.com/folio-org/ui-export-manager/tree/v4.0.0) (2025-03-12)
 [Full Changelog](https://github.com/folio-org/ui-export-manager/compare/v3.2.0...v4.0.0)

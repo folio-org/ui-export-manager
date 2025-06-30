@@ -16,7 +16,6 @@ import { areFilersEmpty } from '../common/helpers';
 
 const AND_SEPARATOR = ` ${CQL_AND_OPERATOR} `;
 const OR_SEPARATOR = ` ${CQL_OR_OPERATOR} `;
-const BULK_EDIT_TYPE = '"BULK_EDIT_IDENTIFIERS" or "BULK_EDIT_QUERY" or "BULK_EDIT_UPDATE"';
 const EDI_ORDERS_FILE_FORMAT_KEY = 'jsonb.exportTypeSpecificParameters.vendorEdiOrdersExportConfig.fileFormat';
 
 const ORDERS_JOB_TYPES_CQL_VALUE = ORGANIZATION_INTEGRATION_EXPORT_TYPES
@@ -29,7 +28,6 @@ const buildOrdersJobTypeQueryDict = (fileType) => ({
 });
 
 const typeQueryDict = {
-  [EXPORT_JOB_TYPE_KEYS.BULK_EDIT]: { type: `${BULK_EDIT_TYPE}` },
   [EXPORT_JOB_TYPE_KEYS.ORDERS_CSV]: buildOrdersJobTypeQueryDict(EXPORT_FILE_TYPE.csv),
   [EXPORT_JOB_TYPE_KEYS.ORDERS_EDI]: buildOrdersJobTypeQueryDict(EXPORT_FILE_TYPE.edi),
 };
