@@ -1,17 +1,17 @@
-import React from 'react';
-import { QueryClient, QueryClientProvider } from 'react-query';
-import { renderHook } from '@testing-library/react-hooks';
-
-import '@folio/stripes-acq-components/test/jest/__mock__';
-import { useOkapiKy } from '@folio/stripes/core';
+import {
+  QueryClient,
+  QueryClientProvider,
+} from 'react-query';
 
 import {
-  useExportEdiJobsQuery,
-} from './apiQuery';
+  renderHook,
+  waitFor,
+} from '@folio/jest-config-stripes/testing-library/react';
+import { useOkapiKy } from '@folio/stripes/core';
+
+import { useExportEdiJobsQuery } from './apiQuery';
 
 const queryClient = new QueryClient();
-
-// eslint-disable-next-line react/prop-types
 const wrapper = ({ children }) => (
   <QueryClientProvider client={queryClient}>
     {children}
@@ -19,6 +19,10 @@ const wrapper = ({ children }) => (
 );
 
 describe('Export EDI jobs api queries', () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
+
   describe('useExportEdiJobsQuery', () => {
     it('should fetch export EDI jobs', async () => {
       const exportEdiJobs = [{
@@ -27,7 +31,7 @@ describe('Export EDI jobs api queries', () => {
         description: '# of Charges: 5',
       }];
 
-      useOkapiKy.mockClear().mockReturnValue({
+      useOkapiKy.mockReturnValue({
         get: () => ({
           json: () => ({
             jobRecords: exportEdiJobs,
@@ -36,7 +40,7 @@ describe('Export EDI jobs api queries', () => {
         }),
       });
 
-      const { result, waitFor } = renderHook(() => useExportEdiJobsQuery(
+      const { result } = renderHook(() => useExportEdiJobsQuery(
         '?limit=100&offset=0&status=SCHEDULED', {
           offset: 30,
           limit: 30,
@@ -46,9 +50,7 @@ describe('Export EDI jobs api queries', () => {
         },
       ), { wrapper });
 
-      await waitFor(() => {
-        return !result.current.isLoading;
-      });
+      await waitFor(() => expect(result.current.isLoading).toBe(false));
 
       expect(result.current.exportEdiJobs).toEqual(exportEdiJobs);
     });
@@ -61,7 +63,7 @@ describe('Export EDI jobs api queries', () => {
       }];
       const totalRecords = 1;
 
-      useOkapiKy.mockClear().mockReturnValue({
+      useOkapiKy.mockReturnValue({
         get: () => ({
           json: () => ({
             jobRecords: exportEdiJobs,
@@ -70,7 +72,7 @@ describe('Export EDI jobs api queries', () => {
         }),
       });
 
-      const { result, waitFor } = renderHook(() => useExportEdiJobsQuery(
+      const { result } = renderHook(() => useExportEdiJobsQuery(
         '?limit=100&offset=0&status=SCHEDULED', {
           offset: 30,
           limit: 30,
@@ -80,9 +82,7 @@ describe('Export EDI jobs api queries', () => {
         },
       ), { wrapper });
 
-      await waitFor(() => {
-        return !result.current.isLoading;
-      });
+      await waitFor(() => expect(result.current.isLoading).toBe(false));
 
       expect(result.current.totalCount).toEqual(totalRecords);
     });

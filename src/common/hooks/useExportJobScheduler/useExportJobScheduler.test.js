@@ -1,6 +1,9 @@
-import { QueryClient, QueryClientProvider } from 'react-query';
-import { renderHook } from '@testing-library/react-hooks';
+import {
+  QueryClient,
+  QueryClientProvider,
+} from 'react-query';
 
+import { renderHook } from '@folio/jest-config-stripes/testing-library/react';
 import { useOkapiKy } from '@folio/stripes/core';
 
 import { useExportJobScheduler } from './useExportJobScheduler';
@@ -15,12 +18,16 @@ const wrapper = ({ children }) => (
 );
 
 describe('useExportJobScheduler', () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
+
   it('should make post request when mutate fn was called', async () => {
     const postMock = jest.fn(() => ({
       json: () => Promise.resolve({ id: 'jobId' }),
     }));
 
-    useOkapiKy.mockClear().mockReturnValue({
+    useOkapiKy.mockReturnValue({
       post: postMock,
     });
 

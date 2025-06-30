@@ -1,7 +1,14 @@
-import { QueryClient, QueryClientProvider } from 'react-query';
-import user from '@testing-library/user-event';
-import { act, render, screen } from '@testing-library/react';
+import {
+  QueryClient,
+  QueryClientProvider,
+} from 'react-query';
 
+import {
+  act,
+  render,
+  screen,
+} from '@folio/jest-config-stripes/testing-library/react';
+import userEvent from '@folio/jest-config-stripes/testing-library/user-event';
 import { useOkapiKy } from '@folio/stripes/core';
 import {
   downloadBase64,
@@ -44,8 +51,6 @@ const defaultProps = {
 const toastMessage = type => `ui-export-manager.exportJob.details.action.${type}`;
 
 const queryClient = new QueryClient();
-
-// eslint-disable-next-line react/prop-types
 const wrapper = ({ children }) => (
   <QueryClientProvider client={queryClient}>
     {children}
@@ -69,17 +74,16 @@ describe('ExportEdiJobDetailsActionMenu', () => {
   const kyPostMock = jest.fn(() => Promise.resolve());
 
   beforeEach(() => {
-    downloadBase64.mockClear();
-    kyGetMock.mockClear();
-    kyPostMock.mockClear();
-    scheduleExportJob.mockClear();
-    showCallout.mockClear();
-    useExportJobScheduler.mockClear().mockReturnValue({ scheduleExportJob });
-    useShowCallout.mockClear().mockReturnValue(showCallout);
-    useOkapiKy.mockClear().mockReturnValue({
+    useExportJobScheduler.mockReturnValue({ scheduleExportJob });
+    useShowCallout.mockReturnValue(showCallout);
+    useOkapiKy.mockReturnValue({
       get: kyGetMock,
       post: kyPostMock,
     });
+  });
+
+  afterEach(() => {
+    jest.clearAllMocks();
   });
 
   it('should display action menu items', () => {
@@ -88,10 +92,10 @@ describe('ExportEdiJobDetailsActionMenu', () => {
     expect(screen.getByTestId('job-action-rerun')).toBeInTheDocument();
   });
 
-  it('should send POST request when Rerun button was clicked', () => {
+  it('should send POST request when Rerun button was clicked', async () => {
     renderExportEdiJobDetailsActionMenu();
 
-    user.click(screen.getByTestId('job-action-rerun'));
+    await userEvent.click(screen.getByTestId('job-action-rerun'));
 
     expect(scheduleExportJob).toHaveBeenCalled();
   });
@@ -104,7 +108,7 @@ describe('ExportEdiJobDetailsActionMenu', () => {
       },
     });
 
-    await act(async () => user.click(screen.getByTestId('job-action-download')));
+    await act(async () => userEvent.click(screen.getByTestId('job-action-download')));
 
     expect(kyGetMock).toHaveBeenCalled();
     expect(downloadBase64).toHaveBeenCalled();
@@ -115,7 +119,7 @@ describe('ExportEdiJobDetailsActionMenu', () => {
 
     renderExportEdiJobDetailsActionMenu();
 
-    await act(async () => user.click(screen.getByTestId('job-action-download')));
+    await act(async () => userEvent.click(screen.getByTestId('job-action-download')));
 
     expect(showCallout).toHaveBeenCalledWith(expect.objectContaining({
       messageId: toastMessage`download.error`,
@@ -125,7 +129,7 @@ describe('ExportEdiJobDetailsActionMenu', () => {
   it('should handle export job resend', async () => {
     renderExportEdiJobDetailsActionMenu();
 
-    await act(async () => user.click(screen.getByTestId('job-action-resend')));
+    await act(async () => userEvent.click(screen.getByTestId('job-action-resend')));
 
     expect(kyPostMock).toHaveBeenCalled();
     expect(showCallout).toHaveBeenCalledWith(expect.objectContaining({
@@ -134,11 +138,11 @@ describe('ExportEdiJobDetailsActionMenu', () => {
   });
 
   it('should handle export job resend error', async () => {
-    kyPostMock.mockReturnValue(Promise.reject());
+    kyPostMock.mockImplementation(() => Promise.reject());
 
     renderExportEdiJobDetailsActionMenu();
 
-    await act(async () => user.click(screen.getByTestId('job-action-resend')));
+    await act(async () => userEvent.click(screen.getByTestId('job-action-resend')));
 
     expect(showCallout).toHaveBeenCalledWith(expect.objectContaining({
       messageId: toastMessage`resend.error`,

@@ -1,9 +1,6 @@
-import '@folio/stripes-acq-components/test/jest/__mock__';
-
-import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
-import { render } from '@testing-library/react';
 
+import { render } from '@folio/jest-config-stripes/testing-library/react';
 import { runAxeTest } from '@folio/stripes-testing';
 import { useStripes } from '@folio/stripes/core';
 

@@ -1,11 +1,7 @@
-import React from 'react';
-import { render } from '@testing-library/react';
-import {
-  useParams,
-} from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
+import { render } from '@folio/jest-config-stripes/testing-library/react';
 import { runAxeTest } from '@folio/stripes-testing';
-import '@folio/stripes-acq-components/test/jest/__mock__';
 
 import { useExportJobsQuery } from './apiQuery';
 import { ExportJobs } from './ExportJobs';

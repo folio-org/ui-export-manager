@@ -1,19 +1,17 @@
-import React from 'react';
 import {
-  render,
-  fireEvent,
-} from '@testing-library/react';
+  QueryClient,
+  QueryClientProvider,
+} from 'react-query';
 
+import { render } from '@folio/jest-config-stripes/testing-library/react';
+import userEvent from '@folio/jest-config-stripes/testing-library/user-event';
 import { runAxeTest } from '@folio/stripes-testing';
-import '@folio/stripes-acq-components/test/jest/__mock__';
 
-import { QueryClient, QueryClientProvider } from 'react-query';
 import { EXPORT_JOB_STATUS_OPTIONS } from '../../common/constants';
 import {
   EXPORT_JOB_TYPES,
   EXPORT_JOB_TYPES_REQUEST_MAP,
 } from '../constants';
-
 import { ExportJobsFilters } from './ExportJobsFilters';
 
 const defaultProps = {
@@ -90,10 +88,10 @@ describe('ExportJobsFilters', () => {
   });
 
   describe('when selecting a job type with multiple facet values', () => {
-    it('should apply correct values', () => {
+    it('should apply correct values', async () => {
       const { getByText } = renderExportJobsFilters();
 
-      fireEvent.click(getByText('ui-export-manager.exportJob.type.AUTH_HEADINGS_UPDATES'));
+      await userEvent.click(getByText('ui-export-manager.exportJob.type.AUTH_HEADINGS_UPDATES'));
 
       expect(defaultProps.applyFilters).toHaveBeenCalledWith('type', EXPORT_JOB_TYPES_REQUEST_MAP.AUTH_HEADINGS_UPDATES);
     });
