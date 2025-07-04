@@ -1,10 +1,7 @@
-import React from 'react';
-import { render } from '@testing-library/react';
-import user from '@testing-library/user-event';
-
-import '@folio/stripes-acq-components/test/jest/__mock__';
-
+import { render } from '@folio/jest-config-stripes/testing-library/react';
+import userEvent from '@folio/jest-config-stripes/testing-library/user-event';
 import { runAxeTest } from '@folio/stripes-testing';
+
 import { useSecureDownload } from '../../hooks';
 import { ExportJobId } from './ExportJobId';
 
@@ -48,7 +45,7 @@ describe('ExportJobId', () => {
     expect(getByTestId('text-link')).toBeDefined();
   });
 
-  it('should use secure download for eholdings exports', () => {
+  it('should use secure download for eholdings exports', async () => {
     const jobName = '1001';
     const { getByTestId } = renderExportJobId({
       name: jobName,
@@ -57,13 +54,14 @@ describe('ExportJobId', () => {
       type: 'E_HOLDINGS',
     });
 
-    user.click(getByTestId('text-link'));
+    await userEvent.click(getByTestId('text-link'));
 
     expect(downloadSecurelyMock).toHaveBeenCalled();
   });
 
   it('should render with no axe errors', async () => {
     const jobName = '1001';
+
     renderExportJobId({
       name: jobName,
       fileNames: ['/test.png'],

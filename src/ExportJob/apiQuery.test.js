@@ -1,8 +1,12 @@
-import React from 'react';
-import { QueryClient, QueryClientProvider } from 'react-query';
-import { renderHook } from '@testing-library/react-hooks';
+import {
+  QueryClient,
+  QueryClientProvider,
+} from 'react-query';
 
-import '@folio/stripes-acq-components/test/jest/__mock__';
+import {
+  renderHook,
+  waitFor,
+} from '@folio/jest-config-stripes/testing-library/react';
 import { useOkapiKy } from '@folio/stripes/core';
 
 import {
@@ -10,8 +14,6 @@ import {
 } from './apiQuery';
 
 const queryClient = new QueryClient();
-
-// eslint-disable-next-line react/prop-types
 const wrapper = ({ children }) => (
   <QueryClientProvider client={queryClient}>
     {children}
@@ -19,6 +21,10 @@ const wrapper = ({ children }) => (
 );
 
 describe('Export job api queries', () => {
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+
   describe('useExportJobQuery', () => {
     it('should fetch export job', async () => {
       const exportJob = {
@@ -27,17 +33,15 @@ describe('Export job api queries', () => {
         description: '# of Charges: 5',
       };
 
-      useOkapiKy.mockClear().mockReturnValue({
+      useOkapiKy.mockReturnValue({
         get: () => ({
           json: () => exportJob,
         }),
       });
 
-      const { result, waitFor } = renderHook(() => useExportJobQuery(), { wrapper });
+      const { result } = renderHook(() => useExportJobQuery(), { wrapper });
 
-      await waitFor(() => {
-        return !result.current.isLoading;
-      });
+      await waitFor(() => expect(result.current.isLoading).toBe(false));
 
       expect(result.current.exportJob).toEqual(exportJob);
     });

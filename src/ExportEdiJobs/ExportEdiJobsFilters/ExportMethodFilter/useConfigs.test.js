@@ -1,19 +1,18 @@
-import React from 'react';
 import {
   QueryClient,
   QueryClientProvider,
 } from 'react-query';
-import { renderHook } from '@testing-library/react-hooks';
 
+import {
+  renderHook,
+  waitFor,
+} from '@folio/jest-config-stripes/testing-library/react';
 import { useOkapiKy } from '@folio/stripes/core';
-
 import { LIMIT_MAX } from '@folio/stripes-acq-components';
 
 import { useConfigs } from './useConfigs';
 
 const queryClient = new QueryClient();
-
-// eslint-disable-next-line react/prop-types
 const wrapper = ({ children }) => (
   <QueryClientProvider client={queryClient}>
     {children}
@@ -32,15 +31,19 @@ describe('useConfigs', () => {
   }));
 
   beforeEach(() => {
-    useOkapiKy.mockClear().mockReturnValue({
+    useOkapiKy.mockReturnValue({
       get: mockGet,
     });
   });
 
-  it('fetches integration configs', async () => {
-    const { result, waitFor } = renderHook(() => useConfigs(), { wrapper });
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
 
-    await waitFor(() => !result.current.isFetching);
+  it('fetches integration configs', async () => {
+    const { result } = renderHook(() => useConfigs(), { wrapper });
+
+    await waitFor(() => expect(result.current.isFetching).toBe(false));
 
     expect(result.current.configs).toEqual(configs);
     expect(mockGet).toHaveBeenCalledWith(
