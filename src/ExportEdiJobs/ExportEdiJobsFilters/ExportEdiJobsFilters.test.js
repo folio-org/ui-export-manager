@@ -1,14 +1,12 @@
-import React from 'react';
-import { render } from '@testing-library/react';
-
-import '@folio/stripes-acq-components/test/jest/__mock__';
-
-import { runAxeTest } from '@folio/stripes-testing';
-import { QueryClient, QueryClientProvider } from 'react-query';
 import {
-  EXPORT_JOB_STATUS_OPTIONS,
-} from '../../common/constants';
+  QueryClient,
+  QueryClientProvider,
+} from 'react-query';
 
+import { render } from '@folio/jest-config-stripes/testing-library/react';
+import { runAxeTest } from '@folio/stripes-testing';
+
+import { EXPORT_JOB_STATUS_OPTIONS } from '../../common/constants';
 import { ExportEdiJobsFilters } from './ExportEdiJobsFilters';
 
 jest.mock('@folio/stripes-acq-components', () => {
@@ -48,7 +46,7 @@ const renderExportEdiJobsFilters = ({
       applyFilters={applyFilters}
       disabled={disabled}
     />
-  </QueryClientProvider>
+  </QueryClientProvider>,
 ));
 
 describe('ExportEdiJobsFilters', () => {

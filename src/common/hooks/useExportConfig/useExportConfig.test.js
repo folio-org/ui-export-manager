@@ -1,12 +1,17 @@
-import { renderHook } from '@testing-library/react-hooks';
-import { QueryClient, QueryClientProvider } from 'react-query';
+import {
+  QueryClient,
+  QueryClientProvider,
+} from 'react-query';
 
+import {
+  renderHook,
+  waitFor,
+} from '@folio/jest-config-stripes/testing-library/react';
 import { useOkapiKy } from '@folio/stripes/core';
 
 import { useExportConfig } from './useExportConfig';
 
 const queryClient = new QueryClient();
-// eslint-disable-next-line react/prop-types
 const wrapper = ({ children }) => (
   <QueryClientProvider client={queryClient}>
     {children}
@@ -29,9 +34,9 @@ describe('useExportConfig', () => {
   });
 
   it('should return fetched fiscal years', async () => {
-    const { result, waitFor } = renderHook(() => useExportConfig(mockConfig.id), { wrapper });
+    const { result } = renderHook(() => useExportConfig(mockConfig.id), { wrapper });
 
-    await waitFor(() => !result.current.isLoading);
+    await waitFor(() => expect(result.current.isLoading).toBe(false));
 
     expect(result.current.config).toEqual(mockConfig);
   });

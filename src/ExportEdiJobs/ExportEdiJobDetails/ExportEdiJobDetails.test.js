@@ -1,7 +1,14 @@
-import { QueryClient, QueryClientProvider } from 'react-query';
-import { screen, render } from '@testing-library/react';
+import {
+  QueryClient,
+  QueryClientProvider,
+} from 'react-query';
 
+import {
+  screen,
+  render,
+} from '@folio/jest-config-stripes/testing-library/react';
 import { runAxeTest } from '@folio/stripes-testing';
+
 import { useExportJobQuery } from '../../ExportJob/apiQuery';
 import { ExportEdiJobDetails } from './ExportEdiJobDetails';
 
@@ -44,8 +51,6 @@ const exportJob = {
 };
 
 const queryClient = new QueryClient();
-
-// eslint-disable-next-line react/prop-types
 const wrapper = ({ children }) => (
   <QueryClientProvider client={queryClient}>
     {children}
@@ -59,7 +64,7 @@ const renderExportEdiJobDetails = () => render(
 
 describe('ExportEdiJobDetails', () => {
   beforeEach(() => {
-    useExportJobQuery.mockClear();
+    jest.clearAllMocks();
   });
 
   it('should fetch export job', () => {

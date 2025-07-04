@@ -22,7 +22,7 @@ import { ViewMetaData } from '@folio/stripes/smart-components';
 import { ExportJobId } from '../../common/components';
 import {
   useExportConfig,
-  useExportManagerPerms
+  useExportManagerPerms,
 } from '../../common/hooks';
 import { useNavigation } from '../../hooks';
 
@@ -45,7 +45,7 @@ export const ExportEdiJobDetails = ({ refetchJobs, uuid }) => {
   const perms = useExportManagerPerms();
 
   const {
-    hasAllExportManagerPerms
+    hasAllExportManagerPerms,
   } = perms;
 
   const {

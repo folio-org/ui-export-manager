@@ -1,9 +1,12 @@
-import { renderHook } from '@testing-library/react-hooks';
 import {
   QueryClient,
   QueryClientProvider,
 } from 'react-query';
 
+import {
+  renderHook,
+  waitFor,
+} from '@folio/jest-config-stripes/testing-library/react';
 import { useOkapiKy } from '@folio/stripes/core';
 
 import {
@@ -40,7 +43,7 @@ describe('useExportJobsQuery', () => {
       }),
     });
 
-    const { result, waitFor } = renderHook(() => useExportJobsQuery(
+    const { result } = renderHook(() => useExportJobsQuery(
       '?limit=100&offset=0&status=SCHEDULED&type=BULK_EDIT', {
         offset: 30,
         limit: 30,
@@ -67,7 +70,7 @@ describe('useExportJobsQuery', () => {
       }),
     });
 
-    const { result, waitFor } = renderHook(() => useExportJobsQuery(
+    const { result } = renderHook(() => useExportJobsQuery(
       '?limit=100&offset=0', {
         offset: 0,
         limit: 10,
@@ -90,7 +93,7 @@ describe('useExportJobsQuery', () => {
 
     useOkapiKy.mockReturnValue({ get: getMock });
 
-    const { result, waitFor } = renderHook(() => useExportJobsQuery(
+    const { result } = renderHook(() => useExportJobsQuery(
       '?limit=100&offset=0&status=SCHEDULED', {
         offset: 30,
         limit: 30,
@@ -117,9 +120,9 @@ describe('buildJobsQuery', () => {
   it('should generate correct query', () => {
     const parsedQuery = {
       status: 'SUCCESSFUL',
-      type: ['ORDERS_CSV', 'ORDERS_EDI', 'BURSAR_FEES_FINES']
+      type: ['ORDERS_CSV', 'ORDERS_EDI', 'BURSAR_FEES_FINES'],
     };
 
     expect(buildJobsQuery(parsedQuery)).toEqual('(status=="SUCCESSFUL" and ((type==("CLAIMS" or "EDIFACT_ORDERS_EXPORT") and jsonb.exportTypeSpecificParameters.vendorEdiOrdersExportConfig.fileFormat==("CSV" or "EDI")) or (type==(BURSAR_FEES_FINES)))) sortby name/sort.descending');
-  })
+  });
 });

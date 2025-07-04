@@ -1,9 +1,8 @@
 import { useLocation } from 'react-router-dom';
-import { renderHook } from '@testing-library/react-hooks';
 
-import {
-  useNavigation,
-} from './hooks';
+import { renderHook } from '@folio/jest-config-stripes/testing-library/react';
+
+import { useNavigation } from './hooks';
 
 const mockHistoryPush = jest.fn();
 
