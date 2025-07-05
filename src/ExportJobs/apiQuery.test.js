@@ -43,7 +43,7 @@ describe('useExportJobsQuery', () => {
       }),
     });
 
-    const { result, waitFor } = renderHook(() => useExportJobsQuery(
+    const { result } = renderHook(() => useExportJobsQuery(
       '?limit=100&offset=0&status=SCHEDULED&type=CLAIMS', {
         offset: 30,
         limit: 30,
