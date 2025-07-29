@@ -12,9 +12,14 @@ export const useJobDeletionIntervalsMutation = () => {
     mutateAsync: updateJobDeletionIntervals,
   } = useMutation({
     mutationFn: ({ data }) => {
-      return Promise.allSettled(data.map((item) => {
-        return ky.put(`${EXPORT_JOBS_DELETION_INTERVALS_API}/${item.exportType}`, { json: item }).json();
-      }));
+      return Promise
+        .allSettled(data.map((item) => {
+          return ky.put(`${EXPORT_JOBS_DELETION_INTERVALS_API}/${item.exportType}`, { json: item }).json();
+        }))
+        .then((settled) => settled.map((res, index) => ({
+          ...res,
+          exportType: data[index].exportType,
+        })));
     },
   });
 

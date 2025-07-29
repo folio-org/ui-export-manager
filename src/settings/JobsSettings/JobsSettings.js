@@ -69,7 +69,7 @@ export const JobsSettings = () => {
                 type: i ? 'error' : 'success',
                 values: {
                   count: results.length,
-                  entities: results.map((result) => getExportTypeLabel(result.value.exportType, intl)).join(', '),
+                  entities: results.map((result) => getExportTypeLabel(result.exportType, intl)).join(', '),
                 },
               });
             }
