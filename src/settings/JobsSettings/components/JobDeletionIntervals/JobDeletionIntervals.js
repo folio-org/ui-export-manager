@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Field } from 'react-final-form';
 import { useIntl } from 'react-intl';
 
@@ -59,4 +60,17 @@ export const JobDeletionIntervals = ({
       </div>
     </div>
   );
+};
+
+JobDeletionIntervals.propTypes = {
+  disabled: PropTypes.bool,
+  fields: PropTypes.shape({
+    map: PropTypes.func.isRequired,
+    value: PropTypes.arrayOf(PropTypes.shape({
+      exportType: PropTypes.string,
+      retentionDays: PropTypes.number,
+    })),
+  }).isRequired,
+  isLoading: PropTypes.bool,
+  isNonInteractive: PropTypes.bool,
 };

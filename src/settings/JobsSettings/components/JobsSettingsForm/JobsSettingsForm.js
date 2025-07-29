@@ -93,6 +93,7 @@ const JobsSettingsForm = ({
 };
 
 JobsSettingsForm.propTypes = {
+  disabled: PropTypes.bool,
   form: PropTypes.shape({
     getState: PropTypes.func.isRequired,
   }).isRequired,

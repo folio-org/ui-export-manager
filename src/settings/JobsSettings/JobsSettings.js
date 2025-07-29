@@ -56,27 +56,26 @@ export const JobsSettings = () => {
     updateJobDeletionIntervals,
   } = useJobDeletionIntervalsMutation();
 
-  const onSubmit = useCallback((values, form) => {
+  const onSubmit = useCallback(async (values, form) => {
     const data = getChangedRows(values, form);
 
-    return updateJobDeletionIntervals({ data })
-      .then((settled) => {
-        partition(settled, (result) => result.status === 'fulfilled')
-          .forEach((results, i) => {
-            if (results.length) {
-              showCallout({
-                messageId: `ui-export-manager.settings.jobs.update.${i ? 'error' : 'success'}`,
-                type: i ? 'error' : 'success',
-                values: {
-                  count: results.length,
-                  entities: results.map((result) => getExportTypeLabel(result.exportType, intl)).join(', '),
-                },
-              });
-            }
-          });
+    const settled = await updateJobDeletionIntervals({ data });
 
-        refetch();
+    partition(settled, (result) => result.status === 'fulfilled')
+      .forEach((results, i) => {
+        if (results.length) {
+          showCallout({
+            messageId: `ui-export-manager.settings.jobs.update.${i ? 'error' : 'success'}`,
+            type: i ? 'error' : 'success',
+            values: {
+              count: results.length,
+              entities: results.map((result) => getExportTypeLabel(result.exportType, intl)).join(', '),
+            },
+          });
+        }
       });
+
+    refetch();
   }, [intl, refetch, showCallout, updateJobDeletionIntervals]);
 
   const initialValues = useMemo(() => ({

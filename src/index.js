@@ -1,4 +1,5 @@
 
+import PropTypes from 'prop-types';
 import { lazy } from 'react';
 
 const ExportManager = lazy(() => import('./ExportManager'));
@@ -11,3 +12,7 @@ export default function ExportManagerRoot({ showSettings, ...props }) {
 
   return <ExportManager />;
 }
+
+ExportManagerRoot.propTypes = {
+  showSettings: PropTypes.bool,
+};
