@@ -30,7 +30,14 @@ export const JobDeletionIntervals = ({
           const exportType = fields.value[index]?.exportType;
           const label = getExportTypeLabel(exportType, intl);
 
-          return <Label htmlFor={name}>{label}</Label>;
+          return (
+            <Label
+              key={name}
+              htmlFor={name}
+            >
+              {label}
+            </Label>
+          );
         })}
       </div>
       <div className={css.fieldInput}>
