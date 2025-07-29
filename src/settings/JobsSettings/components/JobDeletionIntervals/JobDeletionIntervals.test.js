@@ -5,6 +5,7 @@ import {
   render,
   screen,
 } from '@folio/jest-config-stripes/testing-library/react';
+import { runAxeTest } from '@folio/stripes-testing';
 
 import {
   DELETION_INTERVALS_FIELD_ARRAY_NAME,
@@ -57,5 +58,11 @@ describe('JobDeletionIntervals', () => {
     Object.values(TRANSLATION_KEYS_DICT).forEach((value) => {
       expect(screen.getByText(value)).toBeInTheDocument();
     });
+  });
+
+  it('should render with no axe errors', async () => {
+    const { container } = renderJobDeletionIntervals();
+
+    await runAxeTest({ rootNode: container });
   });
 });
