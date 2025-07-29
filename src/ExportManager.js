@@ -11,7 +11,7 @@ import { BE_INTERFACE } from './common/constants';
 import { ExportJobs } from './ExportJobs';
 import { ExportEdiJobs } from './ExportEdiJobs';
 
-export const ExportManager = () => {
+const ExportManager = () => {
   const stripes = useStripes();
 
   return (
@@ -61,3 +61,5 @@ export const ExportManager = () => {
     </Switch>
   );
 };
+
+export default ExportManager;

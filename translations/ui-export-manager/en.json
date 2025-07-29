@@ -60,5 +60,13 @@
 
   "permission.jobs.downloadAndResend.execute": "Export manager: Download and resend files",
   "permission.export-manager.all": "Export manager: All",
-  "permission.export-manager.view": "Export manager: View"
+  "permission.export-manager.view": "Export manager: View",
+  "permission.settings.view": "Settings (Export manager): Can view only settings",
+  "permission.settings.edit": "Settings (Export manager): Can view and edit settings",
+
+  "settings.title": "Export manager settings",
+  "settings.jobs": "Jobs",
+  "settings.jobs.deletionIntervals": "Job deletion intervals (days)",
+  "settings.jobs.update.success": "{count, plural, one {Deletion interval for <b>{entities}</b> was successfully updated} other {Deletion intervals for <b>{entities}</b> were successfully updated}}.",
+  "settings.jobs.update.error": "{count, plural, one {Deletion interval for <b>{entities}</b> was not updated} other {Deletion intervals for <b>{entities}</b> were not updated}}."
 }

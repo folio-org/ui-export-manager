@@ -1,0 +1,20 @@
+.fieldLabel {
+  display: flex;
+  flex-direction: column;
+  min-width: max-content;
+
+  & > label {
+    font-weight: normal;
+    margin-bottom: var(--control-margin-bottom);
+    min-height: var(--control-min-size-desktop);
+  }
+}
+
+.fieldInput {
+  max-width: 12rem;
+}
+
+.list {
+  display: flex;
+  gap: var(--gutter);
+}
