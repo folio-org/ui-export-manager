@@ -34,7 +34,7 @@
     "exportJob.details.action.download.error": "Pobieranie pliku nie powiodło się.",
     "exportJob.details.action.resend": "Wyślij ponownie",
     "exportJob.details.action.resend.error": "Przesyłanie pliku nie powiodło się.",
-    "exportJob.details.action.resend.success": "Your file upload has started successfully.",
+    "exportJob.details.action.resend.success": "Przesyłanie pliku rozpoczęło się pomyślnie.",
     "exportJob.type.AUTH_HEADINGS_UPDATES": "Authority control",
     "exportJob.details.type.CIRCULATION_LOG": "Dziennik udostępniania",
     "exportJob.details.type.BURSAR_FEES_FINES": "Bursar",
