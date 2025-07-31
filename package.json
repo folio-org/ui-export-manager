@@ -1,6 +1,6 @@
 {
   "name": "@folio/export-manager",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "description": "Description for export manager",
   "main": "index.js",
   "repository": "",
@@ -17,7 +17,7 @@
     "route": "/export-manager",
     "okapiInterfaces": {
       "configuration": "2.0",
-      "data-export-spring": "1.0 2.0",
+      "data-export-spring": "2.0",
       "tags": "1.0",
       "users": "15.0 16.0"
     },

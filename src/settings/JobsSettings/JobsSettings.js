@@ -64,9 +64,16 @@ export const JobsSettings = () => {
     partition(settled, (result) => result.status === 'fulfilled')
       .forEach((results, i) => {
         if (results.length) {
+          /*
+            Partition returns an array of arrays, where the first array contains successful results
+            and the second contains failed results. We use the index `i` to determine if
+            the results are successful or not.
+           */
+          const type = i === 1 ? 'error' : 'success';
+
           showCallout({
-            messageId: `ui-export-manager.settings.jobs.update.${i ? 'error' : 'success'}`,
-            type: i ? 'error' : 'success',
+            messageId: `ui-export-manager.settings.jobs.update.${type}`,
+            type,
             values: {
               count: results.length,
               entities: results.map((result) => getExportTypeLabel(result.exportType, intl)).join(', '),
