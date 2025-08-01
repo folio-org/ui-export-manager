@@ -4,7 +4,7 @@ import { render } from '@folio/jest-config-stripes/testing-library/react';
 import { runAxeTest } from '@folio/stripes-testing';
 import { useStripes } from '@folio/stripes/core';
 
-import { ExportManager } from './ExportManager';
+import ExportManager from './ExportManager';
 
 jest.mock('./ExportJobs', () => ({ ExportJobs: () => <span>ExportJobs</span> }));
 jest.mock('./ExportEdiJobs', () => ({ ExportEdiJobs: () => <span>ExportEdiJobs</span> }));

@@ -1,6 +1,6 @@
 {
   "name": "@folio/export-manager",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "description": "Description for export manager",
   "main": "index.js",
   "repository": "",
@@ -10,13 +10,14 @@
   },
   "stripes": {
     "actsAs": [
-      "app"
+      "app",
+      "settings"
     ],
     "displayName": "ui-export-manager.meta.title",
     "route": "/export-manager",
     "okapiInterfaces": {
       "configuration": "2.0",
-      "data-export-spring": "1.0 2.0",
+      "data-export-spring": "2.0",
       "tags": "1.0",
       "users": "15.0 16.0"
     },
@@ -37,6 +38,14 @@
       {
         "permissionName": "module.export-manager.enabled",
         "displayName": "UI: Export manager module is enabled",
+        "visible": false
+      },
+      {
+        "permissionName": "settings.export-manager.enabled",
+        "displayName": "Settings (Export manager): Export manager settings enabled",
+        "subPermissions": [
+          "settings.enabled"
+        ],
         "visible": false
       },
       {
@@ -81,6 +90,24 @@
           "data-export.edifact.orders.create",
           "ui-export-manager.jobs.downloadAndResend.execute"
         ]
+      },
+      {
+        "permissionName": "ui-export-manager.settings.view",
+        "displayName": "Settings (Export manager): Can view only settings",
+        "subPermissions": [
+          "settings.export-manager.enabled",
+          "data-export.job-deletion-intervals.collection.get"
+        ],
+        "visible": true
+      },
+      {
+        "permissionName": "ui-export-manager.settings.edit",
+        "displayName": "Settings (Export manager): Can view and edit settings",
+        "subPermissions": [
+          "ui-export-manager.settings.view",
+          "data-export.job-deletion-intervals.item.put"
+        ],
+        "visible": true
       }
     ]
   },
@@ -128,6 +155,8 @@
     "lodash": "^4.17.21",
     "prop-types": "^15.5.10",
     "query-string": "^6.1.0",
+    "react-final-form": "^7.0.0",
+    "react-final-form-arrays": "^4.0.0",
     "react-router-prop-types": "^1.0.4"
   },
   "peerDependencies": {
