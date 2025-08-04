@@ -152,11 +152,13 @@
   },
   "dependencies": {
     "@folio/stripes-acq-components": "^7.0.0",
+    "final-form": "^4.0.0",
+    "final-form-arrays": "^3.0.0",
     "lodash": "^4.17.21",
     "prop-types": "^15.5.10",
     "query-string": "^6.1.0",
-    "react-final-form": "^7.0.0",
-    "react-final-form-arrays": "^4.0.0",
+    "react-final-form": "^6.0.0",
+    "react-final-form-arrays": "^3.0.0",
     "react-router-prop-types": "^1.0.4"
   },
   "peerDependencies": {
