@@ -6,11 +6,16 @@ import {
   Label,
   Loading,
 } from '@folio/stripes/components';
-import { TextField } from '@folio/stripes-acq-components';
+import {
+  TextField,
+  validateRequiredPositiveNumber,
+} from '@folio/stripes-acq-components';
 
 import { getExportTypeLabel } from '../../utils';
 
 import css from './JobDeletionIntervals.css';
+
+const parseInterval = (value) => (value ? Number(value) : undefined);
 
 export const JobDeletionIntervals = ({
   disabled,
@@ -26,24 +31,19 @@ export const JobDeletionIntervals = ({
 
   return (
     <div className={css.list}>
-      <div className={css.fieldLabel}>
-        {fields.map((name, index) => {
-          const exportType = fields.value[index]?.exportType;
-          const label = getExportTypeLabel(exportType, intl);
+      {fields.map((name, index) => {
+        const exportType = fields.value[index]?.exportType;
+        const label = getExportTypeLabel(exportType, intl);
 
-          return (
+        return (
+          <>
             <Label
               key={name}
               htmlFor={name}
+              className={css.fieldLabel}
             >
               {label}
             </Label>
-          );
-        })}
-      </div>
-      <div className={css.fieldInput}>
-        {fields.map((name) => {
-          return (
             <Field
               key={name}
               id={name}
@@ -51,13 +51,14 @@ export const JobDeletionIntervals = ({
               disabled={disabled}
               isNonInteractive={isNonInteractive}
               name={`${name}.retentionDays`}
-              parse={Number}
-              format={Number}
+              parse={parseInterval}
+              format={parseInterval}
+              validate={validateRequiredPositiveNumber}
               type="number"
             />
-          );
-        })}
-      </div>
+          </>
+        );
+      })}
     </div>
   );
 };
