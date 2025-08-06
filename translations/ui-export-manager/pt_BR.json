@@ -51,5 +51,12 @@
     "exportJob.integrationType.claiming": "Reclamatórias",
     "exportJob.integrationType.ordering": "Pedidos",
     "exportJob.type.ORDERS_EDI": "Pedidos (EDI)",
-    "exportJob.type.ORDERS_CSV": "Pedidos (CSV)"
+    "exportJob.type.ORDERS_CSV": "Pedidos (CSV)",
+    "permission.settings.view": "Configurações (Gerenciador de exportação): Pode visualizar apenas as configurações",
+    "permission.settings.edit": "Configurações (Gerenciador de exportação): Pode visualizar e editar configurações",
+    "settings.title": "Configurações do gerenciador de exportação",
+    "settings.jobs": "Trabalhos",
+    "settings.jobs.deletionIntervals": "Intervalos de exclusão de trabalhos (dias)",
+    "settings.jobs.update.success": "{count, plural, one {Intervalo de exclusão para <b>{entities}</b> foi atualizado com sucesso} other {Intervalos de exclusão para <b>{entities}</b> foram atualizados com sucesso}}.",
+    "settings.jobs.update.error": "{count, plural, one {Intervalo de exclusão para <b>{entities}</b> não foi atualizado} other {Intervalos de exclusão para <b>{entities}</b> não foram atualizados}}."
 }

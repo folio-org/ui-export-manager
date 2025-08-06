@@ -51,5 +51,12 @@
     "exportJob.integrationType.claiming": "Monity",
     "exportJob.integrationType.ordering": "Zamówienia",
     "exportJob.type.ORDERS_EDI": "Zamówienia (EDI)",
-    "exportJob.type.ORDERS_CSV": "Zamówienia (CSV)"
+    "exportJob.type.ORDERS_CSV": "Zamówienia (CSV)",
+    "permission.settings.view": "Ustawienia (Menedżer eksportu): można przeglądać tylko ustawienia",
+    "permission.settings.edit": "Ustawienia (Menedżer eksportu): możliwość przeglądania i edytowania ustawień",
+    "settings.title": "Ustawienia menedżera eksportu",
+    "settings.jobs": "zadania",
+    "settings.jobs.deletionIntervals": "Interwały usuwania zadania (dni)",
+    "settings.jobs.update.success": "{count, plural, one {Interwał usuwania dla <b>{entities}</b> został pomyślnie zaktualizowany} other {Interwały usuwania dla <b>{entities}</b> zostały pomyślnie zaktualizowane}}.",
+    "settings.jobs.update.error": "{count, plural, one {Interwał usuwania dla <b>{entities}</b> nie został zaktualizowany} other {Interwały usuwania dla <b>{entities}</b> nie zostały zaktualizowane}}."
 }
