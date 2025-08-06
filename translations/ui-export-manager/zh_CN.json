@@ -51,5 +51,12 @@
     "exportJob.integrationType.claiming": "催缺",
     "exportJob.integrationType.ordering": "订单",
     "exportJob.type.ORDERS_EDI": "订单 : EDI ) ",
-    "exportJob.type.ORDERS_CSV": "订单 : CSV ) "
+    "exportJob.type.ORDERS_CSV": "订单 : CSV ) ",
+    "permission.settings.view": "Settings (Export manager): Can view only settings",
+    "permission.settings.edit": "Settings (Export manager): Can view and edit settings",
+    "settings.title": "Export manager settings",
+    "settings.jobs": "Jobs",
+    "settings.jobs.deletionIntervals": "Job deletion intervals (days)",
+    "settings.jobs.update.success": "{count, plural, one {Deletion interval for <b>{entities}</b> was successfully updated} other {Deletion intervals for <b>{entities}</b> were successfully updated}}.",
+    "settings.jobs.update.error": "{count, plural, one {Deletion interval for <b>{entities}</b> was not updated} other {Deletion intervals for <b>{entities}</b> were not updated}}."
 }
