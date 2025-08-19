@@ -52,11 +52,11 @@
     "exportJob.integrationType.ordering": "Objednávky",
     "exportJob.type.ORDERS_EDI": "Objednávky (EDI)",
     "exportJob.type.ORDERS_CSV": "Objednávky (CSV)",
-    "permission.settings.view": "Settings (Export manager): Can view only settings",
-    "permission.settings.edit": "Settings (Export manager): Can view and edit settings",
-    "settings.title": "Export manager settings",
-    "settings.jobs": "Jobs",
-    "settings.jobs.deletionIntervals": "Job deletion intervals (days)",
-    "settings.jobs.update.success": "{count, plural, one {Deletion interval for <b>{entities}</b> was successfully updated} other {Deletion intervals for <b>{entities}</b> were successfully updated}}.",
-    "settings.jobs.update.error": "{count, plural, one {Deletion interval for <b>{entities}</b> was not updated} other {Deletion intervals for <b>{entities}</b> were not updated}}."
+    "permission.settings.view": "Nastavení (Správce exportu): Může pouze zobrazit nastavení",
+    "permission.settings.edit": "Nastavení (Správce exportu): Může zobrazit a upravit nastavení",
+    "settings.title": "Nastavení správce exportu",
+    "settings.jobs": "Úlohy",
+    "settings.jobs.deletionIntervals": "Intervaly mazání úloh (dny)",
+    "settings.jobs.update.success": "{count, plural, one {Interval mazání pro <b>{entities} </b> byl úspěšně aktualizován} other {Intervaly mazání pro <b>{entities} </b> byly úspěšně aktualizovány}}.",
+    "settings.jobs.update.error": "{count, plural, one {Interval mazání pro <b>{entities} </b> nebyl aktualizován} other {Intervaly mazání pro <b>{entities} </b> nebyly aktualizovány}}."
 }
