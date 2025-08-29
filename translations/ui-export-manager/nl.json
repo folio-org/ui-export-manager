@@ -52,11 +52,11 @@
     "exportJob.integrationType.ordering": "Bestellingen",
     "exportJob.type.ORDERS_EDI": "Bestellingen (EDI)",
     "exportJob.type.ORDERS_CSV": "Bestellingen (CSV)",
-    "permission.settings.view": "Settings (Export manager): Can view only settings",
-    "permission.settings.edit": "Settings (Export manager): Can view and edit settings",
-    "settings.title": "Export manager settings",
-    "settings.jobs": "Jobs",
-    "settings.jobs.deletionIntervals": "Job deletion intervals (days)",
-    "settings.jobs.update.success": "{count, plural, one {Deletion interval for <b>{entities}</b> was successfully updated} other {Deletion intervals for <b>{entities}</b> were successfully updated}}.",
-    "settings.jobs.update.error": "{count, plural, one {Deletion interval for <b>{entities}</b> was not updated} other {Deletion intervals for <b>{entities}</b> were not updated}}."
+    "permission.settings.view": "Instellingen (exportmanager): Kan alleen instellingen bekijken",
+    "permission.settings.edit": "Instellingen (Exportmanager): Kan instellingen bekijken en bewerken",
+    "settings.title": "Instellingen exportmanager",
+    "settings.jobs": "Functie",
+    "settings.jobs.deletionIntervals": "Intervallen voor verwijderen van functies (dagen)",
+    "settings.jobs.update.success": "{count, plural, one {Verwijderinterval voor <b>{entiteiten}</b> is succesvol geüpdatet} other {Verwijderintervallen voor <b>{entiteiten}</b> zijn succesvol geüpdatet}}.",
+    "settings.jobs.update.error": "{count, plural, one {Verwijderinterval voor <b>{entiteiten}</b> is niet geüpdatet} other {Verwijderintervallen voor <b>{entiteiten}</b> werden niet geüpdatet}}."
 }

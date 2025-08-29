@@ -1,5 +1,5 @@
 {
-    "meta.title": "Zarządzanie eksportem",
+    "meta.title": "Menedżer eksportu",
     "permission.export-manager.all": "Menedżer eksportu: wszystko",
     "exportJobs": "Zadania eksportu",
     "exportJob.jobId": "ID zadania",
@@ -16,7 +16,7 @@
     "exportJob.system": "System",
     "exportJob.status.SCHEDULED": "Zaplanowane",
     "exportJob.status.IN_PROGRESS": "W toku",
-    "exportJob.status.SUCCESSFUL": "Pomyślne",
+    "exportJob.status.SUCCESSFUL": "Zakończony sukcesem",
     "exportJob.status.FAILED": "Niepowodzenie",
     "exportJob.type.CIRCULATION_LOG": "Dziennik udostępniania",
     "exportJob.type.BURSAR_FEES_FINES": "Kwestor",
