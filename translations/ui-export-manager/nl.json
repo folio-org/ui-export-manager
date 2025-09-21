@@ -57,6 +57,6 @@
     "settings.title": "Instellingen exportmanager",
     "settings.jobs": "Functie",
     "settings.jobs.deletionIntervals": "Intervallen voor verwijderen van functies (dagen)",
-    "settings.jobs.update.success": "{count, plural, one {Verwijderinterval voor <b>{entiteiten}</b> is succesvol geüpdatet} other {Verwijderintervallen voor <b>{entiteiten}</b> zijn succesvol geüpdatet}}.",
-    "settings.jobs.update.error": "{count, plural, one {Verwijderinterval voor <b>{entiteiten}</b> is niet geüpdatet} other {Verwijderintervallen voor <b>{entiteiten}</b> werden niet geüpdatet}}."
+    "settings.jobs.update.success": "{count, plural, one {Verwijderinterval voor <b>{entities}</b> is succesvol geüpdatet} other {Verwijderintervallen voor <b>{entities}</b> zijn succesvol geüpdatet}}.",
+    "settings.jobs.update.error": "{count, plural, one {Verwijderinterval voor <b>{entities}</b> is niet geüpdatet} other {Verwijderintervallen voor <b>{entities}</b> werden niet geüpdatet}}."
 }
