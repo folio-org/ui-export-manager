@@ -47,7 +47,7 @@
     "title.organizations": "Organisationen",
     "permission.jobs.downloadAndResend.execute": "Exportmanager: Herunterladen und erneutes Versenden der Dateien",
     "exportJob.download": "Herunterladen",
-    "exportJob.integrationType": "Integration type",
+    "exportJob.integrationType": "Integrationstyp",
     "exportJob.integrationType.claiming": "Claims",
     "exportJob.integrationType.ordering": "Bestellungen",
     "exportJob.type.ORDERS_EDI": "Bestellungen (EDI)",
@@ -56,7 +56,7 @@
     "permission.settings.edit": "Settings (Export manager): Can view and edit settings",
     "settings.title": "Export manager settings",
     "settings.jobs": "Jobs",
-    "settings.jobs.deletionIntervals": "Job deletion intervals (days)",
+    "settings.jobs.deletionIntervals": "Job-Löschintervalle (Tage)",
     "settings.jobs.update.success": "{count, plural, one {Deletion interval for <b>{entities}</b> was successfully updated} other {Deletion intervals for <b>{entities}</b> were successfully updated}}.",
     "settings.jobs.update.error": "{count, plural, one {Deletion interval for <b>{entities}</b> was not updated} other {Deletion intervals for <b>{entities}</b> were not updated}}."
 }
