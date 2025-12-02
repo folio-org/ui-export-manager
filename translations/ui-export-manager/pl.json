@@ -24,7 +24,7 @@
     "exportJob.exportMethod": "Metoda eksportu",
     "navigation.all": "Wszystko",
     "navigation.organizations": "Organizacje",
-    "exportJob.details.action.rerun": "Rerun",
+    "exportJob.details.action.rerun": "Ponowne uruchomienie",
     "exportJob.details.action.rerun.success": "Export job <b>{name}</b> was successfully rerun.",
     "exportJob.details.action.rerun.error": "Export job <b>{name}</b> rerun was failed.",
     "exportJob.sentTo": "Sent to",
