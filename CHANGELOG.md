@@ -6,7 +6,7 @@
 * Use `jest-config-stripes` as dependency to setup Jest tests. Refs UIEXPMGR-130.
 * Remove "Bulk edit" references. Refs UIEXPMGR-128.
 * *BREAKING* Allow users to set an interval for deletion of export jobs. Refs UIEXPMGR-129.
-* Include global mod-settings permissions in base permission sets. Refs UIEXPMGR-131.
+* Include universal read-only permissions. Refs UIEXPMGR-131.
 
 ## [4.0.0](https://github.com/folio-org/ui-export-manager/tree/v4.0.0) (2025-03-12)
 [Full Changelog](https://github.com/folio-org/ui-export-manager/compare/v3.2.0...v4.0.0)
