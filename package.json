@@ -38,13 +38,17 @@
       {
         "permissionName": "module.export-manager.enabled",
         "displayName": "UI: Export manager module is enabled",
+        "subPermissions": [
+          "stripes-core.settings.read"
+        ],
         "visible": false
       },
       {
         "permissionName": "settings.export-manager.enabled",
         "displayName": "Settings (Export manager): Export manager settings enabled",
         "subPermissions": [
-          "settings.enabled"
+          "settings.enabled",
+          "stripes-core.settings.read"
         ],
         "visible": false
       },
