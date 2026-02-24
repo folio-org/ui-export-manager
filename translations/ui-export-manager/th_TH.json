@@ -3,7 +3,7 @@
     "permission.export-manager.all": "Export manager: All",
     "exportJobs": "Export jobs",
     "exportJob.jobId": "Job ID",
-    "exportJob.status": "Status",
+    "exportJob.status": "สถานะ",
     "exportJob.type": "Job type",
     "exportJob.description": "Description",
     "exportJob.source": "Source",
