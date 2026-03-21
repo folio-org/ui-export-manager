@@ -1,5 +1,5 @@
 {
-    "meta.title": "Export manager",
+    "meta.title": "Eksporta pārvaldnieks",
     "permission.export-manager.all": "Export manager: All",
     "exportJobs": "Export jobs",
     "exportJob.jobId": "Job ID",
