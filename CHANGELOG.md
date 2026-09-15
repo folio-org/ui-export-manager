@@ -1,6 +1,6 @@
 # Change history for ui-export-manager
 
-## (IN PROGRESS)
+## 5.1.0 (IN PROGRESS)
 
 ## [5.0.0](https://github.com/folio-org/ui-export-manager/tree/v5.0.0) (2026-04-16)
 [Full Changelog](https://github.com/folio-org/ui-export-manager/compare/v4.0.0...v5.0.0)
